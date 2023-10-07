@@ -1,0 +1,3369 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#"
+     xml:base="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cake="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:banhtt="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#có_Bột_là -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#có_Bột_là">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Bột_của"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#có_Thành_Phần_là -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#có_Thành_Phần_là">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Thành_Phần_của"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#có_Đặc_Sản_là -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#có_Đặc_Sản_là">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Đặc_Sản_của"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Bột_của -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Bột_của">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Ngày_làm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Ngày_làm">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Thành_Phần_của -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Thành_Phần_của">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Đặc_Sản_của -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Đặc_Sản_của">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Chén -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Chén">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Nghệ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Nghệ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Hấp_Lá_Dứa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Hấp_Lá_Dứa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nước_Cốt_Dừa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nước_Cốt_Dừa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nướng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nướng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Xứ_Huế -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Xứ_Huế">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Đường_Thốt_Nốt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Đường_Thốt_Nốt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bông_Lan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bông_Lan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bột_Lọc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bột_Lọc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Chiên -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Chiên">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Hấp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Hấp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Nướng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Nướng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chè_Lam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chè_Lam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Chay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Chay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Cốm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Cốm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Dài -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Dài">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Ngũ_Sắc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Ngũ_Sắc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Nếp_Cẩm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Nếp_Cẩm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cuốn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cuốn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cốm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cốm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Chín_Tầng_Mây -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Chín_Tầng_Mây">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Đậu_Xanh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Đậu_Xanh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Dẻo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Dẻo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gai -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gai">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gio_Mật -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gio_Mật">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giò -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giò">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày"/>
+                                <owl:hasValue rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giổ_Tổ_Hùng_Vương"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy_Giò -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy_Giò">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Hỏi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Hỏi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Bột_Nếp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Bột_Nếp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Nhân_Đậu_Xanh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Nhân_Đậu_Xanh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khúc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khúc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khọt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khọt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Nếp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Nếp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Phu_Thê -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Phu_Thê">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Trung_Thu"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sóc_Trăng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sóc_Trăng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sầu_Riêng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sầu_Riêng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Quai_Vạc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Quai_Vạc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rán -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rán">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Heo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Heo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Yến -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Yến">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tiêu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tiêu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#là_Đặc_Sản_của"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#được_làm_Ngày"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Ba_Màu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Ba_Màu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Cốm_Dẹp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Cốm_Dẹp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Gấc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Gấc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Cẩm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Cẩm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Dứa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Dứa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Nhân_Chuối -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Nhân_Chuối">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Bì -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Bì">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Khoai_Mì -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Khoai_Mì">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tẻ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tẻ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tổ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tổ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Bắc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Bắc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Nam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Nam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Trung -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Trung">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đậu_Xanh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đậu_Xanh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Chén -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Chén">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Chén"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bắp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Điều"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Nạc_Xay_Nhuyễn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Phộng_Rang"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Huế -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Huế">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Xứ_Huế"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Da_Heo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Bằm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Khô"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Huế"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Nghệ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Nghệ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bèo_Xứ_Nghệ"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Điều"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Bằm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Nóng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Húng_Quế"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Mùi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tiêu"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tương_Ớt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tỏi_Băm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nghệ_An"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Hấp_Lá_Dứa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Hấp_Lá_Dứa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Hấp_Lá_Dứa"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nở"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sài_Gòn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nước_Cốt_Dừa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nước_Cốt_Dừa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nước_Cốt_Dừa"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nở"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Men_Nở"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nướng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nướng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Nướng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Men_Nở"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Đường_Thốt_Nốt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Đường_Thốt_Nốt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bò_Đường_Thốt_Nốt"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Men_Nở"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Thốt_Nốt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bông_Lan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bông_Lan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bông_Lan"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bắp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì_Đa_Dụng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Lạt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bột_Lọc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bột_Lọc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Bột_Lọc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ớt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tỏi_Băm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ớt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cay"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Cà_Ri"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nghệ"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ngọt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ớt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Sắn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tỏi_Băm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Chiên -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Chiên">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Chiên"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Tiêu"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Hấp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Hấp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Hấp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Báng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Nướng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Nướng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chuối_Nướng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì_Đa_Dụng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Mì_Ngọt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Lạt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Sứ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cà_Phê"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rượu_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Đặc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chè_Lam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chè_Lam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chè_Lam"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gừng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lạc_Nhân"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mạch_Nha"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Vàng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vĩnh_Lộc_Thanh_Hóa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Chay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Chay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Chay"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Cốm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Cốm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Cốm"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Khô"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Dài -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Dài">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Dài"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Ngũ_Sắc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Ngũ_Sắc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Ngũ_Sắc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Cẩm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Riềng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ruột_Gấc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Nếp_Cẩm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Nếp_Cẩm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Chưng_Nếp_Cẩm"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp_Cẩm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cuốn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cuốn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cuốn"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ngọt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Phi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ấm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mèo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo_Bằm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tiêu"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cốm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cốm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Cốm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Xanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Rang"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mứt_Bí_Thái"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Hoa_Bưởi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hà_Nội"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Chín_Tầng_Mây -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Chín_Tầng_Mây">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Chín_Tầng_Mây"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Màu_Đỏ_Vàng_Xanh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Đậu_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Đậu_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Da_Lợn_Đậu_Xanh"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nam_Bộ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Dẻo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Dẻo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Dẻo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Dẻo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì_Đa_Dụng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Trà_Xanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Đường"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tinh_Dầu_Hương_Bưởi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Trung_Thu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gai">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gai"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Sắn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Gai"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vừng_Rang"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đông_Bằng_Bắc_Bộ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gio_Mật -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gio_Mật">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Gio_Mật"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Tro"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giò -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giò">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giò"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Canh"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tím"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mộc_Nhĩ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Nạc_Xay_Nhuyễn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xương_Cụt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ấm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giổ_Tổ_Hùng_Vương"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy_Giò -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy_Giò">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Giầy_Giò"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giò_Lụi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Tươi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Hỏi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Hỏi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Hỏi"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Hẹ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bình_Định"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nha_Trang"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phú_Yên"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vũng_Tàu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Bột_Nếp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Bột_Nếp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Bột_Nếp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Hoa_Bưởi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Trung_Thu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Nhân_Đậu_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Nhân_Đậu_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_In_Nhân_Đậu_Xanh"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Chanh"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Hoa_Bưởi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khúc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khúc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khúc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo_Tẻ"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Khúc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nam_Bộ"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Đoan_Ngọ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khọt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khọt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Khọt"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nghệ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Phi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Mì_Ngọt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Mì_Ngọt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Nếp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Nếp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Nếp"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Nâu"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phú_Thọ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Phu_Thê -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Phu_Thê">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Phu_Thê"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đinh_Bảng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sóc_Trăng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sóc_Trăng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sóc_Trăng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Dẻo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nở"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Phần"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rượu_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt_Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bát"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sầu_Riêng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sầu_Riêng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Pía_Sầu_Riêng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Dẻo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sầu_Riêng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt_Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Quai_Vạc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Quai_Vạc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Quai_Vạc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mèo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Nạc_Xay_Nhuyễn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rán -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rán">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rán"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo_Tẻ"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Chanh_Vàng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Áo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rế -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rế">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Rán"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#KhoaiLang"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bình_Định"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phan_Rang"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phan_Thiết"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sóc_Trăng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Heo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Heo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Heo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Thực_Vật"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Yến -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Yến">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tai_Yến"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Vàng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tiêu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tiêu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tiêu"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vừng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Ba_Màu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Ba_Màu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Ba_Màu"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Cẩm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ruột_Gấc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Cốm_Dẹp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Cốm_Dẹp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Cốm_Dẹp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Dẹp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trà_Vinh"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Gấc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Gấc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Gấc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Xiêm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ruột_Gấc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cao_Lãnh"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Cẩm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Cẩm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Cẩm"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Cẩm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt_Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cao_Lãnh"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cần_Thơ"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Dứa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Dứa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Lá_Dứa"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Xiêm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Dứa"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Nhân_Chuối -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Nhân_Chuối">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tét_Nhân_Chuối"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Xiêm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Đen"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Đỏ"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Bì -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Bì">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Bì"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bì_Lợn_Và_Thính"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dưa_Leo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Thơm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xà_Lách"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ớt"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bạc_Liêu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Khoai_Mì -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Khoai_Mì">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tằm_Khoai_Mì"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#KhoaiMi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nam_Bộ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tẻ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tẻ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tẻ"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Tẻ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mèo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo_Bằm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tiêu"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thanh_Hóa"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đông_Bằng_Bắc_Bộ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tổ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tổ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Tổ"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gừng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Rang"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bát"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xứ_Quảng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Bắc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Bắc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Bắc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nghệ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bia"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giá_Đổ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Đoan_Ngọ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Nam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Nam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Nam"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Xèo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Chiên_Giòn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ngọt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giá_Đổ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Đoan_Ngọ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Trung -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Trung">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Xèo_Miền_Trung"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nghệ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tây"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giá_Đổ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mực_Ống"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Trung"/>
+        <được_làm_Ngày rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Đoan_Ngọ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần_Lá_Dứa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần_Lá_Dứa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bột"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Thốt_Nốt"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần_Tôm_Và_Thịt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần_Tôm_Và_Thịt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Ít_Trần"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Bằm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo_Bằm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc_Lạc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc_Lạc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Canh"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo_Tẻ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lạc_Nhân"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Vôi_Trong"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc_Mặn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc_Mặn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tím"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Chanh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mèo"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Nạc_Xay_Nhuyễn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Khô"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tỏi_Băm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ớt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc_Ngọt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc_Ngọt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đúc"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gừng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Màu_Thực_Phẩm"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Rang"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Nâu"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Thốt_Nốt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đậu_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đậu_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bánh_Đậu_Xanh"/>
+        <có_Bột_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani"/>
+        <là_Đặc_Sản_của rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hải_Dương"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bì_Lợn_Và_Thính -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bì_Lợn_Và_Thính">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bình_Định -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bình_Định">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Lạt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Lạt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Thực_Vật -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bơ_Thực_Vật">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bạc_Liêu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bạc_Liêu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Báng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Báng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Dẻo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Dẻo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Mì -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Mì">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Xèo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh_Xèo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bắp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bắp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Canh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Canh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Chiên_Giòn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Chiên_Giòn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Cà_Ri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Cà_Ri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo_Tẻ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Gạo_Tẻ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì_Đa_Dụng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Mì_Đa_Dụng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nghệ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nghệ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ngọt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ngọt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nêm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Năng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nếp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nở -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Nở">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Sắn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Sắn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Trà_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Trà_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Xay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Xay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Đa_Dụng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Đa_Dụng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Điều -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Điều">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ớt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Ớt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cao_Lãnh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cao_Lãnh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Sứ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Sứ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Tiêu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Tiêu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Tây -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Tây">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Xiêm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối_Xiêm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Chuối"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cà_Phê -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cà_Phê">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cần_Thơ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cần_Thơ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Dẹp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Dẹp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Khô -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Khô">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Cốm"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tây -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tây">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tím -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành_Tím">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Hành"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Sắn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Củ_Sắn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Da_Heo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Da_Heo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dưa_Leo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dưa_Leo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Dừa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Dừa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Ăn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Điều -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dầu_Điều">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Khô_Nạo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Nạo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Dừa_Nạo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giá_Đổ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giá_Đổ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giò_Lụi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giò_Lụi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giổ_Tổ_Hùng_Vương -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Giổ_Tổ_Hùng_Vương">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp_Cẩm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Nếp_Cẩm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Tẻ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gạo_Tẻ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gừng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gừng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Huế -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Huế">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hà_Nội -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hà_Nội">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Lá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tây -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tây">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Bằm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Bằm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Phi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành_Tím_Phi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hành"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hải_Dương -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Hải_Dương">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#KhoaiLang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#KhoaiLang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#KhoaiMi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#KhoaiMi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai_Tây -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai_Tây">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Khoai"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Cẩm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Cẩm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Dứa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Gai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Gai">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Hẹ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Hẹ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Nếp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá_Nếp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lòng_Đỏ_Trứng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lòng_Đỏ_Trứng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lạc_Nhân -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lạc_Nhân">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Men_Nở -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Men_Nở">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Bột_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Bắc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Nam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Trung -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Miền_Trung">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Muối">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Màu_Thực_Phẩm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Màu_Thực_Phẩm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Rang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Rang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè_Trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mè"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mạch_Nha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mạch_Nha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Hành -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Hành">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Nước -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Nước">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Phần -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ_Phần">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mỡ"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mứt_Bí_Thái -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mứt_Bí_Thái">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mực_Ống -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Mực_Ống">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nam_Bộ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nam_Bộ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nghệ_An -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nghệ_An">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nha_Trang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nha_Trang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Chanh_Vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Chanh_Vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Chanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Chanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Cốt_Dừa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Dừa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Dừa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Hoa_Bưởi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Hoa_Bưởi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Cẩm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Cẩm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Dứa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Dứa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Riềng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lá_Riềng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Lọc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Mắm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Nóng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Nóng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ruột_Gấc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ruột_Gấc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Tro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Tro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Vôi_Trong -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Vôi_Trong">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Đường -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Đường">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Chanh_Vàng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Nóng"/>
+        <có_Thành_Phần_là rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ấm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Ấm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nước_Trộn_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Hương">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mèo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mèo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mộc_Nhĩ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm_Mộc_Nhĩ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Nấm"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phan_Rang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phan_Rang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phan_Thiết -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phan_Thiết">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phú_Thọ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phú_Thọ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phú_Yên -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Phú_Yên">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Húng_Quế -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Húng_Quế">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Khúc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Khúc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lá"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Mùi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Mùi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Thơm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Thơm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rau_Ăn_Kèm_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rượu_Trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Rượu_Trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sài_Gòn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sài_Gòn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sóc_Trăng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sóc_Trăng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sầu_Riêng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sầu_Riêng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Tươi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Tươi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Đặc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa_Đặc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Sữa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thanh_Hóa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thanh_Hóa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Ba_Chỉ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo_Bằm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Heo_Bằm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Nạc_Xay_Nhuyễn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt_Nạc_Xay_Nhuyễn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thịt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tinh_Dầu_Hương_Bưởi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tinh_Dầu_Hương_Bưởi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tiêu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tiêu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trà_Vinh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trà_Vinh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Gà">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt_Muối -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng_Vịt_Muối">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Trứng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Khô -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Khô">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm_Tươi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tôm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tương_Ớt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tương_Ớt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Nguyên_Đán">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Trung_Thu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Trung_Thu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Đoan_Ngọ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tết_Đoan_Ngọ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tỏi_Băm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tỏi_Băm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vĩnh_Lộc_Thanh_Hóa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vĩnh_Lộc_Thanh_Hóa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vũng_Tàu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vũng_Tàu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vừng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vừng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vừng_Rang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Vừng_Rang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xà_Lách -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xà_Lách">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xương_Cụt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xương_Cụt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xứ_Quảng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Xứ_Quảng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đinh_Bảng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đinh_Bảng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đông_Bằng_Bắc_Bộ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đông_Bằng_Bắc_Bộ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bát -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bát">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bột -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Bột">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Cát_Trắng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Mật -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Mật">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Nâu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Nâu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Phèn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Phèn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Thốt_Nốt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Thốt_Nốt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Vàng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Vàng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Áo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường_Áo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đường"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Phộng_Rang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Phộng_Rang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Xanh_Không_Vỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Đen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Đen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Đỏ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu_Đỏ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đậu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Màu_Đỏ_Vàng_Xanh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Màu_Đỏ_Vàng_Xanh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ống_Vani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ớt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Ớt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Gia_Vị"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Lễ_Hội"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Thành_Phần_Bánh"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Tên_Bánh"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/thu/ontologies/2019/7/banhtt.owl#Đặc_Sản_Vùng_Miền"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

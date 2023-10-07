@@ -1,0 +1,3980 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/letuandat/ontologies/2023/8/VN_Overall"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/letuandat/ontologies/2023/8/VN_Overall">
+    <Prefix name="" IRI="http://www.semanticweb.org/letuandat/ontologies/2023/8/VN_Overall"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Dac_San"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dan_Toc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mien_Bac"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mien_Nam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mien_Trung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mon_An"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quan_Dao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trai_Cay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VN"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Co_quan_dao_la"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Tinh_co_dac_san_la"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Tinh_co_dan_toc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Tinh_co_le_hoi_la"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#An_Giang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BaRia_VungTau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ba_Khia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ba_Na"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bac_Ninh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Bia_Vung_Thom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Bong_Lan_Trung_Muoi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Bot_Loc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Cay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Dau_Xanh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Gio_Mat_Mia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Keo_Hat_Dieu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Khoa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Tai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Tet_La_Cam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banh_Trang_Hoa_Da"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ben_Tre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Binh_Phuoc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bo_Sap"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bo_Y"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Brau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bru_Van_Kieu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ca_Mau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ca_Xiu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cam_Cao_Phong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cam_Sanh_Ham_Yen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Can_Tho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cha_Muc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cham"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chao_Vat_Giuong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Che"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Che_Shan_Tuyet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cho_Ro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Choi_Vosa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chrul_Col"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chu_Ru"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chuoi_Ngu_Dai_Hoang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Co"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Co_Do_Hue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Co_Ho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Co_Lao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Co_Tu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Com_Chay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Com_Lam_Ga_Nuong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Com_Moi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Com_Tam_Sai_Gon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Com_Va_Banh_Com"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Da_Nang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dak_Nong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dam_Duong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dam_Trau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dau_Tay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Den_Hung"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dinh_Fansipan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Don_Ta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dong_Thap"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dooc_Moong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dua_Cau_Duc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dua_Sap"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dua_Va_Keo_Dua"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#E_De"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gao_Nep_Nuong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gia_Rai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Giay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gie_Trieng"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gio_Bi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Goi_La"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gruov_Taox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#H_Mong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ha_Nam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ha_Nhi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ha_Noi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ha_Tinh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hai_Duong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hai_Phong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hau_Giang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ho_Su_Cha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hoa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hoa_Qua_Lai_Thieu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hung_Yen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ka_Te"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Keo_Cu_Do"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Khang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Khmer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kho_Gia_Gia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kho_Mu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kin_Khau_Mau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kin_Pang_Then"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kinh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ko_Pan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#La_Chi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#La_Ha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#La_Hu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lap_Tich"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lo_Lo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Long_An"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Long_Tong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ma"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Me_Xung"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mi_Quan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mit_To_Nu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mnong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Muc_Rim_Me"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Muoi_Tom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Muong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nam_Dinh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nang_Hai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nao_Cong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nem_Bui"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nem_Chua"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nem_Cua_Be"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nem_Lai_Vung"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nem_Nam_Giao_Thuy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ngai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nhan_Da_Bo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nhay_Lua"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ninh_Binh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Noel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nung"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#O_Du"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pa_Then"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pho_Co_Hoi_An"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Phong_Nha_Ke_Bang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Phu_La"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Po_Dinh_Hon_A_To"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Poon_Poong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pu_Peo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Puh_Ho_Drih"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Co_To"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Con_Co"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Con_Dao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Cu_Lao_Cham"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Hoang_Sa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Hon_Son"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quoc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_Dao_Truong_Sa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quan_The_Danh_Thang_Trang_An"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Raglai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ranuwan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ro_Mam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Roya_Phik_Trok"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruou_Bau_Da"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruou_De_Go_Den"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruou_Nho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#San_Chay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#San_Diu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sau_Rieng"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sayangva"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Si_La"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Son_La"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Su_Su_Tam_Dao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sua_Bo_Moc_Chau"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ta_Oi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thai_Binh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thanh_Dia_My_Son"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thanh_Hoa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thanh_Long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thit_Lon_Cap_Nach"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thit_Nai_Kho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thit_Trau_Gac_Bep"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thot_Not"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tien_Giang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Toi_Ly_Son"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tuong_Nam_Dan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vai_Thieu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vinh_Ha_Long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vinh_Long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vinh_Phuc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vit_Quay_La_Moc_Mat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vuong_Quoc_Gia_Tram_Chim"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XTieng"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Xinh_Mun"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Xo_Dang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Xoe_Chieng"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Xoi_Tim"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Yen_Sao"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Mien_Bac"/>
+        <Class IRI="#VN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mien_Nam"/>
+        <Class IRI="#VN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mien_Trung"/>
+        <Class IRI="#VN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mon_An"/>
+        <Class IRI="#Dac_San"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trai_Cay"/>
+        <Class IRI="#Dac_San"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Dac_San"/>
+        <Class IRI="#VN"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dan_Toc"/>
+        <Class IRI="#VN"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <Class IRI="#VN"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <Class IRI="#VN"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Quan_Dao"/>
+        <Class IRI="#VN"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#BaRia_VungTau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Ba_Khia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Ba_Na"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Bac_Ninh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Bia_Vung_Thom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Bong_Lan_Trung_Muoi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Bot_Loc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Cay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Dau_Xanh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Gio_Mat_Mia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Keo_Hat_Dieu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Khoa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Tai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Tet_La_Cam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Banh_Trang_Hoa_Da"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Ben_Tre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Binh_Phuoc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Bo_Sap"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Bo_Y"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Brau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Bru_Van_Kieu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Ca_Mau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Ca_Xiu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Cam_Cao_Phong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Cam_Sanh_Ham_Yen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Can_Tho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Cha_Muc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Cham"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Chao_Vat_Giuong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Che"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Che_Shan_Tuyet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Cho_Ro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Choi_Vosa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Chrul_Col"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Chu_Ru"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Chuoi_Ngu_Dai_Hoang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Chut"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Co"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Co_Do_Hue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Co_Ho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Co_Lao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Co_Tu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Com_Chay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Com_Lam_Ga_Nuong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Com_Moi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Com_Tam_Sai_Gon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Com_Va_Banh_Com"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Cong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Da_Nang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Dak_Nong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Dam_Duong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Dam_Trau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Dao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Dau_Tay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Den_Hung"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Dinh_Fansipan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Don_Ta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Dong_Thap"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Dooc_Moong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Dua_Cau_Duc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Dua_Sap"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Dua_Va_Keo_Dua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#E_De"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Gao_Nep_Nuong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Gia_Rai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Giay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Gie_Trieng"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Gio_Bi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Goi_La"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Gruov_Taox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#H_Mong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Ha_Nam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Ha_Nhi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Ha_Noi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Ha_Tinh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Hai_Duong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Hai_Phong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Hau_Giang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Ho_Su_Cha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Hoa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Hoa_Qua_Lai_Thieu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Hre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Hung_Yen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Ka_Te"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Keo_Cu_Do"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Khang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Khmer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Kho_Gia_Gia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Kho_Mu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Kin_Khau_Mau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Kin_Pang_Then"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Kinh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Ko_Pan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#La_Chi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#La_Ha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#La_Hu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Lao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Lap_Tich"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Lo_Lo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Long_An"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Lu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Ma"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Mang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Me_Xung"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Mi_Quan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Mit_To_Nu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Mnong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Muc_Rim_Me"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Muoi_Tom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Muong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Nam_Dinh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Nang_Hai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Nao_Cong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Nem_Bui"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Nem_Chua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Nem_Cua_Be"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Nem_Lai_Vung"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Nem_Nam_Giao_Thuy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Ngai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Nhan_Da_Bo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Nhay_Lua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Ninh_Binh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Nung"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#O_Du"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Pa_Then"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Pho_Co_Hoi_An"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Phong_Nha_Ke_Bang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Phu_La"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Po_Dinh_Hon_A_To"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Poon_Poong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Pu_Peo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Puh_Ho_Drih"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Co_To"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Con_Co"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Con_Dao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Cu_Lao_Cham"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Hoang_Sa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Hon_Son"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quoc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quan_Dao"/>
+        <NamedIndividual IRI="#Quan_Dao_Truong_Sa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Quan_The_Danh_Thang_Trang_An"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Raglai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Ranuwan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Ro_Mam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Roya_Phik_Trok"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Ruou_Bau_Da"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Ruou_De_Go_Den"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Ruou_Nho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#San_Chay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#San_Diu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Sau_Rieng"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Sayangva"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Si_La"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Su_Su_Tam_Dao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Sua_Bo_Moc_Chau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Ta_Oi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Tay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Thai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Thai_Binh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Thanh_Dia_My_Son"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Thanh_Hoa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Thanh_Long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Thit_Lon_Cap_Nach"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Thit_Nai_Kho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Thit_Trau_Gac_Bep"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Tho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Thot_Not"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Trung"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Tien_Giang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Toi_Ly_Son"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Tuong_Nam_Dan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trai_Cay"/>
+        <NamedIndividual IRI="#Vai_Thieu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Vinh_Ha_Long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Nam"/>
+        <NamedIndividual IRI="#Vinh_Long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Vinh_Phuc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Vit_Quay_La_Moc_Mat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+        <NamedIndividual IRI="#Vuong_Quoc_Gia_Tram_Chim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#XTieng"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Xinh_Mun"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dan_Toc"/>
+        <NamedIndividual IRI="#Xo_Dang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+        <NamedIndividual IRI="#Xoe_Chieng"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Xoi_Tim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mien_Bac"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mon_An"/>
+        <NamedIndividual IRI="#Yen_Sao"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+        <NamedIndividual IRI="#BaRia_VungTau"/>
+        <NamedIndividual IRI="#Quan_Dao_Con_Dao"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Ba_Khia"/>
+        <NamedIndividual IRI="#Ca_Mau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ba_Na"/>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ba_Na"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ba_Na"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ba_Na"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Bia_Vung_Thom"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Bong_Lan_Trung_Muoi"/>
+        <NamedIndividual IRI="#BaRia_VungTau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Bot_Loc"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Cay"/>
+        <NamedIndividual IRI="#Thai_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Dau_Xanh"/>
+        <NamedIndividual IRI="#Hai_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Gio_Mat_Mia"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Keo_Hat_Dieu"/>
+        <NamedIndividual IRI="#Binh_Phuoc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Khoa"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Tai"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Tet_La_Cam"/>
+        <NamedIndividual IRI="#Can_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Banh_Trang_Hoa_Da"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Bo_Sap"/>
+        <NamedIndividual IRI="#Dak_Nong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Bo_Y"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Bo_Y"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Brau"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Bru_Van_Kieu"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Bru_Van_Kieu"/>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Bru_Van_Kieu"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Ca_Xiu"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Cam_Cao_Phong"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Cam_Sanh_Ham_Yen"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Cha_Muc"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cham"/>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Chao_Vat_Giuong"/>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Che"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Che_Shan_Tuyet"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cho_Ro"/>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cho_Ro"/>
+        <NamedIndividual IRI="#Binh_Phuoc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cho_Ro"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cho_Ro"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Choi_Vosa"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Ca_Mau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Can_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Hau_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chol_Chnam_Thmay"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Chrul_Col"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Chu_Ru"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Chu_Ru"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Chuoi_Ngu_Dai_Hoang"/>
+        <NamedIndividual IRI="#Ha_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Chut"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Chut"/>
+        <NamedIndividual IRI="#Ha_Tinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Chut"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Chut"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Co_Do_Hue"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co_Ho"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co_Lao"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co_Lao"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co_Tu"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Co_Tu"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Com_Chay"/>
+        <NamedIndividual IRI="#Ninh_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Com_Lam_Ga_Nuong"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Com_Moi"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Com_Tam_Sai_Gon"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Com_Va_Banh_Com"/>
+        <NamedIndividual IRI="#Ha_Noi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Cong"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dam_Duong"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dam_Duong"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dam_Trau"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dam_Trau"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dam_Trau"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Ha_Noi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Vinh_Phuc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Dao"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Dau_Tay"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Den_Hung"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Dinh_Fansipan"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Don_Ta"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dooc_Moong"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dooc_Moong"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dooc_Moong"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Dooc_Moong"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Dua_Cau_Duc"/>
+        <NamedIndividual IRI="#Hau_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Dua_Sap"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Dua_Va_Keo_Dua"/>
+        <NamedIndividual IRI="#Ben_Tre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#E_De"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#E_De"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#E_De"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#E_De"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Gao_Nep_Nuong"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Gia_Rai"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Gia_Rai"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Gia_Rai"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Giay"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Giay"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Giay"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Giay"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Gie_Trieng"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Gio_Bi"/>
+        <NamedIndividual IRI="#Hung_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Goi_La"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Gruov_Taox"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Thanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#H_Mong"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ha_Nhi"/>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ha_Nhi"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ha_Nhi"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ho_Su_Cha"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hoa"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Hoa_Qua_Lai_Thieu"/>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hre"/>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hre"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Hre"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ka_Te"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ka_Te"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ka_Te"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Keo_Cu_Do"/>
+        <NamedIndividual IRI="#Ha_Tinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khang"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khang"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Ca_Mau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Can_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Dong_Thap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#Vinh_Long"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Kho_Gia_Gia"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kho_Mu"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kho_Mu"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kho_Mu"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kho_Mu"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Kin_Khau_Mau"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Kin_Pang_Then"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#BaRia_VungTau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Bac_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ben_Tre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Binh_Phuoc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ca_Mau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Can_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Da_Nang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Dak_Nong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Dong_Thap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ha_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ha_Noi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ha_Tinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Hai_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Hai_Phong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Hau_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Hung_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Long_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Nam_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ninh_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Thai_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Thanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Tien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Vinh_Long"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Vinh_Phuc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Kinh"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ko_Pan"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Chi"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Chi"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Chi"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Chi"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Ha"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Ha"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Ha"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Ha"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Hu"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Hu"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Hu"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#La_Hu"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lao"/>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lao"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lao"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lao"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Lap_Tich"/>
+        <NamedIndividual IRI="#Ha_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lo_Lo"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lo_Lo"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lo_Lo"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lo_Lo"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Long_Tong"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lu"/>
+        <NamedIndividual IRI="#Ho_Chi_Minh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lu"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lu"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Lu"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ma"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Mang"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Me_Xung"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Mi_Quan"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Mit_To_Nu"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Mnong"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Mnong"/>
+        <NamedIndividual IRI="#Dak_Nong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Mnong"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Mnong"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Mnong"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Da_Nang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Ha_Noi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Nam_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Mua_Xuan"/>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Muc_Rim_Me"/>
+        <NamedIndividual IRI="#Da_Nang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Muoi_Tom"/>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Muong"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Muong"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Muong"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Muong"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Muong"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Nang_Hai"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Nao_Cong"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Nem_Bui"/>
+        <NamedIndividual IRI="#Bac_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Nem_Chua"/>
+        <NamedIndividual IRI="#Thanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Nem_Cua_Be"/>
+        <NamedIndividual IRI="#Hai_Phong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Nem_Lai_Vung"/>
+        <NamedIndividual IRI="#Dong_Thap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Nem_Nam_Giao_Thuy"/>
+        <NamedIndividual IRI="#Nam_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ngai"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ngai"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ngai"/>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ngai"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ngai"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Nhan_Da_Bo"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Nhay_Lua"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Nhay_Lua"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Nung"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#O_Du"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#O_Du"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#O_Du"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#O_Du"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#O_Du"/>
+        <NamedIndividual IRI="#Phu_Yen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+        <NamedIndividual IRI="#Bac_Lieu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+        <NamedIndividual IRI="#Soc_Trang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ok_Om_Bok"/>
+        <NamedIndividual IRI="#Tra_Vinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Pa_Then"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Pa_Then"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Pho_Co_Hoi_An"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Phong_Nha_Ke_Bang"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Phu_La"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Phu_La"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Po_Dinh_Hon_A_To"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Poon_Poong"/>
+        <NamedIndividual IRI="#Thanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Pu_Peo"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Puh_Ho_Drih"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Co_To"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Con_Co"/>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Con_Dao"/>
+        <NamedIndividual IRI="#BaRia_VungTau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Cu_Lao_Cham"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Hoang_Sa"/>
+        <NamedIndividual IRI="#Da_Nang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Hon_Son"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quoc"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quoc"/>
+        <NamedIndividual IRI="#Kien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Phu_Quy"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <NamedIndividual IRI="#Quan_Dao_Truong_Sa"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Quan_The_Danh_Thang_Trang_An"/>
+        <NamedIndividual IRI="#Ninh_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Raglai"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Raglai"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Raglai"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Raglai"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Ranuwan"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ro_Mam"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Roya_Phik_Trok"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Roya_Phik_Trok"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Roya_Phik_Trok"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Ruou_Bau_Da"/>
+        <NamedIndividual IRI="#Binh_Dinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Ruou_De_Go_Den"/>
+        <NamedIndividual IRI="#Long_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Ruou_Nho"/>
+        <NamedIndividual IRI="#Ninh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Chay"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Chay"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Chay"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Chay"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Chay"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Chay"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Diu"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Diu"/>
+        <NamedIndividual IRI="#Hai_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Diu"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Diu"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Diu"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#San_Diu"/>
+        <NamedIndividual IRI="#Vinh_Phuc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Sau_Rieng"/>
+        <NamedIndividual IRI="#Tien_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Sayangva"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Si_La"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Su_Su_Tam_Dao"/>
+        <NamedIndividual IRI="#Vinh_Phuc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Sua_Bo_Moc_Chau"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ta_Oi"/>
+        <NamedIndividual IRI="#Quang_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ta_Oi"/>
+        <NamedIndividual IRI="#Quang_Tri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Ta_Oi"/>
+        <NamedIndividual IRI="#Thua_Thien_Hue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Bac_Kan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Cao_Bang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Thai_Nguyen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tay"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Thai"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Thai"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Thai"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Thai"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Thanh_Dia_My_Son"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Thanh_Long"/>
+        <NamedIndividual IRI="#Binh_Thuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Thit_Lon_Cap_Nach"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Thit_Nai_Kho"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Thit_Trau_Gac_Bep"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Tho"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Thot_Not"/>
+        <NamedIndividual IRI="#An_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Toi_Ly_Son"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Tuong_Nam_Dan"/>
+        <NamedIndividual IRI="#Nghe_An"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Vai_Thieu"/>
+        <NamedIndividual IRI="#Bac_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Vinh_Ha_Long"/>
+        <NamedIndividual IRI="#Quang_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Vit_Quay_La_Moc_Mat"/>
+        <NamedIndividual IRI="#Lang_Son"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <NamedIndividual IRI="#Vuong_Quoc_Gia_Tram_Chim"/>
+        <NamedIndividual IRI="#Dong_Thap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#XTieng"/>
+        <NamedIndividual IRI="#Binh_Duong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#XTieng"/>
+        <NamedIndividual IRI="#Binh_Phuoc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#XTieng"/>
+        <NamedIndividual IRI="#Dong_Nai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#XTieng"/>
+        <NamedIndividual IRI="#Lam_Dong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#XTieng"/>
+        <NamedIndividual IRI="#Tay_Ninh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Dien_Bien_Phu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Ha_Giang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Hoa_Binh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Lao_Cai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Phu_Tho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Tuyen_Quang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xen_Xo_Phon"/>
+        <NamedIndividual IRI="#Yen_Bai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xinh_Mun"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xinh_Mun"/>
+        <NamedIndividual IRI="#Son_La"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xo_Dang"/>
+        <NamedIndividual IRI="#Dak_Lak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xo_Dang"/>
+        <NamedIndividual IRI="#Gia_Lai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xo_Dang"/>
+        <NamedIndividual IRI="#Kon_Tum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xo_Dang"/>
+        <NamedIndividual IRI="#Quang_Nam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <NamedIndividual IRI="#Xo_Dang"/>
+        <NamedIndividual IRI="#Quang_Ngai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <NamedIndividual IRI="#Xoe_Chieng"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Xoi_Tim"/>
+        <NamedIndividual IRI="#Lai_Chau"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <NamedIndividual IRI="#Yen_Sao"/>
+        <NamedIndividual IRI="#Khanh_Hoa"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Co_quan_dao_la"/>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <ObjectProperty IRI="#Tinh_co_dac_san_la"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <ObjectProperty IRI="#Tinh_co_dan_toc"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <ObjectProperty IRI="#Tinh_co_le_hoi_la"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Co_quan_dao_la"/>
+        <Class IRI="#Quan_Dao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <Class IRI="#Dac_San"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <Class IRI="#Dan_Toc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_dac_san_la"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_dac_san_la"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_dac_san_la"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_dan_toc"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_dan_toc"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_dan_toc"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_le_hoi_la"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_le_hoi_la"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Tinh_co_le_hoi_la"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Co_quan_dao_la"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Co_quan_dao_la"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Co_quan_dao_la"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Dac_san_cua_tinh"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Danh_lam_thang_canh_cua"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#La_dan_toc_song_tai_tinh"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#La_quan_dao_cua"/>
+        <Class IRI="#Quan_Dao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <Class IRI="#Mien_Bac"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <Class IRI="#Mien_Nam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Le_hoi_cua_tinh_la"/>
+        <Class IRI="#Mien_Trung"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Tinh_co_dac_san_la"/>
+        <Class IRI="#Dac_San"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Tinh_co_dan_toc"/>
+        <Class IRI="#Dan_Toc"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Tinh_co_danh_lam_thang_canh_la"/>
+        <Class IRI="#Danh_Lam_Thang_Canh"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Tinh_co_le_hoi_la"/>
+        <Class IRI="#Le_Hoi_Truyen_Thong"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
