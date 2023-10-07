@@ -51,7 +51,6 @@ print("Độ chính xác từng lớp:\n", confusion_matrix(y_test, y_pred_Bayes
 
 X_train, X_test, y_train, y_test = train_test_split(data_X, data_y, test_size=1/3.0, random_state=10)
 
-print("\nNghi thức hold-out:")
 Model_KNN = KNeighborsClassifier(n_neighbors=9)
 Model_KNN.fit(X_train, y_train)
 y_pred_KNN_f = Model_KNN.predict(X_test)
