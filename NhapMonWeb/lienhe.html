@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liên Hệ</title>
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="data\images\favicon.ico">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sudungchung.css" type="text/css">
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <a id="logo" href="trangchu.html"> <img src="data\images\logo.png"></a>
+        <img src="data\images\header-img1.png" id="header-img1">
+        <img src="data\images\header-img2.png" id="header-img2">
+        <img src="data\images\header-img3.png" id="header-img3">
+        <nav>
+            <a href="trangchu.html">Trang chủ</a> 
+            <a href="gioithieu.html">Giới thiệu</a> 
+            <a href="sanpham.html">Sản phẩm</a> 
+            <a href="tintuc.html">Tin tức</a> 
+            <a href="dangnhap.html">Đăng nhập</a> 
+            <a href="dangky.html">Đăng ký</a> 
+            <a href="lienhe.html">Liên hệ</a> 
+        </nav>
+        <form class="search-box" method="GET" id="search-form" action="timkiem.html" onsubmit="return mySearch(event);">
+            <input name="search" type="search" id="search" placeholder="Nhập nội dung cần tìm..." />
+            <button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+            &nbsp;
+        </form>
+    </header>
+    <main class="one-col">
+        <h1>Liên hệ</h1>
+        <p>
+            <span class="map-icon">
+                <i class="fa fa-map-marker">
+                    <img src="data\images\lienhe\check-in.png" class="img">
+                </i>
+            </span>
+            <b>Địa chỉ: 0123, Tòa Nhà ABC, Tp Cần Thơ</b>
+            Nếu bạn có góp ý, vui lòng liên hệ thư điện tử hoặc sử dụng biểu mẫu bên dưới. Xin cảm ơn.
+        </p>
+        <h1>Góp ý</h1>
+        <form method="post" enctype="application/x-www-form-urlencoded" onsubmit="return ctValidate(this);">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name" class="form-icons">
+                            <i class="fa fa-user">Họ và tên</i>
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" placeholder="Vui lòng nhập họ và tên" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email" class="form-icons">
+                            <i class="fa fa-user">Email</i>
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" name="email" id="email" placeholder="Vui lòng nhập email" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="form-icons">
+                            <i class="fa fa-list">Vấn đề</i>
+                        </label>
+                    </td>
+                    <td>
+                        <select size="1">
+                            <option>Về Sản Phẩm / Dịch Vụ</option>
+                            <option>Về Ưu Đãi Thành Viên</option>
+                            <option>Về Tin Tuyển Dụng</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="details" class="form-icons">
+                            <i class="fa fa-sticky-note">Nội dung</i>
+                        </label>
+                    </td>
+                    <td>
+                        <textarea name="details" id="details" cols="50" rows="7" type="text" placeholder="Nội dung cần liên hệ"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Gửi">
+        </form>
+    </main>
+    <footer>
+        &copy; 2021 Bản quyền thuộc về FreezeVN. 
+        <a href="https://www.facebook.com">facebook</a>
+        <a href="https://www.twitter.com">twitter</a>
+        <a href="https://www.pinterest.com">pinterest</a>
+        <a href="#logo"><img src="data\images\top.png" width="25px">Về đầu trang</a>
+    </footer>
+</body>
+</html>

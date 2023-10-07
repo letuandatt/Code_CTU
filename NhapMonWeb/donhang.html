@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đơn hàng</title>
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="data\images\favicon.ico">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sudungchung.css">
+    <script></script>
+</head>
+<body>
+    <header>
+        <a id="logo" href="trangchu.html"> <img src="data\images\logo.png"></a>
+        <img src="data\images\header-img1.png" id="header-img1">
+        <img src="data\images\header-img2.png" id="header-img2">
+        <img src="data\images\header-img3.png" id="header-img3">
+        <nav>
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="sanpham.html">Sản phẩm</a>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="dangnhap.html">Đăng nhập</a>
+            <a href="dangky.html">Đăng ký</a>
+            <a href="lienhe.html">Liên hệ</a> 
+        </nav>
+        <div class="search-box">
+            <input type="search" id="search" placeholder="Nhập nội dung cần tìm..." />
+            <span class="search-icon"><i class="fa fa-search"><img src="" alt=""></i></span>
+            &nbsp;
+            <span class="shopping-cart-icon"><i class="fa fa-shopping-cart"></i></span>
+        </div>
+    </header>
+    <main class="one-col">
+        <h1>Chi tiết đơn hàng</h1>
+        <table border id="cartDetail">
+            <thead>
+                <tr>
+                    <th>Hình SP</th>
+                    <th>Tên SP</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr><td colspan="6" align="right">Tổng thành tiền (A) = <span id="bill_totalpretax"></span></td></tr>
+                <tr><td colspan="6" align="right">Chiết khấu (B) = <span id="bill_discount"></span></td></tr>
+                <tr><td colspan="6" align="right">Thuế (C) = 10% x (A - B) = <span id="bill_tax"></span></td></tr>
+                <tr><td colspan="6" align="right">Tổng đơn hàng = A - B + C = <span id="bill_total"></span></td></tr>
+                <tr><td colspan="6" align="center"><button type="submit">Xác Nhận Đơn Hàng</button></td></tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>
+        &copy; 2021 Bản quyền thuộc về FreezeVN. 
+        <a href="https://www.facebook.com" class="facebook">facebook</a>
+        <a href="https://www.twitter.com" class="twitter">twitter</a>
+        <a href="https://www.pinterest.com" class="pinterest">pinterest</a>
+        <a href="#logo"><img src="data\images\top.png" width="25px">Về đầu trang</a>
+    </footer>
+</body>
+</html>
