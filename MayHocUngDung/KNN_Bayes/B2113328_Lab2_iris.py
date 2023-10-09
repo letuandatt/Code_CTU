@@ -67,5 +67,5 @@ print("Nhãn thực tế:", real_value, sep="\n")
 print("Nhãn dự đoán:\n", y_pred)
 
 from sklearn.metrics import confusion_matrix, accuracy_score
-print("Độ chính xác theo %: ", accuracy_score(y_pred, y_test) * 100, "%", sep="")
-print("Độ chính xác theo matrix:", confusion_matrix(y_pred, y_test), sep="\n")
+print("Độ chính xác theo %: ", accuracy_score(y_test, y_pred) * 100, "%", sep="")
+print("Độ chính xác theo matrix:", confusion_matrix(y_test, y_pred), sep="\n")
