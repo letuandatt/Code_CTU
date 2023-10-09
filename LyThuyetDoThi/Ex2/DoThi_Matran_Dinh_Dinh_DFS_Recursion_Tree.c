@@ -103,5 +103,3 @@ int main(){
 //		printf("%d %d\n", i, parent[i]);
 //   }
 }
-
-
