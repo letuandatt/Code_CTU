@@ -1,0 +1,9 @@
+{
+  "defaultDomain": "aircargotransport_domain.pddl",
+  "defaultOptions": "",
+  "cases": [
+    {
+      "problem": "aircargotransport_problem.pddl"
+    }
+  ]
+}

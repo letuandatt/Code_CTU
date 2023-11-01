@@ -1,0 +1,9 @@
+{
+  "defaultDomain": "robot_domain.pddl",
+  "defaultOptions": "",
+  "cases": [
+    {
+      "problem": "robot_problem4.pddl"
+    }
+  ]
+}
