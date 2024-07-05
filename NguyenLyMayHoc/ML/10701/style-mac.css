@@ -1,0 +1,108 @@
+.submenumac
+{
+  border: solid 1px #969696;
+  background-color: #EDEDED;
+  background-image: url(images/sm_back_mac.gif);
+  height: auto;
+}
+
+
+.item1mac
+{
+  background-image: url(images/spacer.gif);
+  background-color: transparent;
+  width: 100%;
+  cursor: default;
+}
+
+.item2mac
+{
+  background-image: url(images/sm_back_mac2.gif);
+  background-color: #1657B8;
+  width: 100%;
+  cursor: default;
+}
+
+.text1mac
+{
+  font: bold 13px Arial, Helvetica;
+  color: #000000;
+  padding: 4px;
+  padding-left: 4px;
+  padding-right: 20px;
+  width:100%;
+}
+
+.text2mac
+{
+  font: bold 13px Arial, Helvetica;
+  color: #FFFFFF;
+  padding: 4px;
+  padding-left: 4px;
+  padding-right: 20px;
+  width:100%;
+}
+
+
+.topsubmenumac
+{
+  border: none;
+  background-color: #EDEDED;
+  background-image: url(images/it_back_mac.gif);
+}
+
+.topitem1mac
+{
+  background-image: url(images/spacer.gif);
+  background-color: transparent;
+  cursor: default;
+  text-align: center;
+  width: 100px;
+  height: 22px;
+}
+
+.topitem2mac
+{
+  background-image: url(images/sm_back_mac2.gif);
+  background-color: #1657B8;
+  text-align: center;
+  cursor: default;
+  width: 100px;
+  height: 22px;
+}
+
+.toptext1mac
+{
+  font: bold 13px Arial, Helvetica;
+  color: #000000;
+  width:100%;
+}
+
+.toptext2mac
+{
+  font: bold 13px Arial, Helvetica;
+  color: #FFFFFF;
+  width:100%;
+}
+
+.textdis1mac
+{
+  font: bold 13px Arial, Helvetica;
+  color: #AAAAAA;
+  padding: 4px;
+  padding-left: 4px;
+  padding-right: 20px;
+  width:100%;
+  cursor:default;
+}
+
+.borderitem1mac
+{
+  cursor: default;
+  width: auto;
+}
+
+.bordertext1mac
+{
+  padding: 0px;
+}

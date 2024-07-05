@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<title>10701 Introduction to Machine Learning</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6{font-family: "Roboto", sans-serif}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align">
+    <a href="index.html" class="w3-bar-item w3-button w3-small w3-hover-white w3-medium w3-large">Home</a>
+    <a href="description.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">About</a>
+    <a href="people.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">People</a>
+    <a href="lectures.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Lectures</a>
+    <a href="recitation.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Recitations</a>
+    <a href="homework.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Homework</a>
+    <a href="previous.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Previous</a>
+
+  </div>
+</div>
+<div class="w3-main" >
+
+  <div class="w3-row">
+  <div class="w3-quarter w3-padding-64 w3-center">
+  <br><br><br>
+  <img src="ml-logo.gif" style="height: 40%;width:40%;">
+</div>
+    <div class="w3-half w3-padding-64">
+      <h1 class="w3-text">Introduction to Machine Learning (10-701)</h1>
+      <h4 class="w3-text">Fall 2017</h4>
+      <h3 style="color:blue;"><a href="http://www.cs.cmu.edu/~bapoczos/" target = "_blank" >Barnabás Póczos</a>, <a href="http://www.cs.cmu.edu/~zivbj/" target = "_blank" >Ziv Bar-Joseph</a></h3>
+      <h6 style="font-weight: bold;line-height: 15px;">School of Computer Science, Carnegie Mellon University</h6>
+      <br>
+
+
+
+      <h2 class="w3-text" style="font-weight: 20px;">Syllabus and (tentative) Course Schedule</h2>
+
+      <p style="color:#404040;"> This schedule is <b>tentative</b> and subject to change. Please check back often.<br>Reading listed for each lecture is not mandatory unless otherwise specified</p>
+
+      <p style="color:#404040;">Legend:
+        <ul style="color:#404040;">
+          <li>TM : Machine Learning, Tom Mitchell</li>
+          <li>KM : Machine Learning: a Probabilistic Perspective, Kevin Murphy</li>
+          <li>CB : Pattern Recognition and Machine Learning, Chris Bishop</li>
+          <li>DM : Information Theory, Inference, and Learning Algorithms, David Mackay</li>
+
+        </ul>
+      </p>
+
+      <table class="w3-table-all w3-hoverable w3-centered" style="width: 120%">
+        <tr >
+          <th>Date</th>
+          <th>Lecture</th>
+          <th>Topics</th>
+          <th>Relevant Reading</th>
+          <th>Announcements</th>
+        </tr>
+
+         <!-- LECTURE 1 -->
+
+        <tr>
+          <td>Mon <br> 28-Aug</td>
+          <td> <b>1</b>: Introduction<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/1_Introduction.pdf">Slides</a>]
+
+          </td>
+          <td>
+            Introductory Math<br>
+            MLE<br>
+          </td>
+          <td>TM : Chapters 1, 2</td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br> 30-Aug</td>
+          <td><b>2</b>: Classification<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/2_Classification.pdf">Slides</a>]
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/2_KNN_Derivation.pdf">Class_Notes</a>]
+
+          </td>
+          <td>
+            KNN
+          </td>
+          <td>TM : Chapter 8 </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>4-Sept</td>
+          <td> <b>LABOR DAY<br>HOLIDAY</b></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>6-Sept</td>
+          <td><b>3</b>: Naive Bayes<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/3_Naive_Bayes.pdf">Slides</a>]
+
+          </td>
+          <td> </td>
+          <td>TM : 6.1 - 6.10 </td>
+          <td>HW1 out </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>11-Sept</td>
+          <td><b>4</b>: Decision Trees<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/4_Decision_Trees.pdf">Slides</a>]
+
+          </td>
+          <td> </td>
+          <td>TM : Chapter 3 </td>
+          <td> </td>
+        </tr>
+
+        <tr>
+          <td>Wed<br>13-Sept</td>
+          <td><b>5</b>: Linear Regression<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/5_Linear_Regression.pdf">Slides</a>]
+
+          </td>
+          <td> </td>
+          <td>TM : Chapter 4.1-4.3 </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>18-Sept</td>
+          <td><b>6</b>: Logistic Regression<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/6_Logistic_Regression.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>KM : 8.1 - 8.3, 8.6</td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>20-Sept</td>
+          <td><b>7</b>: Perceptron<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/8_Perceptron.pdf">Slides</a>]
+
+          </td>
+          <td> </td>
+          <td>[<a style="color: blue " href=https://drive.google.com/file/d/0B6pX3VvUVMAIRUNpdzE4UjVIN1U/view>10601_Notes</a>] [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Perceptron_Reading_Material.pdf">Barnabas'_Notes</a>]</td>
+
+          <td>HW1 due<br>HW2 out </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>25-Sept</td>
+          <td><b>8</b>: Neural Networks 1<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/9_Multilayer_Perceptron.pdf">Slides</a>]
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/9_1_MLP_Matlab_Demos.pdf">Matlab_Demos</a>]
+
+          </td>
+          <td> </td>
+          <td>[<a style="color: blue " href=http://neuralnetworksanddeeplearning.com/index.html>Online_Book</a>]<br>TM : Chapter 4<br>CB : Chapter 5</td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>27-Sept</td>
+          <td><b>9</b>: Neural Networks 2: Deep Learning<br>
+                  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/10_Deep_Learning.pdf">Slides</a>]
+
+          </td>
+          <td> </td>
+          <td>[<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/cnn_notes.pdf">CNN_Notes</a>]
+			  <br>
+		      [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Perceptron_Reading_Material.pdf">MLP_Notes</a>]
+			  <br>
+		      [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/multi-layer-perceptron_notes.pdf">Perceptron_Notes</a>]
+		      <br>
+			  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/imagenet_paper.pdf">ImageNet_Paper</a>]
+		      <br>
+			  [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/deep_learning_paper.pdf">Bengio_Deep_Learning</a>]
+			  </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>2-Oct</td>
+          <td><b>10</b>: Applications of Neural Networks<br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/10_Deep_Learning_Applications.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>4-Oct</td>
+          <td><b>11</b>: Support Vector Machines - 1<br>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/11_SVM.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+            <br>
+            KM: Chapter 14
+            <br>
+            CB: Chapters 6 & 7
+            <br>
+          </td>
+          <td>HW2 due<br>HW3 out</td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>9-Oct</td>
+          <td><b>12</b>: Support Vector Machines - 2<br>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/11_SVM.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>[<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/SVM_Projected_Notes.pdf">SVM_Projected_Notes</a>]
+              <br>
+              KM: Chapter 14
+              <br>
+              CB: Chapters 6 & 7
+              <br>
+          </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>11-Oct</td>
+          <td><b>13</b>: Ensemble Learning and Boosting<br>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/12_Boosting.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td> [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Boosting_Projected_Notes.pdf">Boosting_Projected_Notes</a>]
+              <br>
+              CB: 14.3
+              <br>
+          </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>16-Oct</td>
+          <td><b>14</b>: Active Learning<br>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/13_Active_Learning.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td> [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Settles_notes.pdf">Settles_Notes</a>]
+             <br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Balcan_notes.pdf">Balcan_Notes</a>]
+             <br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Krause_2008.pdf">Krause_2008</a>]
+          </td>
+          <td></td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>18-Oct</td>
+          <td><b>15</b>: Unsupervised Learning (Clustering) - 1<br>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/14_EM.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+            [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/EM_notes.pdf">EM_Notes</a>]
+            <br>
+            [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/MoG_notes.pdf">MoG_Notes</a>]
+            <br>
+          </td>
+          <td>HW3 due</td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>23-Oct</td>
+          <td><b>16</b>: Clustering - 2<br>
+                  [Slides]
+
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>25-Oct</td>
+          <td><b>MIDTERM<br>5:00 PM (Location: MM 103 and MM A14)</b>
+				  [<a style="color: blue " href="https://www.google.com/maps/place/Margaret+Morrison+Carnegie+Hall,+Pittsburgh,+PA+15213/@40.4414831,-79.9429338,17.75z/data=!4m5!3m4!1s0x8834f21f7e0bfffd:0x5a93bebb14053228!8m2!3d40.4420304!4d-79.9414491">Google Maps</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td>HW4 out</td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>30-Oct</td>
+          <td><b>17</b>: Dimensionality Reduction - 1 (PCA)<br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/15_PCA.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+            [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/PCA_reading.pdf">PCA_reading</a>]
+          </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>1-Nov</td>
+          <td><b>18</b>: Dimensionality Reduction - 2 (ICA) <br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/16_ICA.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/ICA_reading.pdf">ICA_reading</a>]
+          </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>6-Nov</td>
+          <td><b>19</b>: Semi-supervised Learning <br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/17_SSL.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/SSL_survey.pdf">SSL_Survey</a>]
+          </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>8-Nov</td>
+          <td><b>20</b>: Learning Theory - 1<br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/18_Learning_Theory_Risk_Min.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+                [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/Learning_Theory_Notes.pdf">Learning_Theory_Notes (p1-19)</a>]
+          </td>
+          <td>HW4 due</td>
+        </tr>
+
+
+         <tr>
+          <td>Mon<br>13-Nov</td>
+          <td><b>21</b>: Learning Theory - 2<br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/19_VC_Theory.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>15-Nov</td>
+          <td><b>22</b>: Graphical Models (Bayesian Networks)- 1<br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/20_Bayesian_Networks.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td>HW5 out </td>
+        </tr>
+
+
+        <tr>
+          <td>Mon<br>20-Nov</td>
+          <td><b>23</b>: Graphical Models (Markov Random Fields) - 2<br>
+               [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/21_Undirected_Graphical_Models.pdf">Slides</a>]
+               <br>
+               [<a style="color: blue " href="https://www.youtube.com/watch?v=ONpZfEjBtBQ">Lecture Video</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>22-Nov</td>
+          <td><b>THANKSGIVING</b>
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+
+        <tr>
+          <td>Mon<br>27-Nov</td>
+          <td><b>24</b>: Guest Lecture: Zoltán Szabó (CMAP, École Polytechnique)<br>
+             [<a style="color: blue " href="http://www.cmap.polytechnique.fr/~zoltan.szabo/teaching/dependency_testing/Zoltan_Szabo_Guest_Lecture_CMU_27_11_2017.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>29-Nov</td>
+          <td><b>25</b>: Hidden Markov Models - 1<br>
+              [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/22_HMM.pdf">Slides</a>]
+          </td>
+          <td> </td>
+          <td>
+              [<a style="color: blue " href="http://curtis.ml.cmu.edu/w/courses/images/8/89/GM-jordan.pdf">Jordan_GM_Notes</a>]
+          </td>
+          <td> </td>
+        </tr>
+
+
+
+        <tr>
+          <td>Mon<br>4-Dec</td>
+          <td><b>26</b>: Hidden Markov Models - 2<br>
+              [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/23_HMM_Learning.pdf">Slides</a>]
+              [<a style="color: blue " href="http://www.cs.cmu.edu/~10701/slides/23_Advanced_HMMs.pdf">Additional_Slides</a>]
+          </td>
+          <td> </td>
+          <td> </td>
+          <td>HW5 due </td>
+        </tr>
+
+
+        <tr>
+          <td>Wed<br>6-Dec</td>
+          <td><b>27</b>: Large-Scale Question Answering on Knowledge Bases and Text <br>
+          </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+
+
+
+
+
+        </table>
+    </div>
+  </div>
+  <br><br>
+</body>
+</html>

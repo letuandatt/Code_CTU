@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Word Embeddings</title>
+    <meta charset="utf-8">
+        <style>
+       @import url(https://fonts.googleapis.com/css?family=Garamond);
+       @import url(https://fonts.googleapis.com/css?family=Muli:400,700,400italic);
+       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+     </style>
+     <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+### W4995 Applied Machine Learning
+
+# Word Embeddings
+
+04/10/19
+
+Andreas C. Müller
+
+???
+today we'll talk about word embeddings
+word embeddings are the logical next step in doing text analysis after working
+with topic models on Monday.
+
+FIXME move glove before paragraph vectors
+FIXME: all the bullet points?!
+FIXME: redo paragraph vector experiments
+FIXME more on CBOW and skip-grams?
+FIXME: state of the art?
+FIXME: word embeddings with tensorflow?
+FIXME for CBOW and skip-gram shared weights for context
+FIXME for CBOW, which do we keep?
+FIXME SGDClassifier screenshots
+FIXME so much time on gensim, maybe more time on spacy instead?
+FIXME steal from http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/ ?
+FIXME the way I do the word vectors is confusing (using inverse_transform)
+FIXME run through complete code for word vectors, how to deal with out-of-vocabulary words
+---
+class: spacious
+
+# Beyond Bags of Words
+
+Limitations of bag of words:
+- Semantics of words not captured
+- Synonymous words not represented
+- Very distributed representation of documents
+
+???
+
+Last time we started talking about limitations of bag of
+words, such as semantics of words are not captured
+synonymous words are not represented - if I use two
+synonymous words, for example film and movie, they are
+represented in completely different ways and there is no
+connection between them. and we also have a very distributed
+representation of documents, which might be hard to
+understand or hard to learn from.
+---
+class: spacious
+# Last Time
+
+- Latent Semantic Analysis
+- Non-negative Matrix Factorization
+- Latent Dirichlet Allocation
+- All embed documents into a continuous, corpus specific
+space.
+- Today: Embed words in a “general” space (mostly).
+
+???
+
+Last time we looked at latent semanic analysis, non-negative
+matrix factorization and latent dirichlet allocation. Each
+of them embedds the documents into a continuous, corpus
+specific space of a dimension of our choosing, using an
+unsupervised objective. The first two are matrix
+factorization, the third is a probabilistic generative
+model.
+
+Today we'll be talking about a more general embedding, which
+tries to embedd individual words, not documents. The goal is
+to learn an embedding that's generally useful, and not
+necessarily tied to a particular corpus.
+
+---
+class: spacious
+# Idea
+
+- Unsupervised extraction of semantics using large
+corpus (wikipedia etc)
+- Input: one-hot representation of word (as in BoW).
+- Use auxiliary task to learn continuous
+representation.
+
+???
+
+We'll talk about several methods, but they'll all use a very
+large corpus to create a relatively generic embedding. So we
+might use something like wikipedia or google news or a big
+corpus of books. It's an unsupervised task, but the way it
+is phrased is using an auxiliary supervised task to learn
+the embedding. And what I mean by that will be more clear
+shortly. The starting principle is a one-hot representation
+of each word, as in Bag of words, which basically just
+means each word is identified by some index.
+
+---
+class: spacious
+
+# Skip-Gram models
+
+- Given a word, predict surrounding word
+- Supervised task, each document yields many
+examples
+- Not interested in performance for this task, just
+want to learn representations.
+
+???
+
+A very commonly used auxiliary task is the skip-gram model.
+Here the task is, given a word, predict the surrounding
+words. This is a supervised task, with each document
+providing many examples, basically as many as there are
+words in the document. I'm saying this is an auxiliary task,
+because we're not really interested in actually solving this
+problem of predicting surrounding words, we just want to use
+this task to learn useful representations.
+
+---
+class: left
+
+# Example
+```
+[“What is my purpose?”, “You pass the butter.”]
+```
+.center[
+![:scale 50%](images/context_window.png)
+]
+
+Using context windows of size 1 (in practice 5 or 10):
+
+???
+Here's an example of what this task looks like. Let's say we
+have a corpus of two documents, "what is my purpose" and
+"you pass the butter". We specify a context window size,
+let's say one. Then, for each word that has enough context,
+we generate a training example. So for "is", we have a
+context of "what" and "my", for "my" we have "is" and
+"purpose", and so on. So the input would be "is" and the
+goal would be to predict that the word before is "what" and
+the word after is "my". that assigns a high probability to
+the outputs "what" and "my". In practice larger context
+windows are used, often 5-10 words in either direction.
+Cearly it's impossible to actually solve this task, because
+each word can appear in many different contexts. The goal is
+to learn which contexts are likely, and which are not.
+
+---
+.left-column[
+![:scale 120%](images/skip_gram_net_arch.png)
+.smallest[http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/]
+]
+
+--
+
+.right-column[
+![:scale 100%](images/cbow_skipgram_1.png)
+]
+???
+Here’s the architecture that we will be using for this. It's
+kind of like neural network only, this is completely linear.
+In the left-hand side, we have the input layer with one hot
+encoding services in V-dimensional. V represents the size of
+vocabulary. And basically, only one of them will be 1 and
+the others will be 0.
+
+Then we have a weight matrix connecting it to the
+n-dimensional hidden layer. From there, we have multiple
+outputs that correspond to the previous word, previous 2
+words, and previous 3 words and so on. And then the next
+word, next 2 words, next 3 words and so on.
+
+Each output is, again, one hot encoding, which allows you to
+predict each possible version of vocabulary. These layers
+here are very large in size.
+
+Behind the hidden layer is basically a logistic regression.
+So this is just a linear classifier with a softmax
+activation. So each of these Ws will try to predict what the
+words are before and after.
+
+Basically, you have one hot encoding, you've multiplied with
+the first matrix, and then you multiply it with another
+matrix and then you do softmax. The reason why you have
+these two matrix multiplication is basically you want to
+create a bottleneck so if you had a very wide vector, you
+could do one matrix multiplication, basically, you want this
+matrix to have a lower rank. So you want to compress a
+representation to something small.
+
+Each row of W corresponds to a single word. We train this
+whole thing in a supervised fashion to minimize the log
+loss. But we’re only interested in is getting weights w.
+
+---
+
+#Softmax Training
+.center[
+![:scale 70%](images/softmax.png)
+]
+
+
+.smallest[
+<a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Mikolov et. al. - Distributed Representations of Words and Phrases and their Compositionality (2013)</a>
+]
+???
+The problem is you sum over all the outputs. All the outputs
+are all the words in the vocabulary. If you have a million
+words in your vocabulary, this is going to be a lot of work.
+
+
+This is a step that you need to do every time when you want
+to optimize it. And so what most of the algorithms do is
+they just approximate the sum by sampling some words. So it
+just normalizes by some words, but not by all words.
+
+This is the model that's most commonly used. This is called
+skip grams.
+
+---
+# CBOW vs Skip-gram
+
+.center[
+![:scale 70%](images/cbow_skipgram.png)
+]
+
+.smallest[
+Efficient Estimation of Word Representations in Vector Space https://arxiv.org/pdf/1301.3781.pdf
+]
+???
+
+This is the skip-gram model, here you can see it on the right.
+So we start with the one-hot-encoding of the word,
+and we have a matrix multiplication into a latent space. A
+matrix multiplication with a one-hot vector just means that
+each row in that embedding matrix represents one word. From
+this latent space, we run logistic regression, trying to
+predict what the word is for each particular offset, so here
+in this picture we're trying to predict the word two to the
+left, one to the left, one to the right, and two to the
+right. So these are basically four classifiers running on
+the same input.
+
+Another approach is shown on the left, the continuous bag of
+words model, or CBOW. This is something that seems a bit
+more natural to me, where given the context, we are trying
+to predict the word in the center. So here we would be given
+four context words and try to figure out what's the most
+likely word to be in between those.
+
+The skip grams work better. CBOW might capture some things
+like synonymous words because I can switch the synonyms word
+for another word, and it’ll still make sense in the same
+context. So if I say, I watched a movie or I watched the
+film, it doesn't really matter.
+
+---
+class: spacious
+# Implementations
+
+- Gensim
+- Word2vec
+- Tensorflow
+- fasttext
+- ...
+- Don't train yourself
+
+???
+Word2vec uses both the skip grams and continues bag of
+words.
+
+You can train this using TensorFlow. If you actually want to
+train it yourself, it's probably the best idea because then
+you can do it on GPU. These are usually like large matrices,
+you have a large corpus which will take forever. With
+TensorFlow, you can do it on a GPU and, and it makes things
+much more bearable.
+
+But generally, just don't train it yourself. You can
+download several of these word2vec models from Google, for
+example.
+
+---
+class: spacious
+
+# Gensim - topic models for humans
+
+- Multiple Latent Dirichlet Allocation implementations
+- Wrappers for Mallet and vopal wabbit
+- Tools for analyzing topic models
+- No supervised learning
+- Uses list-of-tuples instead of sparse matrices to
+store documents.
+
+???
+Gensim is a Python library for text analysis. Gensim is very
+easy to use and it has a lot of features. Last time, I
+mentioned spacy and NLTK as libraries for NLP, Gensim is the
+third one in that list which is very specific to topic
+models. And it has multiple implementations of LDA. It has
+wrappers for Mallet and vowpal wabbit, which also has very
+fast on LDA implementation. It has no supervised learning.
+This is all about document retrieval and feature extraction.
+
+
+The main thing to keep in mind when you work with this and
+when you combine this with scikit-learn is that it uses a
+list of tuples to store documents instead of sparse
+matrices. It's completely equivalent. It's just a different
+data structure. But if you want to mix this with
+scikit-learn, you need to make sure to convert it.
+
+---
+# Introduction to gensim
+
+.smallest[
+```python
+docs = ["What is my purpose", "You bring butter"]
+texts = [[token for token in doc.lower().split()] for doc in docs]
+print(texts)
+```
+```
+[['what', 'is', 'my', 'purpose'], ['you', 'bring', 'butter']]
+```
+```python
+from gensim import corpora
+dictionary = corpora.Dictionary(texts)
+print(dictionary)
+```
+```
+Dictionary(7 unique tokens: ['butter', 'you', 'is', 'purpose', 'my']...)
+```
+```python
+new_doc = "what butter"
+dictionary.doc2bow(new_doc.lower().split())
+```
+```
+[(3, 1), (5, 1)]
+```
+```python
+corpus = [dictionary.doc2bow(text) for text in texts]
+corpus
+```
+```
+[[(0, 1), (1, 1), (2, 1), (3, 1)], [(4, 1), (5, 1), (6, 1)]]
+```
+]
+
+???
+
+Use NLTK or spacy or a regexp for tokenization in real
+applications. This method here doesn’t even handle
+punctuation.
+In gensim, a document is represented as list of tuples
+(index, frequency), corpus is a list of these.
+
+---
+
+# Converting to/from sparse matrix
+
+.smallest[
+```python
+import gensim
+corpus
+```
+```
+[[(0, 1), (1, 1), (2, 1), (3, 1)], [(4, 1), (5, 1), (6, 1)]]
+```
+```python
+gensim.matutils.corpus2csc(corpus)
+```
+```
+<7x2 sparse matrix of type '<class 'numpy.float64'>'
+  with 7 stored elements in Compressed Sparse Column format>
+```
+```python
+X = CountVectorizer().fit_transform(docs)
+X
+```
+```python
+sparse_corpus = gensim.matutils.Sparse2Corpus(X.T)
+print(sparse_corpus)
+print(list(sparse_corpus))
+```
+```
+<gensim.matutils.Sparse2Corpus object at 0x7fd6d776b438>
+[[(4, 1), (3, 1), (2, 1), (5, 1)], [(1, 1), (0, 1), (6, 1)]]
+```
+]
+
+???
+most transformations is gensim are lazy:
+They yield a generator (like Sparse2Corpus) which can
+be converted to a list.
+Note that the CSC is transposed to what we would expect in sklearn.
+
+---
+# Corpus Transformations
+
+.smaller[
+```python
+tfidf = gensim.models.TfidfModel(corpus)
+tfidf[corpus[0]]
+```
+```
+[(0, 0.5), (1, 0.5), (2, 0.5), (3, 0.5)]
+```
+```python
+print(tfidf[corpus])
+print(list(tfidf[corpus]))
+```
+```
+<gensim.interfaces.TransformedCorpus object at 0x7fd6d776b2b0>
+[[(0, 0.5), (1, 0.5), (2, 0.5), (3, 0.5)], [(4, 0.577), (5, 0.577), (6, 0.577)]]
+```
+
+]
+???
+You can do a TFIDF model with Gensim.
+---
+
+# Word2Vec in Gensim
+
+```python
+from gensim import models
+w = models.KeyedVectors.load_word2vec_format(
+    '../GoogleNews-vectors-negative300.bin', binary=True)
+w['queen'].shape
+```
+```
+(300,)
+```
+```python
+w.vectors.shape
+```
+```
+(3000000, 300)
+```
+???
+There are 2 benefits to using these prebuilt models.
+A)  It takes a long time to run to train these
+B) You probably don't have the corpus, you can download
+Wikipedia, but I don't think you can actually download the
+Google News corpus.
+
+There are 3,000,000 word vectors in total stored in this
+model. So there’s a vocabulary of size 3,000,000. Each of
+the words in the vocabulary has a 300-dimensional vector.
+
+I can only apply this to words that are within this
+vocabulary. If I have any words that are not in this
+vocabulary, then this model is useless.
+
+The first thing that we want to do is to check whether these
+representations actually semantic in some way. To do this,
+first, we need to define how can we measure similarity in
+this space. And the way that similarities usually measured
+between words is using the cosine similarity.
+
+---
+# Cosine Similarity
+.padding-top[
+
+`$$\Large \text{similarity}(v, w)=\cos(\theta) = \frac{v^Tw}{\lVert v\rVert \lVert w \rVert}$$`
+]
+???
+This is quite related to Euclidean distance but basically,
+it normalizes the weight, the length of the vector. This is
+a set of a distance matrix that’s very commonly used in NLP.
+For example, if you want to compare if the two documents are
+similar. For documents in the bag of words representation,
+this might be quite intuitive, since it just sort of
+normalizes the length of document away.
+
+---
+class: smallerr
+# Inspecting Semantics
+```python
+w.most_similar(positive=['movie'], topn=5)
+```
+
+```
+[('film', 0.867),
+ ('movies', 0.801),
+ ('films', 0.736),
+ ('moive', 0.683),
+ ('Movie', 0.669)]
+```
+???
+Now that we know how we can measure similarities in the
+space, we can find similar words. And so let's start with
+‘movie’ and the top 5 matches for it (ordered from most
+similar to least similar top 5)
+
+This computes the cosine similarities between the
+300-dimensional vector for movie and all the other
+300-dimensional vectors for the 3 million other words and
+gives the 5 closest one. In this case, they are ‘film’,
+‘movies’, ‘films’, ‘moive’, ‘Movie’. I guess ‘moive’ is a
+common misspelling.
+
+---
+```python
+w.most_similar(positive=['good'], topn=5)
+```
+???
+Trying the same for the word ‘good’ gives ‘great’, ‘bad’,
+‘terrific’, ‘decent’ and ‘nice’. ‘bad’ is an antonym not a
+synonym for ‘good’, this makes sense since sometimes if we
+replace ‘good’ with ‘bad’, it will still make sense.
+--
+```
+[('great', 0.729),
+ ('bad', 0.719),
+ ('terrific', 0.688),
+ ('decent', 0.683),
+ ('nice', 0.683)]
+ ```
+--
+```python
+w.most_similar(positive=['cute', 'dog'], topn=5)
+```
+```
+[('puppy', 0.764),
+ ('chihuahua', 0.720),
+ ('adorable_puppy', 0.710),
+ ('yorkie', 0.701),
+ ('Shitzu', 0.700)]
+ ```
+
+???
+You can also look at multiple vectors and take the average
+and then look what's close to that. I’ve computed for ‘cute’
+and ‘dog’.
+ ---
+
+# Prepare document (IMDB)
+
+.smallest[
+```python
+print(text_train_sub[0].decode())
+```
+```
+Maybe it's just because I have an intense fear of hospitals and medical stuff, but this one got under my skin
+(pardon the pun). This piece is brave, not afraid to go over the top and as satisfying as they come in terms
+of revenge movies. Not only did I find myself feeling lots of hatred for the screwer and lots of sympathy
+towards the "screwee", I felt myself cringe and feel pangs of disgust at certain junctures which is really a
+rare and delightful thing for a somewhat jaded horror viewer like myself. Some parts are very reminiscant of
+"Hellraiser", but come off as tribute rather than imitation. It's a heavy handed piece that does not offer
+the viewer much to consider, but I enjoy being assaulted by a film once and awhile. This piece brings it and
+doesn't appologize.
+I liked this one a lot. Do NOT watch whilst eating pudding.
+```
+
+```python
+vect_w2v = CountVectorizer(vocabulary=w.index2word)
+vect_w2v.fit(text_train_sub)
+docs = vect_w2v.inverse_transform(vect_w2v.transform(text_train_sub))
+docs[0]
+```
+```
+array(['in', 'for', 'that', 'is', 'the', 'at', 'not', 'as', 'it', 'by',
+       'are', 'have', 'an', 'this', 'they', 'but', 'one', 'which', 'do',
+       'than', 'over', 'just', 'some', 'like', 'only', 'did', 'because',
+       'off', 'being', 'my', 'very', 'much', 'go', 'under', 'does', 'got',
+       'top', 'come', 'really', 'lot', 'find', 'thing', 'once', 'offer',
+       'feel', 'film', 'medical', 'terms', 'rather', 'certain', 'felt',
+       'consider', 'watch', 'parts', 'heavy', 'towards', 'enjoy',
+       'feeling', 'maybe', 'piece', 'fear', 'myself', 'stuff', 'handed',
+       'brings', 'movies', 'hospitals', 'rare', 'lots', 'skin', 'eating',
+       'intense', 'somewhat', 'liked', 'afraid', 'tribute', 'horror',
+       'revenge', 'brave', 'whilst', 'sympathy', 'assaulted', 'satisfying',
+       'hatred', 'viewer', 'awhile', 'pardon', 'delightful', 'disgust',
+       'imitation', 'pudding', 'cringe', 'jaded', 'pun', 'pangs', 'doesn',
+       'junctures', 'hellraiser', 'appologize'],
+      dtype='<U98')
+```
+]
+
+???
+This is a silly way to tokenize the input and using only
+words that appear in the vocabulary used in the pretrained
+model.
+
+Doing the same for movie review. I’m tokenizing this in a
+way that only the words that appear in the vocabulary are
+actually here because the other words can’t be encoded in
+Word2vec. So I get the count vectorizer, I use the
+vocabulary in the Word2vec model and then I transform and
+inverse transform and I get these results where each of them
+has a 300-dimensional vector
+
+
+So now we have the list of tokens for all the movie reviews.
+And the most common way to use this to represent documents
+is just using the average.
+
+---
+# Represent doc by average
+
+.smaller[
+```python
+X_train = np.vstack([np.mean(w[doc], axis=0) for doc in docs])
+X_train.shape
+```
+```
+(18750, 300)
+```
+```python
+docs_val = vect_w2v.inverse_transform(vect_w2v.transform(text_val))
+X_val = np.vstack([np.mean(w[doc], axis=0) for doc in docs_val])
+```
+```python
+lr_w2v = LogisticRegression(C=100).fit(X_train, y_train_sub)
+lr_w2v.score(X_train, y_train_sub)
+```
+```
+0.867
+```
+```python
+lr_w2v.score(X_val, y_val)
+```
+```
+0.857
+```
+
+]
+???
+Right now, each of the tokens is replaced by a
+300-dimensional vector. And so I can represent each review
+by the mean of all the 300-dimensional vectors of the words.
+
+So previously, I had 18750 lists of 300-dimensional vectors
+for the training dataset and now I only have one
+300-dimensional vector.
+
+After computing, we can see that we didn't really gain a
+lot, but definitely, there's still a lot of information
+available to do the sentiment analysis. I think it's better
+than using LSA or LDA.
+
+This still has some downsides of the bag of words in that
+you discard to word order.
+
+You can actually also do embedding for bigrams and trigrams.
+
+
+One of the thing that people found, which was quite
+interesting is that you can actually do some sort of
+semantic algebra with it.
+
+---
+# Analogues and Relationships
+
+.center[
+![:scale 100%](images/king_queen.png)
+]
+
+
+.smaller[
+Answer “King is to Kings as Queen is to ?”:<br/>
+Find closest vector to vec(“Queen”) + (vec(“Kings”) - vec(“King”))
+]
+
+.smallest[
+<a href="http://www.aclweb.org/anthology/N13-1090">Mikolov et. al. Linguistic Regularities in Continuous Space Word Representations (2013)</a>]
+???
+You can use these vectors to find relationships. So people
+found that if they look at the difference between men, and
+women, it looks very similar to the difference between uncle
+and aunt or king and queen. They also found that, for
+example, the difference between King and kings is the same
+as between queen and Queens.
+
+If you want to ask a question, what is to Queen as kings are
+to King?
+
+You can take vector representation of Queen and add the
+vector representation of kings, and subtract the vector
+representation of King. And if you look at the closest point
+to that, you'll find it's going to be queens. People did
+this with a lot of different sort of semantic pairs.
+
+---
+.center[
+![:scale 80%](images/analogues.png)
+]
+
+
+.smallest[
+<a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Mikolov et. al. - Distributed Representations of Words and Phrases and their Compositionality (2013)</a>]
+???
+One thing that's quite interesting is people embedded
+countries and their capitals using a 300-dimensional space
+and then did the PCA on it.
+
+This is projecting down to 2-dimensional space, all
+different countries and their capitals.
+
+Even after this projection, they all look pretty peril. And
+so basically, the thing that goes from Poland to Warsaw is
+basically the same that goes from Japan to Tokyo. You can
+use this to discover analogies or relations.
+
+---
+# Finding Relations
+<br />
+$$\large a : b : : c : ?$$
+<br />
+$$\large d = \text{arg}\max_i\frac{\left(\text{vec}(b) - \text{vec}(a) + \text{vec}(v)\right)^T vec_i}{\lVert\text{vec}(b) - \text{vec}(a) + \text{vec}(v)\rVert\lVert \text{vec}_i\rVert}$$
+???
+The vec(v) in the numerator should be vec(c)
+---
+class: middle
+
+.center[
+![:scale 70%](images/table_cities_states.png)
+]
+
+.smallest[<a href="https://cs224d.stanford.edu/lecture_notes/notes2.pdf">Stanford CS 224D: Deep Learning for NLP</a>]
+???
+The model is able to figure out what the relationship of
+what does it mean for a city to be in a state.
+
+So now we have a space in which vector additions have
+semantic meaning. When people found about this, they were
+really excited.
+
+---
+
+# Examples with Gensim
+
+.smaller[
+```python
+w.most_similar(positive=['woman', 'king'], negative=['man'], topn=3)
+```
+```
+[('queen', 0.711),
+ ('monarch', 0.618),
+ ('princess', 0.590)]
+```
+```python
+w.most_similar(positive=['woman', 'he'], negative=['man'], topn=3)
+```
+```
+[('she', 0.849),
+ ('She', 0.632),
+ ('her', 0.602)]
+```
+```python
+w.most_similar(positive=['Germany', 'pizza'], negative=['Italy'], topn=3)
+```
+```
+[('bratwurst', 0.543),
+ ('Domino_pizza', 0.513),
+ ('donuts', 0.512)]
+```
+
+]
+???
+In the first example, I'm computing ‘woman’ + ‘king’ – ‘man’
+and the top 3 results are ‘queen’, ‘monarch’ and ‘princess’.
+Queen is the highest since ‘man’ is to ‘king’ as ‘women’ is
+to ‘queen’.
+
+So relationships that are found here definitely depend a lot
+on the corpus that was used.
+
+
+---
+class: center
+
+<br>
+.center[
+![:scale 70%](images/paper_title.png)
+]
+
+<br>
+
+<br>
+
+.smaller[
+$\overrightarrow{man} - \overrightarrow{woman} \approx \overrightarrow{king} - \overrightarrow{queen}$
+
+<br>
+<br>
+
+$\overrightarrow{man} - \overrightarrow{woman} \approx \overrightarrow{computer programmer} - \overrightarrow{homemaker}$
+
+
+]
+???
+This relation is actually in there. If you do ‘man is to
+computer programmer’ as ‘women is to x as to x, you get
+‘homemaker’ and we might not be very happy about this.
+
+---
+# Going along he-she direction:
+
+<br>
+.center[
+![:scale 90%](images/he_she.png)
+]
+???
+They did an analysis of this particular embedding. And
+established that we don’t want these gender stereotypes in
+our model and gender appropriate he-she analogies
+
+Some of them are clearly something that we would not want.
+And this is just one particular instance.
+
+As with all machine learning models, this learns all the
+biases of the data that you give it, if you give it a lot of
+text, then it uses that to learn all the biases of human
+society.
+
+---
+class: middle
+
+# Paragaph Vectors
+???
+Alright, so the next thing I want to talk about is a
+slightly smarter way to look at embedding documents, which
+is paragraph vectors. Instead of just taking averages we're
+trying to do a little bit better.
+
+Fixme rerun experiments from doc2vec paper to show it works?
+---
+
+# Doc2Vec
+
+<br>
+.center[
+![:scale 70%](images/doc2vec.png)
+]
+.smallest[
+<a href="https://cs.stanford.edu/~quocle/paragraph_vector.pdf">Le, Mikolov: Distributed Representations of Sentences and Documents (2014)</a>
+]
+???
+
+
+
+based on cbow, not skip-grams
+
+Add a vector for each paragraph / document, also
+randomly initialized.
+To infer for new paragraph: keep weights fixed, do
+stochastic gradient descent on the representation D,
+sampling context examples from this paragraph.
+
+FIXME better explanation.
+
+There is no gradient descent at encoding time for word2vec!
+
+
+The most common approach here is Doc2vec.
+
+This here on the right-hand side would be the continuous bag
+of word model where you get the context, and where you want
+to predict the word from the context. What paragraph vector
+now does is it adds in another thing, which is a paragraph
+specific ID. It’s basically like adding a unique word to a
+vocabulary that’s just unique to this paragraph and encodes
+its presence in this paragraph. And you do not only learn
+the embedding of all the words, but you also learn embedding
+for each paragraph. And so basically, this tries to make up
+for what the words cannot predict. So you have the standard
+CBOW in the middle layer that tries to make a prediction but
+then basically trying to correct this prediction by having a
+paragraph specific ID. This maybe not sorts of the most
+intuitive way. But it actually seemed to work quite well.
+This is actually in practice quite a bit trickier than just
+looking at the word vectors since how are you going to do
+this if you get a new document?
+
+If you get a new document for the word vectors, you just
+look for each word, if it's not in the vocabulary you’re
+lost out anyway, if it’s in the vocabulary, you can just
+take the vector for this word that you have computed
+already.
+
+If you get a new paragraph, how do you get the paragraph
+vector?
+
+Since you have a new paragraph that has never seen before,
+the paragraph is not in the training set. And so what you do
+then you look at the paragraph and you sample training
+samples from this paragraph, so your sample context and
+words. And you fix all the word vectors because you learned
+them on the training sets. You're basically learning this
+paragraph ID by doing gradient descent. So you initialize
+this paragraph vector randomly and to transform a new
+paragraph, you basically learn the paragraph vector for this
+paragraph, fixing all the word vectors.
+
+In this sense, it’s more of trying to correct what the model
+could not figure out with the word vectors. So now, you have
+a vector that represents everything in the paragraph that
+was not already encoded in the context, or it might encode
+like in a wider context or something like that.
+
+And usually, it's just the same dimensionality as the other
+vectors. So here, we would get like a 300-dimensional vector
+that encodes each paragraph. But to encode a new paragraph
+you need to do gradient descent.
+
+
+---
+#Doc2Vec with gensim
+
+.smaller[
+```python
+def read_corpus(text, tokens_only=False):
+    for i, line in enumerate(text):
+        if tokens_only:
+            yield gensim.utils.simple_preprocess(line)
+        else:
+            # For training data, add tags
+            yield gensim.models.doc2vec.TaggedDocument(
+                gensim.utils.simple_preprocess(line), [i])
+
+train_corpus = list(read_corpus(text_train_sub))
+test_corpus = list(read_corpus(text_val, tokens_only=True))
+
+model = gensim.models.doc2vec.Doc2Vec(vector_size=50, min_count=2)
+model.build_vocab(train_corpus)
+
+model.train(train_corpus, total_examples=model.corpus_count, epochs=55)
+```
+]
+
+
+.smallest[
+https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/doc2vec-lee.ipynb
+]
+???
+fixme example of nearest neighbors to see if this learned
+something useful!
+Should use the unlabeled reviews!
+
+So here, basically, I started completely fresh from no model
+at all. And I learned embedding for all of the words and for
+all the paragraphs. So I did a small validation to see if
+the word vectors that I learned are meaningful.
+
+---
+# Validation of Word Vectors
+```python
+model.wv.most_similar("movie")
+```
+```
+[('film', 0.948),
+ ('flick', 0.822),
+ ('series', 0.715),
+ ('programme', 0.703),
+ ('sequel', 0.693),
+ ('story', 0.677),
+ ('show', 0.655),
+ ('documentary', 0.653),
+ ('picture', 0.642),
+ ('thriller', 0.630)]
+ ```
+???
+I looked at the most similar ones to ‘movie’ and we get
+these results.
+
+I like this better than the ones from the pre-built one.
+These are pretty good but it's maybe not as surprising as
+‘movie’ is sort of the most common word in the whole corpus.
+
+
+ ---
+#Encoding using doc2vec
+
+.smaller[
+```python
+vectors = [model.infer_vector(train_corpus[doc_id].words)
+          for doc_id in range(len(train_corpus))]
+
+X_train = np.vstack(vectors)
+
+X_train.shape
+```
+```
+(18759, 50)
+```
+```python
+test_vectors = [model.infer_vector(test_corpus[doc_id])
+                for doc_id in range(len(test_corpus))]
+X_test = np.vstack(test_vectors)
+```
+
+]
+???
+Now I can encode my training corpus.  I get a 50-dimensional
+vector for each movie review in the training dataset. If I
+want to do classification I can run a logistic regression on
+this vector.
+
+So model.infer_vector does the gradient descent to compute
+the paragraph vectors for each document.
+
+In the paper, they used much more data from the same corpus
+and they used 400-dimensions and probably they also iterated
+longer. In the paper, they didn't train a logistic
+regression on this. They trained a neural network on this,
+this probably makes a difference
+
+---
+
+```python
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression(C=100).fit(X_train, y_train_sub)
+
+lr.score(X_train, y_train_sub)
+```
+```
+0.817
+```
+```python
+lr.score(X_val, y_val)
+```
+```
+0.803
+```
+
+???
+Not working well here. Either not enough training data,
+sgd didn’t converge yet, or too low dimension.
+FIXME combine with word vectors?
+In the paper: they actually get 0.926%
+400 dimensions (And using unsupervised data)
+
+---
+
+
+# GloVe: Global Vectors for Word Representation
+
+
+$X_{ij}$ = How often does work j appear in context of word i
+
+`$$ J = \sum\limits_{i,j=1}^{V} f(X_{ij}) (w_i^T \tilde{w_j} + b_i + \tilde{b_j} - \log X_{ij})^2$$`
+
+
+`$$
+f(x) =
+\begin{cases}
+  (x/x_\text{max})^\alpha & \text{if  } x < x_\text{max}  \\
+  1 & \text{otherwise} \\
+\end{cases}
+$$`
+
+.smaller[
+https://nlp.stanford.edu/projects/glove/
+]
+
+
+???
+
+Here X_ij is the coocurrance count matrix, counting
+how often word I and j appear in the same context –
+say a 5 word window.
+We are learning a factorization of log(X_ij) into w_i and
+~w_j, where w_i are the word-vectors we want to
+extract.
+Very infrequent word-pairs are less important to get
+right, and are down-weighted using f(X_ij).
+
+alpha is 3/4 empirically. x_max is 100.
+
+---
+class: center, spacious
+# GloVe  Weighting function f
+
+![:scale 90%](images/glove_weighting.png)
+???
+If you're larger than X max, it's just weighted by 1. If all
+words appear at least 100 times then the loss is weighted
+fully and if words appear less than 100 times, then you take
+x divided by 100 to the power of alpha, and they found alpha
+equal to 0.75. So it works better than linear.
+
+So in the beginning, you have to compute this big sparse
+matrix once, but then you can do gradient descent just on
+this given statistics.
+
+---
+# Word analogies
+
+.center[
+![:scale 45%](images/word_analogies.png)
+]
+
+???
+
+Comparison of CBOW, SGD, skip-gram and Glove on
+the semantic (ie. state→capital) and syntactic (ie
+singular→ plural) word analogy tasks
+
+---
+class: center, middle
+
+# (Stochastic) Gradient Descent
+
+( see http://leon.bottou.org/projects/sgd
+and http://leon.bottou.org/papers/bottou-bousquet-2008
+and http://scikit-learn.org/stable/modules/scaling_strategies.html )
+
+???
+The last thing I want to talk about today is Stochastic
+Gradient Descent. This is just another solver to solve
+linear models or neural networks. But it's good to
+understand a little bit more in detail because it comes up a
+lot in particular with very large data sets.
+
+---
+
+# Reminder: Gradient Descent
+
+.right-column[
+.padding-top[
+![:scale 100%](images/gradient_descent.png)
+]]
+
+Want: $$\arg \min_w F(w)$$
+
+Initialize $w_0$
+
+$$w^{(i+1)} \leftarrow w^{(i)} - \eta_i\frac{d}{dw}F(w^{(i)})$$
+
+Converges to local minimum
+
+???
+First, let's talk about Gradient Descent. So we have some
+function we want to minimize here the function is Lasso
+training data set plus the regularizer. F is the objective
+of the model and I want to find the best parameter setting
+w. The way gradient descent works are that we initialize it
+with some W and then we compute a gradient then we walk down
+the gradient by a small step. This converges to a local
+minimum in the function. For linear models, there's only one
+global minimum. Basically, any optimization algorithm you
+can think of will always converge to the same solution, they
+only converge at different speeds.
+
+Severely stolen from
+https://hackernoon.com/dl03-gradient-descent-719aff91c7d6
+
+fixme!!
+
+---
+
+# Reminder: Gradient Descent
+
+.center[
+![:scale 40%](images/gradient_branin.png)
+]
+
+$$w^{(i+1)} \leftarrow w^{(i)} - \eta_i\frac{d}{dw}F(w^{(i)})$$
+
+
+???
+
+
+---
+
+# Pick a learning rate
+
+.center[
+![:scale 90%](images/branin_learning_rate.png)
+]
+
+$$w^{(i+1)} \leftarrow w^{(i)} - \eta_i\frac{d}{dw}F(w^{(i)})$$
+
+???
+A little bit of an issue here is picking a learning rate
+which is how big a step are you making. If you make too
+small a step, then you're going to get stuck wherever you're
+started. If you pick the right step size, you can make very
+quick progress. If you pick too a big step size, you're
+going to be missing the target and just jumping around the
+target. This is a very simple optimizer. But it's not great
+and it’s not very fast because you need to compute gradients
+over the whole dataset. What you can do instead is you can
+approximate a gradient by looking only a single data point
+at a time.
+
+
+---
+class: compact
+# Batch vs stochastic optimization
+
+Batch
+`$$ W_i \leftarrow W_i - \eta\sum\limits_{j=1}^N \frac{\partial l(x_j,y_j)}{\partial W_i} $$`
+<br />
+--
+
+Online/Stochastic
+`$$ W_i \leftarrow W_i - \eta\frac{\partial l(x_j,y_j)}{\partial W_i}$$`
+<br />
+
+--
+
+Minibatch
+`$$ W_i \leftarrow W_i - \eta\sum\limits_{j=k}^{k+m} \frac{\partial l(x_j,y_j)}{\partial W_i}$$`
+
+
+???
+So doing standard gradient descent, we would update a weight
+matrix W_i but using the old W_i and taking a gradient step,
+so subtracting the gradient of the loss wrt the paramters,
+summed over the whole training set, times some learning
+rate. The problem with this is that it's quite slow.
+Computing all these gradients means that we need to pass all
+the examples forward through the network, make predictions,
+and then do a backward pass with backpropagation. That's a
+lot of matrix multiplications to do a single gradient step,
+in particular given that we want to do this for very large
+datasets. So what we can do to speed this up is doing a
+stochastic approximation, as we already saw for linear
+models, doing stochastic gradient descent aka online
+gradient descent. Here, you pick a sample at random, compute
+the gradient just considering that sample, and then update
+the parameter. So you update the weights much more often,
+but you have a much less stable estimate of the gradient. In
+practice, we often just iterate through the data instead of
+picking a sample at random. And as with linear models, this
+is much faster than doing full batches for large datasets.
+
+However, it's less stable, and also it doesn't necessarily
+use the hardware in the best way. So we can do a compromise
+in where we look at mini-batches of size k, usually
+something like 64 or 512. So we look at k samples, compute
+the gradients, average them, and update the weights. That
+allows us to update much more often than looking at the
+whole dataset, while still having a more stable gradient,
+and better being able to use the parallel computing
+capabilities of modern CPUs and GPUs. This is what's used in
+practice basically always. The reason why this is faster is
+basically that doing a matrix-matrix multiplication is
+faster than doing a bunch of matrix-vector operations.
+
+In principle we could also be using smarter optimization
+methods, like second order methods or LBFGS, but these are
+often not very effective on these large non-convex problems.
+One, called levenberg-marquardt is actually a possibility,
+but it's not really used these days.
+---
+# Stochastic Gradient Descent
+
+- Logistic Regression:
+
+`$$F(w) = -C \sum_{i=1}^n\log(\exp(-y_iw^T \textbf{x}_i) +1 ) + ||w||_2^2$$`
+
+
+- Pick $x_i$ randomly, then
+
+`$$\frac{d}{dw}F(w) = \frac{d}{dw} -C \log(\exp(-y_iw^T \textbf{x}_i) +1 ) + \frac{1}{n}||w||_2^2$$`
+
+- In practice: just iterate over i.
+
+
+???
+Looking at the Logistic Regression, the functional Logistic
+Regression we want to minimize is the log loss plus the
+regularizer. Instead of looking at the gradient for the
+whole sum here, we can get a stochastic approximation of the
+gradient by looking at only one of the sums at a time. In
+practice, we iterate over the dataset and go one by one
+through all the data points. We make sure we shuffle them
+before. Then we do small gradient steps. This is a very bad
+optimizer compared to the SAG but it can go very quickly
+over a lot of data.
+
+---
+class: spacious
+
+# SGD and partial_fit
+
+- SGDClassifier(), SGDRegressor() fast on very large datasets
+- Tuning learning rate and schedule can be tricky.
+- partial_fit allows working with out-of-memory data!
+
+
+???
+This is implemented in SGD classifier, and SGD regressor and
+you can use it in very large data sets. It's a little bit
+tricky to tune the learning rate and so you can either pick
+as constant learning rate, or you can pick an exponentially
+decreasing learning rate. There's one that's called optimal.
+If you scale your data to standard division 1, then the
+optimal one will often work well but it's not actually
+optimal on any sense. This will allow you to give you
+something quickly on a big data set. There's also another
+thing you can do, there's a method called partial_fit that
+these models have which allows you to iteratively fit feed
+it data. If you have like streaming data coming in and you
+having infinite data, you can just keep giving it more and
+more data called partial_fit. This method will update the
+model. In scikit-learn, if you call fit multiple times it
+will always forget whatever it saw before. Each fit resets
+the model while partial fit will remember what it saw before
+and keeps fitting the model. SGDClassifier() and
+SGDRegressor both have a whole bunch of different loss
+function penalties so they both can do elastic net penalty
+and the classifier can do logistic loss and hinge loss and
+squared hinge loss and the regressor can do Huber loss and
+squared error and absolute error. So there are many, many
+different choices for different loss functions.
+
+
+---
+class: center, spacious
+
+![:scale 90%](images/sgd_partial_fit.png)
+
+![:scale 90%](images/sgd_partial_fit2.png)
+
+
+
+???
+Fit works just like everywhere else. Partial fit you can
+call it with different batches of data and this will keep
+fitting the model. One thing that you should keep in mind
+for the classifier is that you need to give it the classes
+at the beginning because it doesn't know how many classes
+there are and at the first time, not all the classes might
+be present in the data you give it to. So you need to
+specify how many classes there are. Partial fit doesn't do
+loops over a dataset. So if you want to use a partial fit,
+and you want to loop over dataset multiple times, you have
+to set the loop yourself. If you loop over a dataset, if you
+do more of gradient descent, then you get better results.
+This code is the same code for all combinations of losses
+and regularizers because it’s very simple to write this
+down.
+---
+class: middle
+# Questions ?
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script>
+    // Config Remark
+    remark.macros['scale'] = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+    };
+    config_remark = {
+        highlightStyle: 'magula',
+        highlightSpans: true,
+        highlightLines: true,
+        ratio: "16:9"
+    };
+      var slideshow = remark.create(config_remark);
+    // Configure MathJax
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] /* removed 'code' entry*/
+    }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parameter Tuning and AutoML</title>
+    <meta charset="utf-8">
+        <style>
+       @import url(https://fonts.googleapis.com/css?family=Garamond);
+       @import url(https://fonts.googleapis.com/css?family=Muli:400,700,400italic);
+       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+     </style>
+     <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+### W4995 Applied Machine Learning
+
+# Parameter Tuning and AutoML
+
+03/11/19
+
+Andreas C. Müller
+
+???
+FIXME show figure 2x random is as good as hyperband?
+FIXME needs lots more polish!
+FIXME too long?! what?! how?!
+FIXME difference between hyperband and SuccessiveHalving unclear
+---
+# Motivation
+- Need to select among Models
+- Need to select Hyper-Parameters
+- Need to select among preprocessing methods
+---
+# Conditional Hyper-Parameters
+- Kernels
+- Neural Nets
+- Pipelines
+---
+# Formulating model-selection as Hyperparameter Optimization
+- One big search, many conditional Hyper-Parameters
+- Categorical, integer, continuous, conditional
+- Different distributions
+---
+# CASH problem
+- Find the best configuration
+- Global optimization on complex (high-dim?) space
+---
+# Issues with Grid-Search
+- Need to define Grid
+- Exponential in number of dims
+---
+class: middle
+# Black-Box Search Procedures
+`$$\Lambda^* = \arg\max_\Lambda f(\Lambda)$$`
+Parameters $\Lambda$, model-evaluation $f$.
+???
+General optimization of unknown, non-differentiable f, possibly no-smooth.
+NP Hard in general.
+Function f is very slow to evaluate - think training a neural net for a week.
+---
+# Random Search
+![:scale 100%](images/bergstra_random.jpeg)
+---
+# Random Search with scikit-learn
+```python
+# specify parameters and distributions to sample from
+from scipy.stats import randint
+param_dist = {"max_depth": [3, None],
+              "max_features": randint(1, 11),
+              "min_samples_split": randint(2, 11),
+              "bootstrap": [True, False],
+              "criterion": ["gini", "entropy"]}
+n_iter_search = 20
+random_search = RandomizedSearchCV(clf,
+                                   param_distributions=param_dist,
+                                   n_iter=200, cv=5)
+```
+- lists or objects with `rvs` method
+- Use continuous distributions for biggest advantage
+---
+# Bayesian Optimization, SMBO
+.wide-left-column[
+
+- fit 'cheap' probabilistic function to black-box
+
+- pick next point using exploration / exploitation
+
+- Implemented as acquisition function
+]
+.narrow-right-column[
+.center[
+![:scale 110%](images/smbo.png)
+]]
+---
+# Surrogate functions
+![:scale 100%](images/smbo_table.png)
+???
+FIXME
+NEED NEURAL NETS
+---
+# Evolutionary Methods: TPOT
+.center[
+![:scale 80%](images/tpot.png)
+]
+---
+class: spacious
+
+# Implementations
+- SMAC: Random Forest model (Hutter group)
+- spearmint: GP (Snoek et al)
+- hyperopt: TPE (Bergstra, not maintained)
+- scikit-optimize: GP, tree, etc
+- GPyOpt: GP based on GPy (Lawrence group)
+---
+class: compact, center
+# Criticism
+![:scale 25%](images/random_rank_chart.png)
+![:scale 25%](images/random_bar_plot_sample.png)<br>
+--
+![:scale 23%](images/random2x_cifar10-compare.png)
+![:scale 23%](images/random2x_mrbi-compare.png)
+![:scale 23%](images/random2x_svhn-compare.png)
+
+.smallest[http://www.argmin.net/2016/06/20/hypertuning/]
+???
+FIXME use newer hyperband figures!
+---
+# Beyond Black-Box
+- Hyperparameter gradient descent
+- Multi-Fidelity optimization
+- Meta-learning
+- (others...)
+---
+# Multi-Fidelity Search
+.smaller[Approximate function by similar cheaper function]
+.center[
+![:scale 70%](images/multi-fidelity-digits.png)
+![:scale 70%](images/multi-fidelity-digits-rf.png)
+
+]
+???
+Top: subsample the datasets
+bottom: use less trees in forest
+---
+# Multi-Fidelity Bayesian Optimization
+- Fit model to performance given parameters and budget
+- Choose parameters and budget for best exploration / exploitation
+- Related to multi-armed bandits and A/B testing
+- Differences to bandits:
+    - non-stationary distributions
+    - receiving loss (computing validation error) is expensive
+    - possibly infinitely many arms (continuous parameters)
+---
+# Successive Halving
+- Given $n$ configuration and budget $B$
+- pick $\eta=2$ or $\eta=3$ (wording follows 2)
+- Each iteration, keep best halve of configurations
+- after $k=\log_\eta(n) + 1$ left with single configuration.
+- initially allocate $\frac{B}{kn}$ to each configuration, double each iteration (exact budget is slightly more complicated, see algorithm).
+--
+![:scale 70%](images/halving_algorithm.png)
+
+---
+# Successive Halving Example
+- configurations n=81
+- total budget B=20000
+```
+train 81 configurations with resources   41
+train 27 configurations with resources  123
+train  9 configurations with resources  370
+train  3 configurations with resources 1111
+train  1 configurations with resources 3333
+resources total: 16638
+```
+???
+Think about resources as in "maximum number of trees build in total" or "maximum number of data points used in total".
+---
+class: center
+# Successive Halving (different) Example
+![:scale 90%](images/halving_curves.png)
+---
+# Hyperband
+![:scale 90%](images/hyperband_curves.png)
+---
+# Hyperband
+![:scale 90%](images/hyperband_algorithm.png)
+---
+# BOHB / HpBandSter
+![:scale 90%](images/bohb_curves.png)
+---
+# In Practice
+"With the exception of the LeNet experiment (Section 3.3) and the 117 Datasets experi-
+ment (Section 4.2.1), the most aggressive bracket of SuccessiveHalving outperformed
+Hyperband in all of our experiments."
+.quote_author[Li et. al.]
+
+- Soon (?) in sklearn ([discussion](https://github.com/scikit-learn/scikit-learn/issues/12538))
+- [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) distributed implementation, some custom code required
+- [scikit-hyperband](https://github.com/thuijskens/scikit-hyperband) looks good, but doesn't do out-of-the-box subsampling
+- Successive halving really easy to implement yourself.
+---
+class: middle, center
+# Meta-learning
+## Learning from experience (other datasets)
+---
+# Ranking
+
+- Run many algorithms on large array of datasets
+- Rank by "best on average"
+
+---
+# Portfolios
+
+- [PoSH auto-sklearn](https://ml.informatik.uni-freiburg.de/papers/18-AUTOML-AutoChallenge.pdf)
+
+- Create diverse set so that a good one among top k
+- Submodular optimization problem
+- greedy approximation
+---
+# Discretization
+
+## Are continuous parameters actually important ?
+
+- Anectotal evidence that it's not.
+---
+# Meta-Features and Meta-Models
+.center[
+![:scale 90%](images/metalearning-diagram.png)
+]
+---
+# Active Testing and Recommendations
+.smaller[
+- [Probabilistic Matrix Factorization for AutoML (Fusi et al)](https://papers.nips.cc/paper/7595-probabilistic-matrix-factorization-for-automated-machine-learning.pdf)
+- https://github.com/rsheth80/pmf-automl/]
+![:scale 90%](images/fusi_latent.png)
+---
+# Multi-Task Bayesian Optimization
+- Create estimate over all datasets at the same time!
+- Not scalable with Gaussian Processes
+- Maybe scalable with Neural Networks?
+---
+# Ensemble Models
+![:scale 100%](images/meta-learning-ensemble.png)
+
+---
+# Auto-sklearn
+- end-to-end auto-ml
+- seaches a fixed sklearn pipeline (4 steps)
+- Warm-starting with meta-features & KNN
+- Bayesian Optimization with SMAC
+
+https://automl.github.io/auto-sklearn/stable/index.html
+---
+# Playing around with auto-sklearn
+```python
+import autosklearn.classification
+import sklearn.model_selection
+import sklearn.datasets
+from sklearn.metrics import accuracy_score
+X, y = sklearn.datasets.load_digits(return_X_y=True)
+X_train, X_test, y_train, y_test = \
+    sklearn.model_selection.train_test_split(X, y, random_state=1)
+automl = autosklearn.classification.AutoSklearnClassifier()
+automl.fit(X_train, y_train)
+y_hat = automl.predict(X_test)
+print("Accuracy score", accuracy_score(y_test, y_hat))
+```
+"This will run for one hour and should result in an accuracy above 0.98."
+
+---
+# Practical Recommendations
+- Multi-Fidelity! Simple, effective!
+- Portfolios
+- BOHB / HpBandSter
+- auto-sklearn
+- TPot?
+## Seems promising:
+- Transfering surrogates / ensembles
+- Collaborative filtering / active testing
+---
+# Criticisms
+- Do we need 100 classifiers?
+- Do we need Complex Pipelines?
+- Creates complex models and ensembles
+- "Making it too easy"?
+---
+class: middle
+
+Although we already reduced the space of considered ML algorithms substantially compared to our previous Auto-sklearn (4 vs. 15 classifiers), we could have reduced this set
+even further since, in the end, only XGBoost models ended up in the final ensembles for
+the challenge.
+
+.quote_author[Feurer et al, PoSH auto-sklearn]
+---
+class: center, middle
+
+# Questions ?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script>
+    // Config Remark
+    remark.macros['scale'] = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+    };
+    config_remark = {
+        highlightStyle: 'magula',
+        highlightSpans: true,
+        highlightLines: true,
+        ratio: "16:9"
+    };
+      var slideshow = remark.create(config_remark);
+    // Configure MathJax
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] /* removed 'code' entry*/
+    }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    </script>
+  </body>
+</html>

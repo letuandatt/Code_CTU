@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<title>10701 Introduction to Machine Learning</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6{font-family: "Roboto", sans-serif}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align">
+    <a href="index.html" class="w3-bar-item w3-button w3-small w3-hover-white w3-medium w3-large">Home</a>
+    <a href="description.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">About</a>
+    <a href="people.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">People</a>
+    <a href="lectures.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Lectures</a>
+    <a href="recitation.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Recitations</a>
+    <a href="homework.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Homework</a>
+    <a href="previous.html" class="w3-bar-item w3-button w3-small w3-medium w3-hover-white w3-large">Previous</a>
+
+  </div>
+</div>
+<div class="w3-main" >
+
+  <div class="w3-row">
+  <div class="w3-quarter w3-padding-64 w3-center">
+  <br><br><br>
+  <img src="ml-logo.gif" style="height: 40%;width:40%;">
+</div>
+    <div class="w3-half w3-padding-64">
+      <h1 class="w3-text">Introduction to Machine Learning (10-701)</h1>
+      <h4 class="w3-text">Fall 2017</h4>
+     <h3 style="color:blue;"><a href="http://www.cs.cmu.edu/~bapoczos/" target = "_blank" >Barnabás Póczos</a>, <a href="http://www.cs.cmu.edu/~zivbj/" target = "_blank" >Ziv Bar-Joseph</a></h3>
+      <h6 style="font-weight: bold;line-height: 15px;">School of Computer Science, Carnegie Mellon University</h6>
+      <br>
+
+
+
+      <h2 class="w3-text" style="font-weight: 20px;">Description</h2>
+      <p style="color:#404040;"> 
+        Machine learning studies the question of "How can we build computer programs that automatically improve their performance through experience?". This includes learning to perform many types of tasks based on many types of experience. For example, it includes robots learning to better navigate based on experience gained by roaming their environments, medical decision aids that learn to predict which therapies work best for which diseases based on data mining of historical health records, and speech recognition systems that learn to better understand your speech based on experience listening to you. 
+      </p>
+      <p style="color:#404040;"> 
+        This course is designed to give PhD students a thorough grounding in the methods, mathematics and algorithms needed to do research and applications in machine learning. Students entering the class with a pre-existing working knowledge of probability, statistics and algorithms will be at an advantage, but the class has been designed so that anyone with a strong computational background can catch up and fully participate.
+      </p>
+      
+
+
+      <h2 class="w3-text" style="font-weight: 20px;">Textbooks</h2>
+      <p>Note all textbooks are optional. You are not expected to purchase them.</p>
+      <ul style="color:#404040;">
+        <li><a style="color:blue;" href="http://www.cs.ubc.ca/~murphyk/MLbook/" target = "_blank"><i>Machine Learning: a Probabilistic Perspective</i></a>, Kevin Murphy [Optional]</li>
+        
+        <li><a style="color:blue;" href="http://research.microsoft.com/%7Ecmbishop/PRML/index.htm" target = "_blank"><span style="font-style: italic;">Pattern Recognition and Machine Learning</span></a>, Chris Bishop, <a href="http://www.springer.com/computer/image+processing/book/978-0-387-31073-2">ISBN</a> [Optional] </li>
+        
+        <li><a style="color:blue;" href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/mlbook.html" target = "_blank"><i>Machine Learning</i></a>, Tom Mitchell [Optional] </li>
+        <li><a style="color:blue;" href="http://www.inference.phy.cam.ac.uk/mackay/itila/" target = "_blank"><i>Information Theory, Inference, and Learning Algorithms</i></a>, David Mackay. [Optional] <b>Note:</b> This book is available online as a free PDF <a href="http://www.inference.phy.cam.ac.uk/itprnn/book.pdf" target = "_blank">here</a>.</li>
+        
+        <li>Additional readings will be made available as appropriate. </li>
+        </ul>
+
+        <h2 class="w3-text" style="font-weight: 20px;">Grading</h2>
+        <p style="color:#404040;"> 
+        The requirements of this course consists of participating in lectures, midterm, 5 problem sets and a final exam. The 5th problem set is a mini-project. This is a PhD level class, and the most important thing for us is that by the end of this class students understand the basic methodologies in machine learning, and be able to use them to solve real problems of modest complexity. The grading breakdown is the following:</p>
+
+        <ul style="color:#404040;">
+          <li>5 problem sets : 45 % </li>
+          <li>Final : 30 %</li>
+          <li>Midterm : 20 %</li>
+          <li>Class Participation : 5%</li>
+        </ul>
+
+
+
+        <h2 class="w3-text" style="font-weight: 20px;">Homework resources and collaboration policy</h2>
+        <p style="color:#404040;"> 
+        Homeworks and exams may contain material that has been covered by papers and webpages. Since this is a graduate class, we expect students to want to learn and not google for answers. You should cite the materials you used.</p>
+
+        <p style="color:#404040;">
+        Homeworks will be done individually: each student must hand in their own answers. It <em>is</em> acceptable, however, for students to collaborate in figuring out answers and helping each other solve the problems. We will be assuming that, as participants in a graduate course, you will be taking the responsibility to make sure you personally understand the solution to any work arising from such collaboration. You also must indicate <b><em>on each homework</em></b> with whom you collaborated.</p>
+
+
+         <h2 class="w3-text" style="font-weight: 20px;">Late homework policy</h2>
+
+        <p style="color:#404040;">
+        You will be allowed <b>2 total late days</b> without penalty for the entire semester.  You may be late by 1 day on two different homeworks or late
+        by 2 days on one homework.  Weekends and holidays are also counted as late days.  Late submissions are automatically considered as using late days.
+        </p>
+
+        <p style="color:#404040;">
+        Once those days are used, you will be penalized according to the following policy:</p>
+
+        <ul style="color:#404040;">
+          <li>Homework is worth full credit before the deadline.</li>
+          <li>It is worth half credit for the next 24 hours.</li>
+          <li>It is worth zero credit after that.</li>
+        </ul>
+
+         <p style="color:#404040;">
+         You must turn in at least n - 1 of the n homeworks, even if for zero credit, in order to pass the course. </p>
+
+
+
+         <h2 class="w3-text" style="font-weight: 20px;">Auditing</h2>
+
+         <p style="color:#404040;">
+         We will <b>not</b> be allowing this class to be audited.</p>
+
+
+
+        <h2 class="w3-text" style="font-weight: 20px;">Support</h2>
+
+         <p style="color:#404040;">
+         Take care of yourself.  Do your best to maintain a healthy lifestyle this semester by eating well, exercising, avoiding drugs and alcohol, getting enough sleep and taking some time to relax. This will help you achieve your goals and cope with stress.</p>
+
+         <p style="color:#404040;">
+         All of us benefit from support during times of struggle. You are not alone. There are many helpful resources available on campus and an important part of the college experience is learning how to ask for help. Asking for support sooner rather than later is often helpful.</p>
+
+        <p style="color:#404040;">If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, we strongly encourage you to seek support. Counseling and Psychological Services (CaPS) is here to help: call 412-268-2922 and visit their website at http://www.cmu.edu/counseling/. Consider reaching out to a friend, faculty or family member you trust for help getting connected to the support that can help.</p>
+
+         <p style="color:#404040;">If you or someone you know is feeling suicidal or in danger of self-harm, call someone immediately, day or night:
+        * CaPS: 412-268-2922
+        * Resolve Crisis Network: 888-796-8226
+        * If the situation is life threatening, call the police:
+          * On campus: CMU Police: 412-268-2323
+          * Off campus: 911.</p>
+
+         <p style="color:#404040;">
+         If you have questions about this or your coursework, please let the instructors know.</p>
+
+
+
+        <h2 class="w3-text" style="font-weight: 20px;">Note to people outside Carnegie Mellon University</h2>
+        <p style="color:#404040;">
+        Please feel free to reuse any of these course
+        materials that you find of use in your own courses.  We ask that
+        you retain any copyright notices, and include written notice indicating
+        the source of any materials you use.</p>
+
+    </div>
+  </div>
+  <br><br>
+</body>
+
+</html>

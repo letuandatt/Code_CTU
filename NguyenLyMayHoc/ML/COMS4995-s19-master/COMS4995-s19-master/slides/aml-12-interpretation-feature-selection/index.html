@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feature Selection and Model Interpretation</title>
+    <meta charset="utf-8">
+        <style>
+       @import url(https://fonts.googleapis.com/css?family=Garamond);
+       @import url(https://fonts.googleapis.com/css?family=Muli:400,700,400italic);
+       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+     </style>
+     <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+### W4995 Applied Machine Learning
+
+# Model Interpretation and Feature Selection
+
+03/06/18
+
+Andreas C. Müller
+
+???
+Alright, everybody. Today we will talk about
+Feature selection and model interpretation, look at how to do this in general,
+and how to doit with scikit-learn. We're also going to look into a couple
+of other Python libraries that help doing these two things.
+
+
+
+FIXME random forest code is confusing because I tried to
+simplify it. Also: we haven't seen those yet?!
+
+FIXME mutual information needs better explanation
+FIXME lasso show random between correlated, same for tree, compare to RF
+FIXME IceBOX example with cross?
+FIXME should be two lectures really!
+FIXME correlation matrix for toy data color bar
+FIXME maybe drop shap and shaply
+FIXME better explanation for ice-box and partial dependence
+FIXME partial dependence definitely needs a process diagram
+
+
+---
+class: spacious
+
+# Model Interpretation (post-hoc)?
+
+- ## Not inference!
+- ## Not causality!
+- ## still useful(?)
+
+???
+Possibly useful for feature selection, feature engineering, model debugging, explaining predictions.
+Alternatively: use model that are easy to interpret!
+OR: derive a simpler explainable model from a non-explainable one (model compression)
+
+Caveat: if your model is bad, interpreting it makes no sense!
+
+---
+# Types of explanations
+
+## Explain "kind of model"
+- How would the model change if this feature was dropped?
+- Doesn't explain this particular fitted model
+
+##Explain model globally
+- How does the output depend on the input?
+- Often: some form of marginals
+
+
+## Explain model locally
+- Why did it classify this point this way?
+- Explanation could look like a "global" one but be different for each point.
+- "What is the minimum change to classify it differently?"
+
+???
+Marginals: how does the prediction change as function of a particular Features?
+---
+# "Features important to the model"?
+
+Naive:
+- `coef_` for linear models (abs value or norm for multi-class)
+- `feature_importances_` for tree-based models 
+
+Use with care!
+---
+# Drop Feature Importance
+
+```python
+def drop_feature_importance(est, X, y):
+    base_score = np.mean(cross_val_score(est, X, y, cv=5))
+    scores = []
+    for feature in range(X.shape[1]):
+        mask = np.ones(X.shape[1], 'bool')
+        mask[feature] = False
+        X_new = X[:, mask]
+        this_score = np.mean(cross_val_score(est, X_new, y, cv=5))
+        scores.append(base_score - this_score)
+    return np.array(scores)
+```
+- Can't deal with correlated features well
+- Very slow
+???
+on it's own not very useful, we'll see it later
+rebuilds many models, not explaining this particular model!
+---
+# Permutation importance
+Idea: measure marginal influence of one feature
+
+```python
+def permutation_importance(est, X, y, n_bootstrap=100):
+  baseline_score = estimator.score(X, y)
+  for f_idx in range(X.shape[1]):
+      for b_idx in range(n_bootstrap):
+          X_new = X.copy()
+          X_new[:, f_idx] = np.random.shuffle(X[:, f_idx])
+          feature_score = estimator.score(X_new, y)
+          scores[f_idx, b_idx] = baseline_score - feature_score
+```
+
+--
+
+- Applied on validation set given trained estimator.
+- Also kinda slow.
+- Implementation: ELI5,<br> https://github.com/scikit-learn/scikit-learn/pull/13146
+- For RF: https://github.com/parrt/random-forest-importances (uses oob)
+---
+# LIME
+.smaller[
+- Build sparse linear local model around each data point.
+- Explain prediction for each point locally.
+- Paper: "Why Should I Trust You?" Explaining the Predictions of Any Classifier
+- Implementation: ELI5, https://github.com/marcotcr/lime
+]
+
+.center[
+![:scale 60%](images/lime_paper.png)
+]
+
+---
+# SHAP
+- Build around idea of Shaply values
+- very roughly: does drop-out importance for every subset of features
+- intractable, sampling approximations exit
+- fast variants for linear and tree-based models
+- awesome vis and tools: https://github.com/slundberg/shap
+- allows local / per sample explanations
+---
+class: middle
+
+# Case Study
+---
+# Side-note: CV Estimators
+
+- Exist for most linear models, i.e. RidgeCV, LogisticRegressionCV
+- perform efficient cross validation by exploiting algorithm properties (often warm-starting)
+- have build-in parameter grids
+- are a bit weird with pipelines
+???
+FIXME add small code example
+---
+# Toy data
+```python
+X.shape
+```
+```
+(100000, 8)
+```
+.wide-left-column[
+![:scale 100%](images/toy_data_scatter.png)
+
+]
+.narrow-right-column[
+![:scale 100%](images/covariance.png)
+
+]
+---
+class: compact
+# Models on lots of data
+.smallest[
+```python
+lasso = LassoCV().fit(X_train, y_train)
+lasso.score(X_test, y_test)
+```
+0.545
+```python
+ridge = RidgeCV().fit(X_train, y_train)
+ridge.score(X_test, y_test)
+```
+0.545
+
+```python
+lr = LinearRegression().fit(X_train, y_train)
+lr.score(X_test, y_test)
+```
+0.545
+```python
+param_grid = {'max_leaf_nodes': range(5, 40, 5)}
+grid = GridSearchCV(DecisionTreeRegressor(), param_grid, cv=10, n_jobs=3)
+grid.fit(X_train, y_train)
+grid.score(X_test, y_test)
+```
+0.545
+```python
+rf = RandomForestRegressor(n_estimators=100, min_samples_leaf=5).fit(X_train, y_train)
+rf.score(X_test, y_test)
+```
+0.542
+]
+---
+# Coefficients and default feature importance
+![:scale 100%](images/standard_importances.png)
+???
+- tree and RF have no directionality in importances
+- lasso (and to some degree tree) selected randomly among correlated
+- RF assigns high importance to random features
+---
+# Permutation Importances
+.center[
+![:scale 50%](images/standard_importances.png)
+![:scale 50%](images/permutation_importance_big.png)
+]
+---
+# SHAP values
+.center[
+![:scale 50%](images/standard_importances.png)
+![:scale 50%](images/shap_big.png)
+]
+---
+class: middle
+# More model inspection
+
+---
+
+# Partial Dependence Plots
+- Marginal dependence of prediction on one or two features
+
+.smaller[
+```python
+from sklearn.ensemble.partial_dependence import plot_partial_dependence
+boston = load_boston()
+X_train, X_test, y_train, y_test = train_test_split(
+    boston.data, boston.target,random_state=0)
+
+gbrt = GradientBoostingRegressor().fit(X_train, y_train)
+
+fig, axs = plot_partial_dependence(
+    gbrt, X_train, np.argsort(gbrt.feature_importances_)[-6:],
+    feature_names=boston.feature_names, n_jobs=3,
+    grid_resolution=50)
+```
+]
+
+???
+But there's also something else that's quite interesting,
+which is called Partial Dependence Plots that's actually
+possible for all trees. Unfortunately, in scikit-learn, it’s
+available only for the gradient boosting. So the idea here
+is to not only see what parameters are important but how
+will they influence the target. And so after you fit your
+model, I'm using the Boston data set to the gradient
+boosting regressor, there's a thing called plot partial
+dependence, which gets the model and the training data set
+and then the features for which I want to make the partial
+dependence plots.
+
+So here, I'm looking at the six most important features. The
+feature importance is important according to the trees. So I
+sort this and take the six most important ones. 
+
+---
+# Partial Dependence Plots
+
+.center[
+![:scale 70%](images/feat_impo_part_dep.png)
+]
+
+???
+And so this is what the partner dependence plots look like.
+So this is the most important feature, the second most
+important feature and so on. This is sort of the marginal
+contribution of each feature. Basically, in each tree,
+you're summing out the contribution of all the other
+features, and you look only at what is the contribution of
+this particular feature. In general, this would be hard to
+compute. For tree-based models you can compute is a very
+efficient way because you can basically just sum up over the
+whole space by traversing the tree. 
+
+Here with increased room size, the price increases and you
+can see how it increases and you can see that there's like a
+big step function here. And you can see that for increased
+LSTAT, the price decreases. For the others, there aren’t any
+drastic effect. There seems to be some threshold for NOX.
+And something funky going on DIS. 
+
+The question is, so I said for random forest, you can't find
+out the direction of which way the feature influences. But
+that was for the feature importance. So the feature
+importance tells the impurity decrease. So here I also look
+at the feature importance and they're just numbers so they
+don't give you the direction. For both gradient boosting and
+random forest, you can look at partial dependency plot, and
+they will give you a non-parametric model of how a single
+feature influences it. Unfortunately, it’s not available in
+scikit-learn. You could do the same thing for random
+forests. Because in the end, the way they predict is quite
+similar.
+---
+# Partial Dependence
+- Idea: Get marginal predictions given feature.
+- How? "integrate out" other features using validation data
+- Fast methods available for trees!
+- Nonsensical for linear models.
+- sklearn master: only gradient boosting
+- Next sklearn: fast for gradient boosting, slow for everything else
+- future: fast for all tree-based models
+
+---
+# Bivariate Partial Dependence Plots
+.smaller[
+```python
+plot_partial_dependence(
+    gbrt, X_train, [np.argsort(gbrt.feature_importances_)[-2:]],
+    feature_names=boston.feature_names, n_jobs=3, grid_resolution=50)
+```
+]
+.center[
+![:scale 80%](images/feature_importance.png)
+]
+
+???
+You can also do this in bivariate. So here, looking at the
+two most important features in a bivariate plot, I'm
+actually not giving it a list of features, but I'm giving it
+a list of list of features. And so the two most important
+features, LSTAT, and ROOM. 
+
+You can see there’s no very complex interaction. As you can
+see, the effect of these two features taking into account
+all the other features. 
+
+This is something you can usually do for linear model
+easily. If you do this for the linear model, you would have
+lines everywhere but for more complicated models this is
+very hard to do. Way more tricky to do in neural networks.
+
+---
+# Partial Dependence for Classification
+.tiny-code[
+```python
+from sklearn.ensemble.partial_dependence import plot_partial_dependence
+for i in range(3):
+    fig, axs = plot_partial_dependence(gbrt, X_train, range(4), n_cols=4,
+                                       feature_names=iris.feature_names, grid_resolution=50, label=i)
+```
+]
+.center[
+![:scale 50%](images/feat_impo_part_dep_class.png)
+]
+???
+We can do the same for classification. Here is a partial
+dependency plot for the iris dataset. 
+
+As I said, for classification we’re usually using One Versus
+Rest. So here, we have three classifiers.
+
+One classifier for sertosa, one for Versicolor and one for
+virginica.
+
+You can see that for the first two features they're like
+flat. But for sertosa the decision function is high for
+small part petal length, medium peddling for versicolor and
+large for virginca. These are all put through logistic
+function and then normalized. 
+---
+
+# Ice Box
+.smaller[
+- like partial dependence plots, without the `.mean(axis=0)`
+- looks cool. maybe useful.
+- https://pdpbox.readthedocs.io/en/latest/
+]
+.center[
+![:scale 60%](images/ice_lstat.png)
+]
+
+---
+# Ice Box
+.smaller[
+- Another one: PyCEBOX
+- https://github.com/AustinRochford/PyCEbox
+]
+.center[
+![:scale 80%](images/boston_ice.png)
+]
+
+---
+
+
+class: center, middle
+
+# Feature Selection
+
+???
+Alright, so let's talk about automatic feature selection. I
+want to talk about what methods are there to determine what
+features are important for your dataset, what features are
+important for a particular model. 
+---
+
+class: spacious
+
+# Why Select Features?
+
+- Avoid overfitting (?)
+- Faster prediction and training
+- Less storage for model and dataset
+- More interpretable model
+
+???
+There's a couple of reasons why you might want to feature
+selection. One is to avoid overfitting and get a better
+model. In practice, I have rarely seen that happen. It's not
+usually what I would try to do to increase performance. If
+I’m only interested in performance I probably would not try
+to do automatic feature selection unless I think only a very
+small subset of my feature is actually important. There's a
+lot of increasing performance just by selecting only
+important features. 
+
+What I think is more commonly, the reason to do automatic
+feature selection is you want to shrink your model to make
+faster predictions, to train your model faster, to store
+fewer data and possibly to collect fewer data. If you're
+collecting the data or to feature from some online process,
+maybe it means you need fewer features, you need to store
+less information. I think actually the top reason to do
+feature selection is to have a more interpretable model. If
+your model is smaller, if your model has 5 features instead
+of 500, it's probably much easier for you to grasp what the
+model does. If you can have a model that is as good with way
+fewer features, it will be much easier to explain and most
+people will be happy with it. 
+
+---
+
+class: spacious
+
+# Types of Feature Selection
+
+- Unsupervised vs Supervised
+- Univariate vs Multivariate
+- Model based or not
+
+???
+There's a couple of different types of feature selection
+that I want to talk about. You can have supervised and
+unsupervised feature selection. Depending on whether you
+consider the target or not. You can have Univariate versus
+Multivariate feature selection. Whereas Univariate looks at
+each feature at a time and determines if it’s important.
+Multivariate looks at interactions as well. And you can have
+a feature selection based on a particular machine learning
+model or not. 
+---
+class: spacious
+
+# Unsupervised Feature Selection
+
+- May discard important information
+- Variance-based: 0 variance or mostly constant
+- Covariance-based: remove correlated features
+- PCA: remove linear subspaces
+
+???
+So the simpler thing that you might try is to do
+unsupervised feature selection which means just discard some
+features based on the statistics. For example, you could
+remove features that are mostly constant or that have zero
+variance. Like if they're always constant, then definitely
+they're not going to help you and you can remove them. If
+they have very small variance, on the other hand, that might
+only mean the scale of the features is small and you should
+just re-scale the feature. So just because it has a small
+variance, it doesn't really mean anything. People often
+discard covariance features. But maybe just the difference
+between these two correlated features was the thing that's
+important for prediction. If you use any unsupervised
+method, then you don't know what are the things that are
+actually important are. Similarly, with PCA, it’s not really
+feature selection, because it doesn't select subsets of the
+original feature. PCA will always use all original features.
+But it will remove linear subspaces of the feature space.
+And again, a lot of people like this to reduce the
+dimensionality and you will get the same things like a
+smaller model, maybe not more interpretable. It might be
+that the information you discarded is just the information
+that's important. In a covariance sense, just because the
+data doesn't extend a lot in a particular direction doesn't
+mean that this direction isn't the most important one for
+your prediction problem.
+
+
+---
+
+# Covariance
+
+.smaller[
+```python
+from sklearn.preprocessing import scale
+
+boston = load_boston()
+X, y = boston.data, boston.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+X_train_scaled = scale(X_train)
+
+cov = np.cov(X_train_scaled, rowvar=False)
+```
+]
+.center[
+![:scale 32%](images/img_17.png)
+]
+
+???
+Here's what the covariance matrix looks like for the Boston
+housing data set. The way you could do covariance based
+feature selection is you look at the features that have the
+highest covariance and just drop one of them or you could
+sum over all the features and look at which features most
+correlated with the other ones and drop that.
+---
+
+```python
+from scipy.cluster import hierarchy
+order = np.array(hierarchy.dendrogram(
+    hierarchy.ward(cov),no_plot=True)['ivl'], dtype="int")
+```
+
+.center[
+![:scale 90%](images/img_19.png)
+]
+
+???
+
+So if you look at covariance, it should probably try to sort
+your features using some clustering. Here I'm using
+hierarchical clustering from scipy. On the right, it’s the
+covariance matrix and on the left, it's also the covariance
+matrix where I reordered the columns and rows. You can see
+that there are three correlated blocks. You could do this
+automatically, or you could look at it and see what you
+think how many features are there, and how many of them are
+correlated. I really urge you, whenever you look at
+correlation, never look at correlation without resorting the
+columns. On the right-hand side here, maybe I can see that
+these two are correlated, but I can't see anything else.
+Whereas on the left hand I can see much more clearly what
+the structure of the data is. What it did just was, it did
+clustering on the rows and columns to resort them. 
+
+
+---
+
+
+class: center, middle
+
+# Supervised Feature Selection
+
+???
+
+---
+
+# Univariate Statistics
+
+.smaller[
+- Pick statistic, check p-values !
+- f_regression, f_classsif, chi2 in scikit-learn
+```python
+from sklearn.feature_selection import f_regression
+f_values, p_values = f_regression(X, y)
+```
+]
+.center[
+![:scale 60%](images/img_20.png)
+]
+
+???
+So the simplest way is univariate features selection without
+models. The most classical one is to use statistical test
+and see the ones that are significantly related to the
+target. Depending on whether you look through classification
+or regression, you can add a t-test, f-test or chi-squared
+test and you can say which are the features that are
+significantly related with a target and I'm just going to
+select these. 
+
+So this is again here for the Boston housing dataset, using
+F regression and F test. You can see here F values and the P
+values and you could use either of them to select a subset
+of the features. So for example, the number of rooms and
+LSTAT had very high F values, very small P values. These are
+certainly the most important features. While this one here
+doesn't seem very important. One reason why this is not very
+important is because this is the binary variable and so this
+assumes linear regression model and the linear regression
+model is not very good at exploiting the binary variable.
+
+This is a super quick test to do. It's very fast, it's
+probably something you want to look at. But it assumes a
+linear model, which you might not want to assume. 
+
+---
+
+.smaller[
+```python
+from sklearn.feature_selection import SelectKBest, SelectPercentile, SelectFpr
+from sklearn.linear_model import RidgeCV
+
+select = SelectKBest(k=2, score_func=f_regression)
+select.fit(X_train, y_train)
+print(X_train.shape)
+print(select.transform(X_train).shape)
+```
+```
+(379, 13)
+(379, 2)
+```
+]
+--
+.smaller[
+```python
+all_features = make_pipeline(StandardScaler(), RidgeCV())
+np.mean(cross_val_score(all_features, X_train, y_train, cv=10))
+```
+0.718
+]
+--
+.smaller[
+```python
+select_2 = make_pipeline(StandardScaler(),
+                         SelectKBest(k=2, score_func=f_regression), RidgeCV())
+np.mean(cross_val_score(select_2, X_train, y_train, cv=10))
+```
+0.624
+]
+
+???
+If you want to use these univariate statistics in
+scikit-learn there’s a couple of tools to select features
+based on this. In feature selection, there's a whole bunch
+of them. There select k best which selects the K best
+feature, you can specify the number of features you want.
+Select percentile, which selects a percentile that you want
+and then there's select FPR, it controls for the false
+positive rate, it basically does the multiple hypothesis
+testing adjustments to make sure that you false discovery
+rate of thinking the features are significantly important is
+low. These are scikit-learn transformers, you can
+instantiate them. By default, the parameter they all use a
+score function for classification. So if you want to do
+regression, you need to set the score function to F
+regression because you need different tests for regression
+classification. I said linear regression is not for binary
+features, maybe I shouldn't have formulated in that way.
+Linear regression doesn't allow you to do interactions,
+which is if you have multiple binary features would be the
+only issue. It's more sort of that this linear test will not
+put a lot of emphasis on a binary feature because the way
+the test works. I can obviously also put this in a pipeline.
+Here, I’ve used a centered scale for ridge in a pipeline for
+a Boston housing data set and here, I’ve used two best
+features. You can see it actually got much worse because two
+features are not enough to select or to express all the
+information.
+
+---
+
+# Mututal Information
+
+```python
+from sklearn.feature_selection import mutual_info_regression
+scores = mutual_info_regression(X_train, y_train,
+                                discrete_features=[3])
+```
+.center[
+![:scale 90%](images/img_22.png)
+]
+
+???
+
+Another univariate statistics that you can use which is a
+little bit more complicated, which is called Mutual
+Information. There's a version for regression classification
+in scikit-learn. This doesn't use a linear model. It uses a
+non-parametric model using nearest neighbors. So basically,
+this also works if the interaction is nonlinear and it works
+on discrete and continuous features, but you have to tell us
+which features are discrete. So here, in this case, I tell
+it the feature number three is discrete and then this gives
+me some scores telling me what's the mutual information
+between this feature in the target. Here I'm comparing the F
+values off the standard regression tests with the mutual
+information and they are sort of similar, but not entirely.
+If you think there are nonlinear interactions, and you have
+a model that can capture nonlinear interactions, then doing
+feature selection like taking these nonlinear features into
+account is good. This is much more computationally intensive
+than doing the F statistics. But this is still Univariate,
+looking at one feature at a time. 
+
+
+---
+class: spacious
+
+#Model-Based Feature Selection
+
+- Get best fit for a particular model
+- Ideally: exhaustive search over all possible
+combinations
+- Exhaustive is infeasible (and has multiple testing
+issues)
+- Use heuristics in practice.
+
+???
+So now let's look at multiple features at a time. Most of
+the things that look at multiple features at a time are
+model-based. Usually, model-based feature selection finds
+the subset of features on which this model performs best. So
+giving them a particular model like a linear model, or
+random forest, I want to find a subset of features for which
+this model performs best in terms of cross-validation
+performance. Ideally, to do that, I would do an exhaustive
+search over all possible subsets of the features. But that's
+like exponentially many. Also, if I do so many models fits I
+might overfit. So instead, there are several heuristics you
+can use to basically shrink or grow the sets of features
+that you're using. 
+
+So first you fix the model. For models that give you some
+measure of feature importance, there's a very simple
+technique which just looks at how important the models
+feature is.
+
+---
+
+
+# Model based (single fit)
+.smaller[
+- Build a model, select "features important to model"
+- Lasso, other linear models, tree-based Models
+- Multivariate - linear models assume linear relation
+]
+.smaller[
+```python
+from sklearn.linear_model import LassoCV
+X_train_scaled = scale(X_train)
+lasso = LassoCV().fit(X_train_scaled, y_train)
+print(lasso.coef_)
+```
+[-0.881  0.951 -0.082  0.59  -1.69   2.639 -0.146 -2.796  1.695 -1.614
+ -2.133  0.729 -3.615]
+]
+
+.center[
+![:scale 55%](images/img_23.png)
+]
+
+???
+Using, say, a linear model, you fit the single model, and
+you discard all the features that the model doesn't think
+are important. So this works for linear models really well
+and for tree-based models. This allows you to take linear
+interactions into account and with trees it allows you to
+take arbitrary interactions into account. So for example, I
+can use lasso, I can fit the lasso on my model, and I can
+look at the coefficients and the things that have small
+coefficients are less important in some sense, and so I
+could discard some of them. Here again, I plot the F values
+versus the coefficients of lasso. For example, here you can
+see for this variable, Lasso thinks its way less important
+than Univariate selection. Maybe because it was explained
+already by a combination of the other features. So if you
+have very co-related features Univariate selection will give
+all of them the same importance whereas lasso will usually
+pick only one of them. If you have many co-related features
+lasso picks only one of them at random. So it doesn't mean
+that other features are not important. Question is what does
+this purple don't represent? It represents that both the
+points are overlapping entirely. 
+	
+Here I use lassoCV which means it adjusted the
+regularization parameter in Lasso to make the optimum
+predictions. 
+
+---
+
+# Changing Lasso alpha
+
+.smaller[
+```python
+from sklearn.linear_model import Lasso
+X_train_scaled = scale(X_train)
+lasso = Lasso().fit(X_train_scaled, y_train)
+print(lasso.coef_)
+```
+[-0.     0.    -0.     0.    -0.     2.529 -0.    -0.    -0.    -0.228
+ -1.701  0.132 -3.606]
+]
+
+.center[
+![:scale 80%](images/img_24.png)
+]
+
+???
+If I look at the different alpha, it might be quite
+different. For example here with a default alpha of one, a
+lot of the coefficients are exactly zero and you can see it
+would only select five. How to select the alpha in lasso is
+important for the feature selection and so you might want to
+grid search. Now, let’s say we want to use this and so we
+want a scikit-learn estimator that does this. So we can put
+it in a pipeline. 
+
+---
+class: smaller
+# SelectFromModel
+
+```python
+from sklearn.feature_selection import SelectFromModel
+select_lassocv = SelectFromModel(LassoCV(), threshold=1e-5)
+select_lassocv.fit(X_train, y_train)
+print(select_lassocv.transform(X_train).shape)
+```
+```
+(379,11)
+```
+--
+```python
+pipe_lassocv = make_pipeline(StandardScaler(), select_lassocv, RidgeCV())
+np.mean(cross_val_score(pipe_lassocv, X_train, y_train, cv=10))
+np.mean(cross_val_score(all_features, X_train, y_train, cv=10))
+```
+```
+0.717
+0.718
+```
+--
+```python
+# could grid-search alpha in lasso
+select_lasso = SelectFromModel(Lasso())
+pipe_lasso = make_pipeline(StandardScaler(), select_lasso, RidgeCV())
+np.mean(cross_val_score(pipe_lasso, X_train, y_train, cv=10))
+```
+```
+0.671
+```
+
+???
+SelectFrom model will work with any model with coef_ or feature_importances_.
+So that’s any linear model or tree based model. It uses this to
+select the features. So this will fit lasso and then if you
+call transform, it will discard all the features that lasso
+thought are not important. And you can change the threshold
+here, for example, so in this case, here I want to discard
+everything that lasso put to zero so I put a very small
+threshold in there. I could also set the threshold to be the
+median which selects 50% of the features. Here we are
+possibly discarding multiple features at once.
+SelectFromModel fits a single model, gets the feature
+importance was from this model and then drops according to
+the feature importance. And so here is how it looks in the
+pipeline, for example, you can see here that lasso with
+these parameters, drop two of the features and 11 after 13
+remains. If I put it in a pipeline the performance is about
+the same. 
+
+---
+class: spacious
+
+# Iterative Model-Based Selection
+
+- Fit model, find least important feature, remove, iterate.
+- Or: Start with single feature, find most important feature, add, iterate.
+
+???
+But maybe dropping multiple features at once is not a good
+idea because the importance of the features might change
+once we dropped some of them. What we can do is, we can
+iteratively build models. And we could either start with a
+single feature then add more important ones or we could
+start with all features and discard some. 
+
+We'll talk about these two strategies which are slightly
+different. 
+---
+
+class: spacious
+
+# Recursive Feature Elimination
+
+- Uses feature importances / coefficients, similar to “SelectFromModel”
+- Iteratively removes features (one by one or in groups)
+- Runtime: (n_features - n_feature_to_keep) / stepsize
+
+???
+So the next step from what we just saw would be recursive
+feature elimination. So if we use SelectFromModel it will
+drop all the unimportant features at once, in a recursive
+feature elimination usually drops one feature at a time or
+as a parameter step size it drops step size features at a
+time. So you fit the model, you discard the least important
+feature, you fit the model, you discard the important
+feature and so on until you have as many features left as
+you want again. Again, this needs the model to meet some
+measure of feature importance so you can use this with the
+linear model or tree-based model. An example where you
+cannot use this is, at least not in scikit-learn is Kernel
+SVM or neural networks, because they don't really give you a
+measure of feature importance easily. For each step feature
+that we remove, we need to train a new model. So this is
+much more expensive because we need to retrain the model
+many times, but we're sort of being more careful in how we
+remove the features. 
+
+---
+
+.smaller[
+```python
+from sklearn.linear_model import LinearRegression
+from sklearn.feature_selection import RFE
+
+# create ranking among all features by selecting only one
+rfe = RFE(LinearRegression(), n_features_to_select=1)
+rfe.fit(X_train_scaled, y_train)
+rfe.ranking_
+```
+array([ 9,  8, 13, 11,  5,  2, 12,  4,  7,  6,  3, 10,  1])
+]
+
+
+.center[
+![:scale 95%](images/img_27.png)
+]
+
+
+???
+This is implemented in RFE, for recursive feature
+elimination, it works similar to SelectFromModel. To do RFE,
+then the model that you want to use and then you can specify
+how many features you want to select. Here I'm comparing the
+ranking according to RFE. So when it dropped out the
+features to the linear regression coefficients, which is
+basically what I would use if I drop them off all at once,
+and you can see that they're sort of similar. So there's
+probably not a whole lot of difference, at least in this
+case. You need to specify how many features you want to
+select. But if you want to select only one feature, you have
+to build many models and drop all the other features and so
+on the way you tried out the model for keeping five features
+and so on. So if you want a grid search this, doing this
+independently would be a whole waste of time because they
+would do the same thing over and over again. 
+
+---
+
+# RFECV
+.smaller[
+```python
+from sklearn.linear_model import LinearRegression
+from sklearn.feature_selection import RFECV
+rfe = RFECV(LinearRegression(), cv=10)
+rfe.fit(X_train_scaled, y_train)
+print(rfe.support_)
+print(boston.feature_names[rfe.support_])
+```
+```                   
+[ True  True False  True  True  True False  True  True  True  True  True
+  True]
+['CRIM' 'ZN' 'CHAS' 'NOX' 'RM' 'DIS' 'RAD' 'TAX' 'PTRATIO' 'B' 'LSTAT']
+```
+```python
+pipe_rfe_ridgecv = make_pipeline(StandardScaler(),
+                                 RFECV(LinearRegression(), cv=10), RidgeCV())
+np.mean(cross_val_score(pipe_rfe_ridgecv, X_train, y_train, cv=10))
+```
+```
+0.710
+```
+]
+???
+So there's a thing called RFECV that allows you to do
+efficient grid search for the number of features to keep.
+This basically has built-in cross-validation, provides the
+number of features to keep.
+
+I’ve done RFECVC with linear regression and set it to do 10
+fold cross-validation and then it will do the recursive
+feature elimination inside cross-validation and so it goes
+down from all features to just having one feature and with
+cross-validation, it will select the best number. 
+
+---
+.smaller[
+```python
+pipe_rfe_ridgecv = make_pipeline(StandardScaler(),
+                                 RFECV(LinearRegression(), cv=10), RidgeCV())
+np.mean(cross_val_score(pipe_rfe_ridgecv, X_train, y_train, cv=10))
+```
+```
+0.710
+```
+```python
+from sklearn.preprocessing import PolynomialFeatures
+pipe_rfe_ridgecv = make_pipeline(StandardScaler(), PolynomialFeatures(),
+                                 RFECV(LinearRegression(), cv=10), RidgeCV())
+np.mean(cross_val_score(pipe_rfe_ridgecv, X_train, y_train, cv=10))
+```
+```
+0.820
+```
+]
+???
+If we want to predict with the same model as used for
+selection, RFECV can be used as the prediction step. Could
+also use RFECV as transformer and use any other model!
+---
+class: spacious
+
+# Wrapper Methods
+
+- Can be applied for ANY model!
+- Shrink / grow feature set by greedy search
+- Called Forward or Backward selection
+- Run CV / train-val split per feature
+- Complexity: n_features * (n_features + 1) / 2
+- Implemented in mlxtend
+
+???
+
+So as I set recourse to each elimination. So this is more
+careful and it requires the model that gives you feature
+importance. There's sort of more general reprimand sets that
+are, in a sense, even more careful, but also more expensive,
+but it can be applied to any model. These are sequential
+feature selection. The idea is to either start with zero
+features, and add the most important feature, or start with
+all features and remove the least important feature at a
+time. And you do this by not using a feature importance by
+the model. But actually each step you basically do like one
+step looking at search. So let's say I started with all the
+features, I leave out the first feature, build the model and
+but I don't only build a model, I do cross-validation of the
+model on the subset so I get some accuracy or R squared
+value. And I do this for every single feature. So I leave
+each feature out and look at the cross-validate accuracy.
+And I dropped the one that gives me the highest
+cost-validated accuracy. 
+	
+So now basically, this is even more expensive than doing the
+recursive feature elimination because I do a one step, look
+ahead. So now the runtime is quadratic in the number of
+features. Also for each iteration, I not only need to train
+a single model, I need to do cross-validation. 
+
+This is like a pretty standard method, because it's like
+very general, and you can apply it to any model. It's like a
+brute force search. Right now it's not in scikit-learn, but
+it's in a package called mlxtend which has a couple other
+tools. 
+
+Mlxtend is luckily fully scikit-learn compatible, so you can
+put it in a pipeline and everything's fine. 
+
+---
+
+# SequentialFeatureSelector
+
+.smaller[
+```python
+from mlxtend.feature_selection import SequentialFeatureSelector
+sfs = SequentialFeatureSelector(LinearRegression(), forward=False, k_features=7)
+sfs.fit(X_train_scaled, y_train)
+```
+```
+Features: 7/7
+```
+```python
+print(sfs.k_feature_idx_)
+print(boston.feature_names[np.array(sfs.k_feature_idx_)])
+```
+```
+(1, 4, 5, 7, 9, 10, 12)
+['ZN' 'NOX' 'RM' 'DIS' 'TAX' 'PTRATIO' 'LSTAT']
+```
+```python
+sfs.k_score_
+```
+```
+0.725
+```
+
+]
+
+???
+So from mlxtend, you get feature selection, sequential
+feature selector, you put into the model, you tell it
+whether you want to do forward or backward. Forward equal to
+false means I started with all and I prune features one by
+one. Forward equal to true means I start with zero features
+and I use the one that gives me highest accuracy and then I
+add one by one. As I said with sequential feature selector,
+you need to specify the number of features and it does
+internally cross-validation and it optimizes accuracy for
+classification models and r square for regression models and
+does this stepwise selection. One thing I should have
+mentioned if you do feature selection this way,
+theoretically, you can have a model for feature selection
+that's different from the model for prediction. In here, if
+you look at the top for the recursive feature elimination, I
+use linear regression. But actually, the model I fit in the
+end was a ridge model. So I could also use, let's say, a
+tree-based model for feature selection and then the linear
+model for prediction if I wanted to. It's not entirely clear
+if that helps or makes sense, but it's sort of an additional
+degree of freedom. And for example, if I want a very
+interpretable model, I want my model that does the
+predictions to be linear so I can explain to my boss what it
+means. But I can also still do the feature selection using a
+more complicated model and just tell my boss “Oh, only these
+features are important and here's how I make the prediction”
+
+---
+
+class: center, middle
+
+# Questions ?
+???
+The question is if I do forward method or backward method
+with the same number of features will the same happen? They
+both are sort of one step look ahead approximations to
+trying out all subsets and there's no guarantee we would get
+the same thing.
+
+
+---
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script>
+    // Config Remark
+    remark.macros['scale'] = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+    };
+    config_remark = {
+        highlightStyle: 'magula',
+        highlightSpans: true,
+        highlightLines: true,
+        ratio: "16:9"
+    };
+      var slideshow = remark.create(config_remark);
+    // Configure MathJax
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] /* removed 'code' entry*/
+    }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    </script>
+  </body>
+</html>

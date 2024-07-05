@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>10701 Introduction to Machine Learning</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="external.js"></script>
+  <link rel="stylesheet" href="style-mac.css" type="text/css" />
+    <script type="text/javascript">var dmWorkPath=".";</script>
+    <script type="text/javascript" src="dmenu.js"></script>
+</head>
+<body>
+    <div id="mainmenu">
+      <script type="text/javascript" src="data-menu.js"></script>
+    </div>
+  <!--mainmenu-->
+<div id="content">
+<table id="header">
+    <tbody>
+    <tr>
+        <td class="hspace">
+        </td>
+      <td><a href="http://www.cmu.edu" rel="external"><img src="images/CarnegieMellonSeal.gif" alt="" /></a></td>
+        <td class="hspace2">
+        </td>
+      <td>
+      <div class="coursetitle">Introduction to Machine Learning</div>
+            <b><b>
+                10-701, Fall 2015<br />
+      <br />
+      <a href="http://www.cs.cmu.edu/%7Eepxing" rel="external" class="lecturer">Eric Xing</a>,
+	  <a href="http://www.cs.cmu.edu/%7Ezivbj" rel="external" class="lecturer">Ziv Bar-Joseph</a>
+      <br />
+                School of Computer Science, Carnegie Mellon University
+            </b></b>
+        </td>
+    </tr>
+  </tbody>
+</table>
+<!--Page content begins. Keep this line.-->
+<div id="maincontent">
+<h2>Syllabus and (tentative) Course Schedule</h2>
+
+<table class="schedule" _base_target="_blank">
+<tbody _base_target="_blank">
+<tr _base_target="_blank">
+<th _base_target="_blank">Date</th>
+<th _base_target="_blank">Lecture</th>
+<th _base_target="_blank">Topics</th>
+<th _base_target="_blank">Readings and useful links<br /></th>
+<th _base_target="_blank">Anouncements</th>
+</tr>
+<!--<tr class="lechead" _base_target="_blank">
+<td colspan="5" _base_target="_blank">Module 1</td>
+</tr>-->
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="5" _base_target="_blank">Module 1: Supversived Learning</td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 9/3</td>
+<td _base_target="_blank">Lecture 1 (Eric, Ziv): Intro to probability, MLE
+        -
+        <a href="slides/introduction15.pdf">Slides</a>
+</td>
+<td _base_target="_blank">
+  <ul>
+    <li>Introduction of the course</li>
+    <li>Basic probability</li>
+    <li>Maximum likelihood estimate</li>
+  </ul>
+</td>
+<td _base_target="_blank">
+</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 9/8</td>
+<td _base_target="_blank">No class
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">
+</td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 9/10</td>
+<td _base_target="_blank">Lecture 2 (Ziv): Classification, kNN
+        -
+        <a href="slides/classification15.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+  <ul>
+    <li>Optimal decision using Bayes rule</li>
+    <li>Types of classifiers</li>
+    <li>Effect of values of k on kNN classifiers</li>
+    <li>Probabilistic interpretation of kNN</li>
+  </ul>
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">
+</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 9/15</td>
+<td _base_target="_blank">No class
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">
+</td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 9/17</td>
+<td _base_target="_blank">Lecture 3 (Ziv): Decision trees
+        -
+        <a href="slides/DT15New.pdf">Slides</a> (updated),
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+  <ul>
+    <li>Discriminative classifiers</li>
+    <li>Entropy</li>
+    <li>Information gain</li>
+    <li>Building decision trees</li>
+  </ul>
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">PS1 out</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 9/22</td>
+<td _base_target="_blank">Lecture 4 (Ziv): Na&iuml;ve Bayes
+        -
+        <a href="slides/NB15.pdf">Slides</a>,
+        <a href="files/quiz1.pdf">Quiz</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+  <ul>
+    <li>Problems with estimating full joints</li>
+    <li>Advantages of Na&iuml;ve Bayes assumptions</li>
+    <li>Applications to discrete and continuous cases</li>
+    <li>Problems with Na&iuml;ve Bayes classifiers</li>
+  </ul>
+</td>
+<td _base_target="_blank">Mitchell, 6.1-6.10</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 9/24</td>
+<td _base_target="_blank">Lecture 5 (Ziv): Linear regression
+        -
+        <a href="slides/Reg15.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+  <ul>
+    <li>Basic model</li>
+    <li>Solving linear regression</li>
+    <li>Error in linear regression</li>
+    <li>Advanced regression models</li>
+  </ul>
+</td>
+<td _base_target="_blank">Bishop, 3.1</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 9/29</td>
+<td _base_target="_blank">Lecture 6 (Ziv): Logistic regression
+        -
+        <a href="slides/LR15.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+  <ul>
+    <li>Logistic regression vs. linear regression</li>
+    <li>Sigmoid funcion</li>
+    <li>MLE via gradient ascent</li>
+    <li>Regularization</li>
+    <li>Logistic regression for multiple classes</li>
+  </ul>
+</td>
+<td _base_target="_blank">Bishop, 4.2-4.3</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 10/1</td>
+<td _base_target="_blank">Lecture 7 (Eric): Perceptron, Neural networks
+        -
+        <a href="slides/lecture7-nn.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Perceptron</li>
+  <li>Multilayer Perceptron</li>
+  <li>Backpropagation</li>
+  <li>"Deep" Learning</li>
+  <li>Convolutional Neural Networks</li>
+  <li>Layer-wise Pre-training</li>
+</ul>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Bishop, Ch. 3</li>
+  <li>Bengio, <a
+  href="http://www.iro.umontreal.ca/~bengioy/papers/ftml_book.pdf">Learning
+  Deep
+  Architectures for AI</a></li>
+  <li>Krizhevsky et al.,
+  <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">
+  ImageNet Classification with Deep Convolutional Neural Networks</a></li>
+</ul>
+</td>
+<td _base_target="_blank">PS2 out,<br>PS1 due (10/2)</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 10/6</td>
+<td _base_target="_blank">Lecture 8 (Eric): Deep learning, SVM
+        -
+        <a href="slides/lecture8-dl.pdf">Slides1</a>,
+        <a href="slides/lecture9-svm1.pdf">Slides2</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+<ul>
+  <li>"Deep" Learning</li>
+  <li>Convolutional Neural Networks</li>
+  <li>Support Vector Machines</li>
+</ul>
+</td>
+<td _base_target="_blank">
+Deep Learning:
+<ul>
+  <li>Salakhutdinov, <a
+  href="http://www.cs.toronto.edu/~rsalakhu/papers/annrev.pdf">Learning
+  Learning Deep Generative Models</a></li>
+  <li>Ioffe and Szegedy,
+  <a href="http://arxiv.org/pdf/1502.03167v3.pdf">
+  Batch Normalization: Accelerating Deep Network Training by
+  Reducing Internal Covariate Shift</a></li>
+  <li>Bahdanau et al., <a href="http://arxiv.org/pdf/1409.0473.pdf">Neural machine translation
+  by jointly learning to align and translate</a></li>
+</ul>
+SVM:
+<ul>
+  <li>Burges, <a href="http://research.microsoft.com/pubs/67119/svmtutorial.pdf">A Tutorial on Support Vector Machines for Pattern
+  Recognition</a></li>
+  <li>Sch&ouml;lkopf and Smola, <a
+  href="http://agbs.kyb.tuebingen.mpg.de/lwk/">Learning with Kernels</a></li>
+</ul>
+</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 10/8</td>
+<td _base_target="_blank">Lecture 9 (Eric): SVM
+        -
+        <a href="slides/lecture9-svm.pdf">Slides</a>,
+        <a href="slides/lecture9-svm-annotated.pdf">Annotated</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Duality, KKT condition</li>
+  <li>Kernel trick</li>
+  <li>Sequential Minimal Optimization (SMO)</li>
+</ul>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Platt, <a href="http://research.microsoft.com/pubs/68391/smo-book.pdf">Fast Training of Support Vector Machines
+  using Sequential Minimal Optimization</a></li>
+  <li>Chang and Lin, <a href="https://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf">LIBSVM: a library for support vector machines. ACM Transactions on Intelligent Systems and Technology</a></li>
+  <li>Fan et al., <a href="https://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf">LIBLINEAR: A Library for Large Linear Classification</a></li>
+</ul>
+</td>
+<td _base_target="_blank">Proposal due</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 10/13</td>
+<td _base_target="_blank">Lecture 10 (Eric): Evaluating classifiers, Bias-variance decomposition
+        -
+        <a href="slides/lecture10-fit.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+<ul>
+  <li>Bias-variance decomposition</li>
+  <li>Structural risk minimization</li>
+  <li>Ways to avoid overfitting</li>
+</ul>
+</td>
+<td _base_target="_blank">
+<ul>
+<li>Vapnik, V. (1999)<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=788640"> An Overview of Statistical Learning Theory</a>, IEEE transactions on Neural Networks, Vol. 10, pp. 988-99.
+<li>E.P. Xing, M.I. Jordan and R.M. Karp (2001), <a href="http://www.cs.cmu.edu/~epxing/papers/Old_papers/icml01_features.ps">Feature selection for high-dimensional genomic microarray data</a>, Proceedings of the Eighteenth International Conference on Machine Learning.
+<li>Andrew Y Ng. <a href="http://ai.stanford.edu/~ang/papers/icml98-fs.pdf">On Feature Selection: Learning with Exponentially many Irrelevant Features as Training Examples</a>. In Proceedings of the Fifteenth International Conference on Machine Learning, 1998. 
+</ul>
+</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 10/15</td>
+<td _base_target="_blank">Lecture 11 (Eric): Ensemble learning - Boosting, Random Forests
+        -
+        <a href="slides/lecture11-boosting.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Combing weak learners</li>
+  <li>Bagging and random forest</li>
+  <li>AdaBoost, algorithem and generalization bounds</li>
+  <li>Gradient boosting</li>
+</ul>
+</td>
+<td _base_target="_blank">
+<ul>
+<li>Freund and Schapire, <a href="http://dl.acm.org/citation.cfm?id=261549">A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting</a></li>
+<li>Schapire et al., <a href="https://projecteuclid.org/euclid.aos/1024691352">Boosting the margin:
+A new explanation for the effectiveness of voting methods</a></li>
+<li>Breiman, <a href="http://dl.acm.org/citation.cfm?id=570182">Random Forests</a></li>
+<li>Friedman, <a href="http://www-stat.stanford.edu/~jhf/ftp/trebst.pdf">Greedy Function Approximation: A Gradient Boosting Machine</a></li>
+<li>Chen, <a href="https://github.com/dmlc/xgboost">XGBoost</a>, an efficient implementation of gradient boosting</li>
+</ul>
+</td>
+<td _base_target="_blank">PS3 out,<br>PS2 due (10/16)</td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+	<td colspan="5" _base_target="_blank">Module 2: Unsupversived Learning</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 10/20</td>
+<td _base_target="_blank" rowspan="2">Lecture 12, 13 (Ziv): Unsupervised learning - clustering
+        -
+        <a href="slides/clustering.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank" rowspan="2"> 
+<ul>
+  <li>Hierarchical clustering
+  <li>K-means and Gaussian mixture models
+  <li>Number of clusters
+</ul>
+</td>
+<td _base_target="_blank" rowspan="2">
+<ul>
+<li>Bishop, Ch. 9
+<li>Optional: Mitchell, 6.12
+</ul>
+</td >
+<td _base_target="_blank" rowspan="2"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 10/22</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 10/27</td>
+<td _base_target="_blank">Lecture 14 (Ziv): Semi-supervised learning
+        -
+        <a href="slides/semi15.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+<ul>
+  <li>Re-weighting
+  <li>EM, data augmentation
+  <li>Co-training
+  <li>Detect overfitting
+</ul>
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 10/29</td>
+<td _base_target="_blank">Lecture 15 (Eric): Learning theory
+        -
+        <a href="slides/lecture15-LT.pdf">Slides</a>,
+        <a href="slides/lecture15-LT-annotated.pdf">Annotated</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Realizable vs agnostic
+  <li>PAC learning in finite concept class
+  <li>Sample complexity
+</ul>
+</td>
+<td _base_target="_blank">
+<ul>
+<li>Mitchell, Ch. 7
+<li>Vapnik, V. (1999)<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=788640"> An Overview of Statistical Learning Theory</a>, IEEE transactions on Neural Networks, Vol. 10, pp. 988-99.
+</ul>
+</td>
+<td _base_target="_blank">PS4 out,<br>PS3 due (10/30)</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 11/3</td>
+<td _base_target="_blank">Lecture 16 (Eric): VC dimension
+        -
+        <a href="slides/lecture16-VC.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+<ul>
+  <li>Sample complexity for infinite concept classes
+  <li>VC dimension as a complexity measure
+  <li>Structural risk minimization
+</ul>
+</td>
+<td _base_target="_blank">
+<ul>
+  <li>Ch. 3, An Introduction to Computational Learning Theory, M. Kearns and U. Vazirani
+</ul>
+</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+  <td colspan="5" _base_target="_blank">Module 3: Probabilistic Representation and Modeling</td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 11/5</td>
+<td _base_target="_blank">Lecture 17 (Eric): Graphical models, Bayes nets
+        -
+        <a href="slides/lecture17-GM.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+</td>
+<td _base_target="_blank">
+<ul>
+  <li><a href="http://www.cis.upenn.edu/~mkearns/papers/barbados/jordan-tut.pdf">An introduction to graphical models</a>, M. I. Jordan
+</ul>
+</td>
+<td _base_target="_blank">Midway report due</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 11/10</td>
+<td _base_target="_blank">Lecture 18 (Eric): Bayes nets
+        -
+        <a href="slides/lecture18-Inference-Learning.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank">Bishop, 8.4</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 11/12</td>
+<td _base_target="_blank">Lecture 19 (Eric): Undirected graphical models
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">PS4 due (11/13)</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank"><font color="red"><b>Sun 11/15</b></font></td>
+<td _base_target="_blank"><font color="red"><b>Midterm review at Doherty 2315, 4-6pm</b></font>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 11/17</td>
+<td _base_target="_blank">No class, <font color="red"><b>Midterm at DH 2315, 5pm</b></font>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 11/19</td>
+<td _base_target="_blank">Lecture 20 (Ziv): HMM
+        -
+        <a href="slides/HMMPart1-15.pdf">Slides</a>,
+        <a href="https://mediatech-stream.andrew.cmu.edu/Mediasite/Catalog/Full/b055772df9a34215b7251fded1ba258e21">Video</a>
+</td>
+<td _base_target="_blank">
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">PS5 out</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 11/24</td>
+<td _base_target="_blank">Lecture 21 (Ziv): HMM inference
+        -
+        <a href="slides/HMMLearning15.pdf">Slides</a>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 11/26</td>
+<td _base_target="_blank">No class
+</td>
+<td _base_target="_blank">
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 12/1</td>
+<td _base_target="_blank">Lecture 22 (Eric): MDPs, Reinforcement learning
+        -
+        <a href="slides/lecture21.pdf">Slides</a>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank">
+<ul>
+<li>
+Sutton, Richard and Barto, Andrew: <a href="http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html" _base_target="_blank">Reinforcement Learning: an introduction</a>, MIT Press, Cambridge, MA, 1998
+</li>
+</ul>
+</td>
+<td _base_target="_blank">PS5 due</td>
+</tr>
+
+<tr class="lecture alt" _base_target="_blank">
+<td _base_target="_blank">Thu 12/3</td>
+<td _base_target="_blank">Lecture 23 (Eric): Topic models
+        -
+        <a href="slides/lecture22-TM.pdf">Slides</a>
+</td>
+<td _base_target="_blank">
+</td>
+<td _base_target="_blank">
+        <ul>
+		<li>D. Blei et al., <a href="http://www.cs.princeton.edu/~blei/papers/BleiNgJordan2003.pdf">Latent Dirichlet Allocation</a>
+		<li> T. Griffiths and M. Steyvers, <a href="http://psiexp.ss.uci.edu/research/papers/sciencetopics.pdf">Finding Scientific Topics</a>
+                <li>Eric's ACL 2012 Tutorial. <a href="http://www.cs.cmu.edu/~epxing/talks/ACL2.pdf">Topic Models, Latent Space Models, Sparse Coding, and All That: A systematic understanding of probabilistic semantic extraction in large corpus</a>
+        </ul>
+</td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Fri 12/4</td>
+<td _base_target="_blank"><font color="red"><b>Poster session, 2:30pm at NSH Atrium</b></font>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank"></td>
+</tr>
+
+<tr class="lechead" _base_target="_blank">
+  <td colspan="5" _base_target="_blank">Module 4: Applications of ML</td>
+</tr>
+
+<tr class="lecture" _base_target="_blank">
+<td _base_target="_blank">Tue 12/8</td>
+<td _base_target="_blank">Lecture 24 (Ziv): Computational biology
+        -
+        <a href="slides/compBio15.pdf">Slides</a>
+</td>
+<td _base_target="_blank"> 
+</td>
+<td _base_target="_blank"></td>
+<td _base_target="_blank">Final report due (12/11)</td>
+</tr>
+
+
+
+
+</tbody>
+</table>
+&nbsp;
+</div>
+<!--maincontent-->
+<!--Page content ends. Keep this line.-->
+<hr />
+<div id="trailer">
+&copy; 2012 Eric Xing @ School of Computer Science, Carnegie Mellon University<br /><script type="text/javascript">
+var m = "Last updated " + document.lastModified;
+var p = m.length-8;
+document.write(m.substring(p, 0));
+</script>
+[<a href="http://validator.w3.org/check?uri=referer" rel="external">validate xhtml</a>]
+</div>
+<!--trailer-->
+</div>
+<!--content-->
+</body>
+</html>

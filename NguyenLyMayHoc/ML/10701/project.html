@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>10701 Introduction to Machine Learning</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="external.js"></script>
+  <link rel="stylesheet" href="style-mac.css" type="text/css" />
+    <script type="text/javascript">var dmWorkPath=".";</script>
+    <script type="text/javascript" src="dmenu.js"></script>
+</head>
+<body>
+    <div id="mainmenu">
+      <script type="text/javascript" src="data-menu.js"></script>
+    </div>
+  <!--mainmenu-->
+<div id="content">
+<table id="header">
+    <tbody>
+    <tr>
+        <td class="hspace">
+        </td>
+      <td><a href="http://www.cmu.edu" rel="external"><img src="images/CarnegieMellonSeal.gif" alt="" /></a></td>
+        <td class="hspace2">
+        </td>
+      <td>
+      <div class="coursetitle">Introduction to Machine Learning</div>
+            <b><b>
+                10-701, Fall 2015<br />
+      <br />
+      <a href="http://www.cs.cmu.edu/%7Eepxing" rel="external" class="lecturer">Eric Xing</a>,
+	  <a href="http://www.cs.cmu.edu/%7Ezivbj" rel="external" class="lecturer">Ziv Bar-Joseph</a>
+      <br />
+                School of Computer Science, Carnegie Mellon University
+            </b></b>
+        </td>
+    </tr>
+  </tbody>
+</table>
+<!--Page content begins. Keep this line.-->
+<div id="maincontent">
+<h2 id="req">About Projects</h2>
+
+  <p>
+  <b>Overview:</b> 
+  The class project is an opportunity for you to explore an
+  interesting problem of your choice in the context of a real-world data set.
+  You can either choose one of the suggested projects we provided, or pick your own topic. 
+  Do not hesitate to discuss your project with TAs/instructors to get feedback
+  on your ideas.
+  </p>
+
+  <p>
+  <b>Team:</b> Projects can be done by a team of <font color=red>two or three</font>.
+  Feel free to post on Piazza if you need teammates. 
+  </p>
+
+  <p>
+  <b>Milestones:</b> There are 4 delieverables in total:
+  <ul>
+    <li>Proposal: A short description of the project, including: a title, Andrew
+    ids of the members, and a short description of your proposed project (about
+    a page). Due on 10/8.</li>
+    <li>Midway report: More detailed introduction, review of related works,
+    details of the proposed method, and preliminary results
+    if available, in 4-5 pages. Due on 11/5. </li>
+    <li>Poster session: Present your work to the peers, instructors, and other
+    community members who will stop by. Scheduled on 12/4, at 2:30pm, NSH Atrium.
+    (<a href="http://www.cs.cmu.edu/~help/printing/poster_printing.html">SCS poster printing</a>)
+    </li>
+    <li>Final report: A full academic paper, including: problem definition and
+    motivation, background and related work, details of the proposed method,
+    details of experiments and results, conclusion and future work. 8 pages
+    excluding references and appendix. Due on 12/11.</li>
+  </ul>
+  </p>
+
+  All reports should be in <a href="https://nips.cc/Conferences/2015/PaperInformation/StyleFiles">NIPS format</a>.
+
+
+<h2 id="list">Suggested Projects</h2>
+
+<h3>Computational Education</h3>
+Project1: Multi-view Information Extraction from Textbooks
+This project is about targeted information extraction from textbooks - given a set of textbooks, we may want to extract structured knowledge such as all math theorems and axioms in the textbook. The theorems are often accompanied by images that help them explain it. You will have to use the context, typographical information, etc. that can help you extract such information. The knowledge extracted can then be used for downstream application like summarizing the textbook, answering questions, etc.
+<br><br>
+Project2: Recognizing difficult to comprehend portions of textbooks and fixing them
+This project further is about building a model for how hard it is for students to understand portions of textbooks. This might depend on a lot of factors - your job is to identify these factors, annotate such a textbook for comprehension difficulty (you may crowd-source this task) and then build a model. You can extend this project by mining the web for various images that can help the students understand the text better.
+<br><br>
+Contact Person: Mrinmaya Sachan (mrinmays@cs.cmu.edu)
+<br>
+[1] R. Agrawal, S. Chakraborty, S. Gollapudi, A. Kannan, K. Kenthapadi: Empowering Authors to Diagnose Comprehension Burden in Textbooks. KDD 2012.
+<br>
+[2] R. Agrawal, S. Gollapudi, A. Kannan, K. Kenthapadi: Enriching Textbooks with Images. CIKM 2011.
+<br>
+[3] R. Agrawal, S. Gollapudi, A. Kannan, K. Kenthapadi: Identifying Enrichment Candidates in Textbooks. WWW 2011.
+
+<h3>Image Question Answering</h3>
+This project is about free-form and open-ended Visual Question Answering (VQA) [1,2]. Given an image and a natural language question about the image, the task is to provide an accurate natural language answer. There are two versions of this task - a version of answer selection where candidate answers are given and the task is to pick the correct answer - and - a version where candidate answers are not given and the answer has to be generated by the algorithm. Various previous works have attempted to solve this problem, but, with only limited success. Your job is to do better at this task. One idea is to classify questions into categories and building a model for each category - or better - learning a multi-task model. You can also think of various deep learning methods using CNNs and LSTMs here.
+<br><br>
+Contact Person: Mrinmaya Sachan (mrinmays@cs.cmu.edu), Hao Zhang (hao@cs.cmu.edu)
+<br>
+[1] http://visualqa.org/index.html <br>
+[2] Antol et. al. Visual Question Answering. ArXiv 2015. <br>
+[3] Gao et. al. Are You Talking to a Machine?: Dataset and Methods for Multilingual Image Question Answering. NIPS 2015 <br>
+[4] Ren et. al. Exploring Models and Data for Image Question Answering. NIPS 2015 <br>
+[5] Ferraro et. al. A Survey of Current Datasets for Vision and Language Research. ArXiv 2015 <br>
+
+<h3>Event Structure Learning</h3>
+<p>Scripts have been proposed to model the stereotypical event sequences found in narratives. Scripts encode knowledge of stereotypical events, including information about their typical ordered sequences of sub-events and corresponding arguments (temporal, causal, subevents, etc) [1]. The existence of such structures is based on the assumption that natural language documents are written with a model representation in mind describing specific course of actions of individuals that are performed in real-world scenarios. The goal of this project is to capture the semantics of the event scripts that are encoded in documents (such as a terrorist attack or something like the event structure of chopping an onion).
+</p>
+
+<p>
+There is a small body of preliminary research on automatically learning models of scripts from large corpora of raw text [2-7]. However, all these works use an impoverished representation of events. While they learn interesting event structure, these works make many assumptions - e.g. structures are restricted to be chains, structures are limited to frequent topics in a large corpus or redundant documents about specific events are required, sometimes the relations are binary, and often only slots with named entities are learned.
+</p>
+
+<p>
+In this work, (a) you could explore supervised (or better semi-supervised or unsupervised) learning approaches for discovering events as well as the temporal relations involving events (and possibly time expressions). Alternatively, you can look as this as a structure learning problem and use techniques similar to those we learned for graphical model structure learning.
+</p>
+
+Contact Person: Mrinmaya Sachan (mrinmays@cs.cmu.edu) <br>
+[1] R. Schank and R. Abelson, Scripts, Plans, Goals and Understanding: An Inquiry into Human Knowledge Structures. Lawrence Erlbaum and Associates, Hillsdale, NJ, 1977. <br>
+[2] N. Balasubramanian, S. Soderland, Mausam, and O. Etzioni. Generating coherent event schemas at scale. EMNLP 2013. <br>
+[3] C. A. Bejan. 2008. Unsupervised discovery of event scenarios from texts. FLAIRS 2008. <br>
+[4] N. Chambers and Daniel Jurafsky. Unsupervised learning of narrative event chains. ACL 2008. <br>
+[5] N. Chambers and D. Jurafsky. Unsupervised learning of narrative schemas and their
+participants. ACL-IJCNLP 2009. <br>
+[6] N. Chambers. 2013. Event schema induction with a probabilistic entity-driven model. EMNLP 2013. <br>
+[7] J. Cheung, H. Poon, and L. Vanderwende. Probabilistic frame induction. NAACL 2013. <br>
+
+<h3>Neural Networks for Multi-view Learning across Images and Text</h3>
+<p>
+The problem of image/scene understanding is an important and challenging one. Often images are accompanied with descriptions that describe them. This is an important in image search. Many multi-view learning approaches have been proposed that extract features for both sentences and images, and map them to the same semantic embedding space. These methods are used to address multiple tasks such as retrieving the sentences given the query image, retrieving the images given the query sentences, generating captions that describe image scenes, etc.
+</p>
+<p>
+Problem 1:
+The first proposed problem is to link objects in the images to appropriate mentions in the
+captions. We reason about which particular object each noun/pronoun in the captions is referring to in the image. This could potentially allow us to jointly model the textual and visual information to disambiguate the coreference resolution problem within and across images and texts. Towards this goal, one could explore deep-learning or structure prediction models that exploit features computed from text and RGB-D imagery to reason about the class of the 3D objects, the scene type, as well as to align the nouns/pronouns with the referred visual objects.
+</p>
+Contact Person: Mrinmaya Sachan (mrinmays@cs.cmu.edu) <br>
+[1] C. Kong et. al. What are you talking about? Text-to-Image Coreference. CVPR 2014. <br>
+
+<p>
+Problem 2:
+The first proposed problem is to recognize what appears in images while incorporating knowledge of spatial relationships and interactions between objects and some background knowledge (knowledge of how the world works - e.g. books are placed on a table - usually not under it). Another challenge here is in generating a description that is not only relevant but also grammatically correct, thereby, requiring a model for language. In this project, one could explore integrating recursive deep learning methods for image understanding either with existing language models or other neural networks that learn a language model.
+</p>
+
+Contact Person: Mrinmaya Sachan (mrinmays@cs.cmu.edu) <br>
+[1] H. Fao et. al. From Captions to Visual Concepts and Back. ArXiv <br>
+[2] R. Kiros et. al. Unifying Visual-Semantic Embeddings with Multimodal Neural Language Models. ArXiv. <br>
+[3] A. Karpathy and Li Fei-Fei. Deep Visual-Semantic Alignments for Generating Image Descriptions. ArXiv <br>
+[4] http://googleresearch.blogspot.com/2014/11/a-picture-is-worth-thousand-coherent.html <br>
+[5] J. Donahue et. al. Long-term Recurrent Convolutional Networks for Visual Recognition and Description. ArXiv <br>
+[6] J. Mao et. al. Explain Images with Multimodal Recurrent Neural Networks <br>
+[7] http://blogs.technet.com/b/machinelearning/archive/2014/11/18/rapid-progress-in-automatic-image-captioning.aspx <br>
+[8] http://mscoco.org/dataset/#download <br>
+
+<h3>Unsupervised Methods for Joint Entity and Event Coreference Resolution </h3>
+<p>
+Coreference resolution in text is the process of determining when two mentions (named, nominal or pronominal entity mentions, event mentions, etc.) refer to the same identity in the real world. Coreference is a fundamental problem in NLP : it is an important step in achieving a deeper understanding of the text and is potentially useful for many downstream applications such as paraphrase detection, textual entailment, summarization, question answering, etc. Various structured prediction approaches and non-parametric Bayesian approaches have been proposed for entity coreference resolution. However, there is a well known duality between entities and events. We could benefit by building a jointly model entity and event coreference using the fact that coreferentiality among events imply a coreferentiality in their participant entities. The project will involve building a structure prediction that can jointly reason over entity and event coreference structure. There is a large body of work in coreference resolution. But you could look at these example previous works [1-4] to understand the task and literature.
+</p>
+
+Contact Person: Mrinmaya Sachan (mrinmays@cs.cmu.edu) <br>
+[1] C. Bejan et. al. Nonparametric Bayesian Models for Unsupervised Event Coreference Resolution. NIPS 2009. <br>
+[2] A. Haghighi and D. Klein. Unsupervised Coreference Resolution in a Nonparametric Bayesian Model. ACL 2009. <br>
+[3] G. Durrett and D. Klein. A Joint Model for Entity Analysis: Coreference, Typing, and Linking. TACL 2014. <br>
+[4] H. Lee et. al. Joint Entity and Event Coreference Resolution across Documents. EMNLP 2012. <br>
+
+<h3>Bayesian Learning for Neural Networks</h3>
+<p>
+Neural networks that are popular nowadays have close relationship with graphical models. Instead of black-box back-propagation, can we use Bayesian methods in neural networks? Can we make them more scalable?
+</p>
+
+Contact Person: Xun Zheng, Andrew G. Wilson <br>
+[1] David Mackay's papers: http://www.inference.phy.cam.ac.uk/mackay/BayesNets.html <br>
+[2] Radford Neal's thesis: http://www.cs.toronto.edu/~radford/ftp/thesis.pdf <br>
+[3] Nando de Freitas's thesis: http://www.cs.ubc.ca/~nando/papers/thesis.pdf <br>
+
+<h3>Dropout Training for Graphical Models</h3>
+<p>
+Dropout training has been proposed to remedy the overfitting problem in deep neural networks. Some recent works discussed the interpretation of this method as adaptive regularization or augmenting noisy training data. Recalling the close relationship between neural networks and graphical models, can we apply the same technique to graphical models?
+</p>
+
+Contact Person: Xun Zheng, Andrew G. Wilson <br>
+[1] Srivastava et. al. Dropout: a simple way to prevent neural networks from overfitting. JMLR, 2014. <br>
+[2] van der Maaten et. al. Learning with marginalized corrupted features. ICML, 2013. <br>
+[3] Chen et. al. Dropout training for support vector machines. AAAI, 2014.  <br>
+
+<h3>Fast sampling for mixture models</h3>
+<p>
+MCMC algorithms can be made fast by borrowing ideas from traditional computer science. Can you build constant time samplers for mixture models? Can you make the algorithm run in an online fashion? 
+</p>
+
+Contact Person: Xun Zheng<br>
+[1] Luc Devroye. Non-uniform random variate generation. Springer-Verlag, 1986. <br>
+[2] Alastair J. Walker. An efficient method for generating discrete random variables with general distributions. ACM Transactions on Mathematical Software, vol. 3 (1977), pp. 253-256. <br>
+[3] Peter M Fenwick. A new data structure for cumulative frequency tables. Software: Practice and Experience, vol. 24, no. 3 (1994), pp. 327-336. <br>
+
+
+<h3>Dirichlet Process Distance Metric Learning</h3>
+<p>
+Distance Metric Learning (DML) [1] takes data pairs labeled either as similar or dissimilar to learn a Mahalanobis distance matrix M such that under M, similar pairs will be placed close to each other and dissimilar pairs are separated apart. The learned distance metrics are essential for many tasks such as retrieval, clustering and classification. In real word problems, due to the complexity of data which are inherently embedded in an unknown amount of groups, a single Mahalanobis matrix is insufficient to properly measure distances for data from all groups. In this project, we are going to study the problem of infinite distance metric learning, which aims to learn an unbounded number of Mahalanobis distance matrices where each matrix is responsible for measuring the distance of data in one specific group. Using Bayesian nonparametric techniques, the number of distance matrices can be automatically decided from data, rather than set in an ad-hoc way. To achieve this, we are going to place a Dirichlet Process [2] prior over the Mahalanobis distance matrices. The inference and learning technique could be variational inference [3]  or MCMC sampling [2].
+</p>
+
+Contact Person: Pengtao Xie (pengtaox@cs.cmu.edu) <br>
+[1] Xing, E. P., Jordan, M. I., Russell, S., and Ng, A. Y. (2002). Distance metric learning with application to clustering with side-information. In Advances in neural information processing systems (pp. 505-512).
+[2]  Yee Whye Teh. Dirichlet Process.  <br>
+      http://www.gatsby.ucl.ac.uk/~ywteh/research/npbayes/dp.pdf <br>
+[3] Blei, D. M., and Jordan, M. I. (2006). Variational inference for Dirichlet process mixtures. Bayesian analysis, 1(1), 121-143. <br>
+
+<h3>Indian Buffet Process Distance Metric Learning</h3>
+<p>
+In the previous problem, we consider learning infinite number of distance matrices to accommodate the complexity of data. Each of the matrix is of finite dimension. In this problem, we will study infinite distance metric learning from another perspective, that we learn a single distance matrix, but the distance matrix is of infinite dimension. Interpreted from a latent space modeling view, DML aims to learn a linear projection matrix to project the data from the original feature space to a latent space. After projected into the latent space, data labeled as similar are placed close to each other and those labeled as dissimilar are separated apart. How to choose the dimension of the latent space has a critical influence of performance and setting it to a fixed value limits the power of the distance metric. In this project, we study the problem of learning a distance matrix with unbounded dimension. The dimensionality of the latent space grows with data and is automatically inferred from data. To do this, we place an Indian Buffet Process [1] over the distance matrix to enable an infinite dimensionality. 
+</p>
+
+Contact Person: Pengtao Xie (pengtaox@cs.cmu.edu) <br>
+[1] Griffiths, T., & Ghahramani, Z. (2005). Infinite latent feature models and the Indian buffet process. <br>
+
+<h3>Feature Enriched Collective Matrix Factorization</h3>
+<p>
+Collective Matrix Factorization (CMF) [1] aims to model the inter-relations between multiple parties of data. For example, in a biology domain with genes, diseases, proteins, there are rich relations between these data: genes decide proteins, proteins decide diseases, genes interact with each other, etc. CMF can flexibly model these relations. However, it is unable to model the features associated with data, such as the chromatin features of genes, the types of diseases, etc. In this project, we are going to develop a feature enriched collective matrix factorization model to simultaneously model the features of data and the relations between data. 
+</p>
+
+Contact Person: Pengtao Xie (pengtaox@cs.cmu.edu) <br>
+[1] Singh, A. P., & Gordon, G. J. (2008, August). Relational learning via collective matrix factorization. In Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 650-658). ACM. <br>
+
+
+<h3>Heterogeneous network embedding</h3>
+<p>
+Representation learning has been a hot topic in machine learning research. The learned representations (a.k.a. embedding) of words [1] and images are useful in various tasks of NLP/CV. A few recent work [2] extended the algorithms to network data and significantly improved a variety of tasks. However, these work has mainly focused on homogeneous networks which contain only one or two type of vertexes (i.e. persons in a friend network), while in the real world heterogeneous networks (which allows more than one vertex type) are ubiquitous. e.g., a social network can contain users, posts, interest groups, and so on. A general representation learning framework that takes into account these diverse features is desirable to learn better network embedding, and facilitate a wide range of applications such as recommender systems. In this project, your job is to develop such a framework. One idea to extend the popular skip-gram [1] algorithm in the NLP literature.
+</p>
+
+Contact Person: Zhiting Hu (zhitingh@cs.cmu.edu), Mrinmaya Sachan (mrinmays@cs.cmu.edu)  <br>
+[1] T. Mikolov et al. Distributed Representations of Words and Phrases and their Compositionality. NIPS13 <br>
+[2] J. Tang et al. LINE: Large-scale Information Network Embedding. WWW15 <br>
+ 
+<h3>Personalized topic models</h3>
+<p>
+In increasing many real-world applications, such as recommender systems for news or scientific articles, we want to estimate (probabilistic) models for each user. For example, to create the best user exp
+erience in online applications, we want to build a personalized topic model [1] for each user and there could be millions of such users. Each user has a subset of the entire dataset, e.g., she/he only accessed a subset of all the news articles. This problem differs from previous work: 1) compared to traditional hierarchical models, here users’ datasets are usually not disjoint (i.e. the user overlapping setting); 2) compared to traditional personalized methods which train a topic model for each user separately and thus suffer from huge computational complexity and difficulty in topic alignment, we want to share the statistical strength across different users. In this project, your job is to develop such a model (we have a basic model you can improve over it), and apply it to various real applications such as personalized recommender systems.
+</p>
+
+Contact Person: Zhiting Hu (zhitingh@cs.cmu.edu) <br>
+[1] D. Blei et al. Latent Dirichlet Allocation. JMLR03 <br>
+
+<h3>Large-scale Distributed Convolutional Neural Network</h3>
+<p>
+Large deep neural network models have recently demonstrated state-of-the-art accuracy on hard visual recognition tasks. Unfortunately such models are extremely time consuming to train and require large amount of compute cycles. Complex tasks require deep models with a large number of parameters that have to be trained. Such large models require significant amount of data for successful training to prevent over-fitting on the training data which leads to poor generalization performance on unseen test data. Unfortunately, increasing model size and training data, which is necessary for good prediction accuracy on complex tasks, requires significant amount of computing cycles proportional to the product of model size and training data volume. Due to the computational requirements of deep learning almost all deep models are trained on GPUs. While this works well when the model fits within 2-4 GPU cards attached to a single server, it limits the size of models that can be trained. A possible solution to train extremely large models using real-word big data is to build a large-scale distributed system comprised of commodity servers.
+In this project, you are expected to come up with potential solutions about data parallelism and model parallelism for training large-scale convolutional neural network in a distributed setting (e.g. GPU/CPU clusters). 
+</p>
+
+Contact Person: Hao Zhang (hao@cs.cmu.edu) <br>
+[1] Petuum. http://petuum.github.io/ <br>
+[2] Petuum: A New Platform for Distributed Machine Learning on Big Data. KDD 2015 <br>
+[3] On Model Parallelization and Scheduling Strategies for Distributed Machine Learning. NIPS 2014 <br>
+[4] More Effective Distributed ML via a Stale Synchronous Parallel Parameter Server. NIPS 2014 <br>
+[5] ImageNet Classification with Deep Convolutional Neural Networks. NIPS 2012 <br>
+
+
+
+
+<h3>Unsupervised Learning of Visual Representation from Videos </h3>
+<p>
+Understanding temporal sequences is important for solving many problems in the AI-set. Videos, as a typical kind of temporal sequences, are an abundant and rich source of visual information and can be seen as a window into the physics of the world we live in, showing us examples of what constitutes objects, how objects move against backgrounds, what happens when cameras move and how things get occluded. Being able to learn a representation that disentangles these factors would help in making intelligent machines that can understand and act in their environment. Additionally, learning good video representations is essential for a number of useful tasks, such as recognizing actions and gestures.
+Supervised learning has been extremely successful in learning good visual representations that not only produce good results at the task they are trained for, but also transfer well to other tasks and datasets. Therefore, it is natural to extend the same approach to learning video representations. However, videos are much higher dimensional entities compared to single images. Therefore, it becomes increasingly difficult to do credit assignment and learn long range structure, unless we collect much more labelled data or do a lot of feature engineering (for example computing the right kinds of flow features) to keep the dimensionality low. The costly work of collecting more labelled data and the tedious work of doing more clever engineering can go a long way in solving particular problems, but this is ultimately unsatisfying as a machine learning solution. This highlights the need for using unsupervised learning to find and represent structure in videos. Moreover, videos have a lot of structure in them (spatial and temporal regularities) which makes them particularly well suited as a domain for building unsupervised learning models. In this project, we expect you to explore possible machine learning solutions (CNN, sparse coding) for unsupervised learning on video sequences and evaluate the learned visual representations using different computer vision tasks. 
+</p>
+
+Contact Person: Hao Zhang (hao@cs.cmu.edu) <br>
+[1] Unsupervised Learning of Video Representations using LSTMs. ICML 2015 <br>
+[2] Unsupervised Visual Representation Learning by Context Prediction. ICCV 2015 <br>
+[3] Sparse Output Coding for Scalable Visual Recognition. IJCV 2015 <br>
+
+<h3>Semantic Segmentation for Images</h3>
+<p>
+Semantic segmentation associates one of the pre-defined class labels to each pixel of an image. The input image is divided into the regions, which correspond to the objects of the scene or stuff. To perform a semantic segmentation of an image is to infer the semantic label for every pixel. Using simple semantic labels, the pixels in the image have been explained, each one generated by some unknown model for the category label. If such a segmentation can be achieved, then the image can be catalogued for image search, used for navigation, or any number of other tasks which require basic semantic understanding of arbitrary scenes.
+A wide range of machine learning techniques, including convolutional neural network, graphical models, and spectral methods etc., have been extensively employed in this interesting task.
+In this task, you need to investigate existing methods/models, evaluation metrics, public dataset for supervised semantic segmentation tasks, and then propose your solution for image semantic segmentation, and evaluate it on standard datasets.
+<p>
+
+Contact Person: Hao Zhang (hao@cs.cmu.edu) <br>
+[1] Fully Convolutional Networks for Semantic Segmentation. CVPR 2015 <br>
+[2] Semantic Segmentation using Regions and Parts. CVPR 2012 <br>
+[3] Recurrent Convolutional Neural Networks for Scene Labeling. ICML 2014 <br>
+
+
+
+</div>
+<!--Page content ends. Keep this line.-->
+
+<hr />
+<div id="trailer">
+&copy; 2015 Eric Xing @ School of Computer Science, Carnegie Mellon University<br />
+<script type="text/javascript">
+    var m = "Last updated " + document.lastModified;
+    var p = m.length-8;
+    document.write(m.substring(p, 0));
+</script>
+[<a href="http://validator.w3.org/check?uri=referer" rel="external">validate xhtml</a>]
+</div>  <!--trailer-->
+</div>  <!--content-->
+</body>
+</html>

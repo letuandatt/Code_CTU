@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linear Models for Classification</title>
+    <meta charset="utf-8">
+        <style>
+       @import url(https://fonts.googleapis.com/css?family=Garamond);
+       @import url(https://fonts.googleapis.com/css?family=Muli:400,700,400italic);
+       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+     </style>
+     <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+### W4995 Applied Machine Learning
+
+# Linear Models for Classification, SVMs
+
+02/12/19
+
+Andreas C. Müller
+
+???
+Today we're going to talk about linear models for
+classification, and in addition to that some general
+principles and advanced topics surrounding general models,
+both for classification and regression.
+
+FIXME: in regularizing SVM, long vs short normal vectors.
+FIXME do we need ovo? we kinda do, right?
+
+---
+class: center, middle
+
+# Linear models for <strong>binary</strong> classfication
+
+???
+We'll first start with linear models for binary
+classification, so if there are only two classes. That makes
+the models much easier to understand.
+
+---
+.center[
+![:scale 55%](images/linear_boundary_vector.png)
+]
+
+$$\hat{y} = \text{sign}(w^T \textbf{x} + b) = \text{sign}\left(\sum\limits_{i}w_ix_i + b\right)$$
+
+???
+Similar to the regression case, basically all linear models
+for classification have the same way to make predictions. As
+with regression, they compute an inner product of a weight
+vector w with the feature vector x, and add some bias b. The
+result of that is a real number, as in regression. For
+classification, however, we only look at the sign of the
+result, so whether it is negative or positive. If it's
+positive, we predict one class, usually called +1, if it's
+negative, we predict the other class, usually called -1. If
+the result is 0, by convention the positive class is
+predicted, but because it's a floating point number that
+doesn't really happen in practice. You'll see that sometimes
+in my notation I will not have a $b$. That's because you can
+always add a constant feature to x to achieve the same
+effect (thought you would then need to leave that feature
+out of the regularization). So when I write $w^Tx$ without a
+$b$ assume that there is a constant feature added that is
+not part of any regularization.
+
+Geometrially, what the formula means is that the decision
+boundary of a linear classifier will be a hyperplane in the
+feature space, where w is the normal vector of that plane.
+In the 2d example here, it's just a line separating red and
+blue. Everything on the right hand side would be classified
+as blue by this classifier, and everything on the left-hand
+side as red.
+
+Questions? So again, the learning here consists of finding
+parameters w and b based on the training set, and that is
+where the different algorithms differ. There are quite a lot
+of algorithms out there, and there are also quite a lot in
+scikit-learn, but we'll only discuss the most common ones.
+
+The most straight-forward way to approach finding w and b is
+to use the framework of empirical risk minimization that we
+talked about last time, so finding parameters that minimize
+some loss o the training set. Where classification differs
+quite a bit from regression is on how we want to measure
+misclassifications.
+
+
+---
+
+# Picking a loss?
+
+$$\hat{y} = \text{sign}(w^T \textbf{x} + b)$$
+
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}} \sum_{i=1}^n 1_{y_i \neq \text{sign}(w^T \textbf{x} + b)}$$`
+
+.center[
+![:scale 40%](images/binary_loss.png)
+]
+
+???
+So we need to define a loss function for given w and b that
+tell us how well they fit the training set. Obvious Idea:
+Minimize number of misclassifications aka 0-1 loss but this
+loss is non-convex, not continuous and minimizing it is
+NP-hard. So we need to relax it, which basically means we
+want to find a convex upper bound for this loss. This is not
+done on the actual prediction, but on the inner product $w^T
+x$, which is also called the decision function. So this
+graph here has the inner product on the x axis, and shows
+what the loss would be for class 1. The 0-1 loss is zero if
+the decision function is positive, and one if it's negative.
+Because a positive decision function means a positive
+predition, means correct classification in the case of y=1.
+A negative prediction means a wrong classification, which is
+penalized by the 0-1 loss with a loss of 1, i.e. one
+mistake.
+
+The other losses we'll talk about are mostly the hinge loss
+and the log loss. You can see they are both upper bounds on
+the 0-1 loss but they are convex and continuous. Both of
+these losses care not only that you make a correct
+prediction, but also "how correct" your prediction is, i.e.
+how positive or negative your decision function is. We'll
+talk a bit more about the motivation of these two losses,
+starting with the logistic loss.
+
+
+---
+
+# Logistic Regression
+
+
+.left-column[
+$$\log\left(\frac{p(y=1|x)}{p(y=0|x)}\right) = w^T\textbf{x} + b$$
+
+$$p(y=1|\textbf{x}) = \frac{1}{1+e^{-w^T\textbf{x} -b }}$$
+
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}} -\sum_{i=1}^n \log(\exp(-y_i(w^T \textbf{x}_i + b)) + 1)$$`
+
+
+$$\hat{y} = \text{sign}(w^T\textbf{x} + b)$$
+]
+.right-column[
+![:scale 90%](images/logit.png)]
+
+
+???
+Logistic regression is probably the most commonly used
+linear classifier, maybe the most commonly used classifier
+overall. The idea is to model the log-odds, which is log
+p(y=1|x) - log p(y=0|x) as a linear function, as shown here.
+Rearranging the formula, you get a model of p(y=1|x) as 1
+over 1 + ... This function is called the logistic sigmoid,
+and is drawn to the right here. Basically it squashed the
+linear function $w^Tx$ between 0 and 1, so that it can model
+a probability.
+
+Given this equation for p(y|x), what we want to do is
+maximize the probability of the training set under this
+model. This approach is known as maximum likelihood.
+Basically you want to find w and b such that they assign
+maximum probability to the labels observed in the training
+data. You can rearrange that a bit and end up with this
+equation here, which contains the log-loss as seen on the
+last slide.
+
+The prediction is the class with the higher probability. In
+the binary case, that's the same as asking whether the
+probability of class 1 is bigger or smaller than .5. And as
+you can see from the plot of the logistic sigmoid, the
+probability of the class +1 is greater than .5 exactly if
+the decision function $w^T x$ is greater than 0. So
+predicting the class with maximum probability is the same as
+predicting which side of the hyperplane given by w we are
+on.
+
+Ok so this is logistic regression. We minimize this loss and
+get a w which defines a hyper plane. But if you think back
+to last time, this is only part of what we want. This
+formulation tries to fit the training data, but it doesn't
+care about finding a simple solution.
+
+---
+
+
+# Penalized Logistic Regression
+
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}}-C \sum_{i=1}^n\log(\exp(-y_i(w^T \textbf{x}_i + b )) + 1) + ||w||_2^2$$`
+
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}}-C \sum_{i=1}^n\log(\exp(-y_i (w^T \textbf{x}_i + b)) + 1) + ||w||_1$$`
+
+- C is inverse to alpha (or alpha / n_samples)
+
+
+???
+
+- Both versions strongly convex, l2 version smooth (differentiable).
+
+- All points contribute to $w$ (dense solution to dual).
+
+So we can do the same we did for regression: we can add
+regularization terms using the L1 and L2 norm. The effects
+are the same as for regression: both push the coefficients
+towards zero, but the l1 norm encourages coefficients to be
+exactly zero, for the same reasons we discussed last time.
+
+You could also use a mixed penalty to get something like the
+elasticnet. That's not implemented in the logisticregression
+class in scikit-learn right now, but it's certainly a
+sensible thing to do.
+
+Here I used a slightly different notation as last time,
+though. I'm not using alpha to multiply the regularizer,
+instead I'm using C to multiply the loss. That's mostly
+because that's how it's done in scikit-learn and it has only
+historic reasons. The idea is exactly the same, only now C
+is 1 over alpha. So large C means heavy weight to the loss,
+means little regularization, while small C means less weight
+on the loss, means strong regularization.
+
+Depending on the model, there might be a factor of n_samples
+in there somewhere. Usually we try to make the objective as
+independent of the number of samples as possible in
+scikit-learn, but that might lead to surprises if you're not
+aware of it.
+
+Some side-notes on the optimization problem: here, as in
+regression, having more regularization makes the
+optimization problem easier. You might have seen this in
+your homework already, if you decrease C, meaning you add
+more regularization, your model fits more quickly.
+
+One particular property of the logistic loss, compared to
+the hinge loss we'll discuss next is that each data point
+contributes to the loss, so each data point has an effect on
+the solution. That's also true for all the regression models
+we saw last time.
+---
+# Effect of regularization
+
+
+.center[
+![:scale 90%](images/logreg_regularization.png)
+]
+
+- Small C (a lot of regularization) limits the influence of individual points!
+
+???
+
+So I spared you with coefficient plots, because they looks
+the same as for regression. All the things I said about
+model complexity and dependency on the number of features
+and samples is as true for classification as it is for
+regression.
+
+There is another interesting way to thing about
+regularization that I found helpful, though. I'm not going
+to walk through the math for this, but you can reformulate
+the optimization problem and find that what the C parameter
+does is actually limit the influence of individual data
+points. With very large C, we said we have no
+regularization. It also means individual data points can
+have basically unlimited influence, as you can see here.
+There are two outliers here, which basically completely tilt
+the decision boundary. But if we decrease C, and therefore
+increase the regularization, what happens is that the
+influence of these outlier points becomes limited, and the
+other points get more influence.
+
+
+---
+
+#Max-Margin and Support Vectors
+
+.center[
+![:scale 75%](images/max_margin.png)
+]
+
+???
+A point is within the margin if 〖y_i w〗^T x is smaller
+than one. That means if you have a smaller w, you basically
+have a smaller margin given that you're on the correct side.
+If you're on the wrong side, you'll have always have a loss.
+If you're in the correct side, if you're w^x is small, then
+you also have a loss.
+---
+class: center
+
+#Max-Margin and Support Vectors
+`$$ \min_{w \in \mathbb{R}^p, b \in \mathbb{R}} C \sum_{i=1}^n \max(0, 1 - y_i (w^T\mathbf{x} + b)) + ||w||^2_2 $$`
+
+$$\text{Within margin} \Leftrightarrow y_i(w^T x  + b)< 1$$
+
+Smaller $w \Rightarrow$ larger margin
+
+
+---
+class: center
+
+#Max-Margin and Support Vectors
+
+.left-column[
+![:scale 80%](images/max_margin_C_0.1.png)
+]
+.right-column[
+![:scale 80%](images/max_margin_C_1.png)
+]
+
+???
+Here are two examples on the same dataset. Where I learned
+linear support vector machine with c-0.1, and c=1. With
+c=0.1, you have a wider margin. There are points inside the
+margin and all the points inside the margin are support
+vectors which contribute to the solution. Points that are
+outside of the margin and on the correct side doesn't
+contribute to the solution. These points are sort of
+classified correctly, not when they’re ignored. The normal
+vector is w and basically, the size of the margin is the
+inverse of the length of w. C=0.1 means I have less emphasis
+on the data fitting and more emphasis on the shrinking w.
+This will lead to a smaller w. If I have larger C that means
+less regularization, which will lead to a larger W, larger W
+means a smaller margin. So there are fewer points here, they
+are inside the margin and therefore, fewer support vectors.
+More regularization usually means a larger margin but more
+points inside the margin. Also, more support vectors mean
+there are more data points that actually influence the
+solution.
+---
+
+
+# (soft margin) linear SVM
+
+.larger[
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}}C \sum_{i=1}^n\max(0,1-y_i(w^T \textbf{x}_i + b)) + ||w||_2^2$$`
+
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}}C \sum_{i=1}^n\max(0,1-y_i(w^T \textbf{x}_i + b))+ ||w||_1$$`
+]
+
+
+???
+
+
+- Both versions strongly convex, neither smooth.
+
+- Only some points contribute (the support vectors) to $w$ (sparse solution to dual).
+
+Moving from logistic regression to linear SVMs is just a
+matter of changing the loss from the log loss to the hinge
+loss. The hinge-loss is defined as ... And we can penalize
+using either l1 or l2 norm, or again, in principle also
+elastic net. This formulation with the hinge loss doesn't
+really make sense without the penalty, because of the
+formulation of the hinge loss. What this loss says is
+basically "if you predict the right class with a margin of
+1, there is no loss". Otherwise the loss is linear in the
+decision function. So you need to be on the right side of
+the hyperplane by a given amount, and then there is no more
+loss. That's the reason you need the penalty, for the 1 to
+make sense. Otherwise you could just scale up $w$ to make it
+far enough on the right side. But the regularization
+penalizes growing $w$.
+
+The hinge loss has a kink, same as the l1 norm, and so it's
+not a smooth optimization problem any more, but that's not
+really a big deal. What's interesting is that all the points
+that are classified correctly with a margin of at least 1
+have a loss of zero, and so they don't influence the
+solution any more. All the point that are not classified
+correctly by this margin are the ones that do influence the
+solution and they are called the support vectors.
+
+FIXME graph of not influencing the solution?
+---
+
+class: center
+# Logistic Regression vs SVM
+.compact[
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}}-C \sum_{i=1}^n\log(\exp(-y_i(w^T \textbf{x}_i+b)) + 1) + ||w||_2^2$$`
+`$$\min_{w \in ℝ^{p}, b \in \mathbb{R}}C \sum_{i=1}^n\max(0,1-y_i(w^T \textbf{x}_i + b)) + ||w||_2^2$$`
+
+![:scale 35%](images/binary_loss.png)
+]
+???
+
+So this is the main difference between logistic regression
+and linear SVMs: Does it penalize misclassifications
+according to the green line, or according to the blue line?
+In practice it doesn't make a big difference.
+
+---
+
+
+# SVM or LogReg?
+
+.center[
+![:scale 80%](images/svm_or_lr.png)
+]
+
+- Need compact model or believe solution is sparse? Use L1
+
+???
+So which one of them should you use? If you need probability
+estimates, you should use logistic regression. If you don't,
+you can pick either, and it doesn't really matter. Logistic
+regression can be a bit faster to optimize in theory. If
+you're in a setting where there's many more feature than
+samples, it might make sense to use linear SVMs and solve
+the dual, but you can actually solve either of the problems
+in the dual, and we'll talk about what that means in
+practice in a little bit.
+
+---
+
+
+class: center, middle
+
+# Multiclass classification
+
+
+???
+
+Ok, so I think that's enough on the two loss functions and
+regularization, and hopefully you have a bit of a feel for
+how these two classifiers work, and also an understanding
+that they are in fact quite similar in practice.
+
+Next I want to look at how to go from binary classification
+to multi-class classification. Basically there is a simple
+but hacky way, and there's a slightly more complicated but
+theoretically sound way.
+
+---
+class: center
+
+# Reduction to Binary Classification
+.padding-top[
+.left-column[
+## One vs Rest
+]
+
+.right-column[
+## One vs One
+]
+]
+???
+The slightly hacky way is using what's known as a reduction.
+We're doing a reduction like in math: reducing one problem
+to another. In this case we're reducing the problem of
+multi-class classification into several instances of the
+binary classification problem. And we already know how to
+deal with binary classification.
+
+There are two straight-forward ways to reduce multi-class to
+binary classification. the first is called one vs rest, the
+second one is called one-vs-one.
+
+---
+class: spacious
+
+# One Vs Rest
+
+For 4 classes:
+
+1v{2,3,4}, 2v{1,3,4}, 3v{1,2,4}, 4v{1,2,3}
+
+In general:
+
+n binary classifiers - each on all data
+
+???
+FIXME terrible slide
+
+Let's start with One vs Rest. here, we learn one binary
+classifier for each class against the remaining classes. So
+let's say we have 4 classes, called 1 to 4.  First we learn
+a binary classifier of the points in class 1 vs the points
+in the classes 2, 3 and 4.  Then, we do the same for class
+2, and so on. The way we end up building as many classifiers
+as we have classes.
+
+---
+
+class: spacious
+
+# Prediction with One Vs Rest
+
+
+"Class with highest score"
+
+$$\hat{y} = \text{arg}\max_{i \in Y} \textbf{w}_i\textbf{x} + b_i$$
+
+
+???
+To make a prediction, we compute the decision function of
+all classifiers, say 4 in the example, on a new data point.
+The one with the highest score for the positive class, the
+single class, wins, and that class is predicted.
+
+It's a little bit unclear why this works as well as it does.
+Maybe there's some papers about that now, but I'm not
+
+So in this case we have one coefficient vector w and one
+bias b for each class.
+
+---
+
+# One vs Rest Prediction
+
+.center[
+![:scale 80%](images/ovr_lines.png)
+]
+
+
+???
+Here is an illustration of what that looks like.
+Unfortunately it's a bit hard to draw 4 classes in general
+position in 2 dimensions, so I only used 3 classes here. So
+each class has an associated coefficient vector and bias,
+corresponding to a line. The line tries to separate this
+class from the other two classes.
+# Fixme draw ws?
+
+---
+
+# One vs Rest Prediction
+
+.center[
+![:scale 80%](images/ovr_boundaries.png)
+]
+
+
+???
+
+Here are the decision boundaries resulting from the these
+three binary classifiers. Basically what they say is that
+the line that is closest decides the class. What you can not
+see here is that each of the lines also have a magnitude
+associated with them. It's not only the direction of the
+normal vector that matters, but also the length. You can
+think of that as some form of uncertainty attached to the
+line.
+
+---
+
+class: some-space
+
+# One Vs One
+
+- 1v2, 1v3, 1v4, 2v3, 2v4, 3v4
+- n * (n-1) / 2 binary classifiers - each on a fraction of the data
+
+
+- "Vote for highest positives"
+- Classify by all classifiers.
+- Count how often each class was predicted.
+- Return most commonly predicted class.
+- Again - just a heuristic.
+
+
+???
+FIXME terrible slide
+
+The other method of reduction is called one vs one. In one
+vs one, we build one binary model for each pair of classes.
+In the example of having four classes that is one for 1 vs
+2, one for 1v3 and so on. So we end up with n * (n - 1) /2
+binary classifiers. And each is trained only on the subset
+of the data that belongs to these classes.
+
+To make a prediction, we again apply all of the classifiers.
+For each class we count how often one of the classifiers
+predicted that class, and we predict the class with the most
+votes.
+
+Again, this is just a heuristic and there's not really a
+good theoretical explanation why this should work.
+
+---
+
+class: center
+
+# One vs One Prediction
+
+![:scale 80%](images/ovo_lines.png)
+
+
+???
+Here is an example for predicting on three classes in 2d
+using the one-vs-one heuristic. In the case of three
+classes, there's also three pairs. Three is a bit of a
+special case, with any more classes there would be more
+classifiers than classes.
+
+The dashed lines are colored according to the pair of
+classes they separate. So the green and blue line separates
+the green and blue classes. The data points belonging to the
+grey class were not used in building this model at all.
+---
+
+class: center
+# One vs One Prediction
+
+
+![:scale 80%](images/ovo_boundaries.png)
+
+
+???
+
+Looking at the predictions made by the one vs one classifier
+the correspondence to the binary decision boundaries is a
+bit more clear than for the one vs rest heuristic, because
+it only takes the actual boundaries into account, not the
+length of the normal vectors. That makes it easier to
+visualize the geometry, but it's also a bit of a downside of
+the method because it means it discards any notion of
+uncertainty that was present in the binary classifiers. The
+decision boundary for each class is given by the two lines
+that this class is involved in. So the grey class is bounded
+by the green and grey line and the blue and grey line.
+
+There is a triangle in the center in which there is one vote
+for each of the classes.  In this implemenatation the tie is
+broken to just always predict the first class, which is the
+green one. That might not be the best tie breaking strategy,
+but this is a relatively rare case, in particular if there's
+more than three classes.
+
+OVR and OVO are general heuristics not restricted to linear
+models. They can be used whenever a binary model for
+classification needs to be extended to the multi-class case.
+For logistic regression, there is actually a natural
+extension of the formulation, and we don't have to resort to
+these hacks.
+
+---
+class: spacious
+.left-column[
+## One vs Rest
+- n_classes classifiers
+- trained on imbalanced datasets of original size
+- Retains some uncertainty?
+![:scale 80%](images/ovr_boundaries.png)
+]
+
+.right-column[
+## One vs One
+- n_classes * (n_classes - 1)/2  classifiers
+- trained on balanced subsets
+- No uncertainty propagated
+![:scale 80%](images/ovo_boundaries.png)
+]
+???
+If original problem was balanced, that is...
+
+---
+
+# Multinomial Logistic Regression
+
+Probabilistic multi-class model:
+
+`$$p(y=i|x) = \frac{e^{\textbf{w}_i^T\textbf{x} + b_i}}{\sum_{j=1}^k e^{\textbf{w}_j^T\textbf{x} + b_j}}$$`
+
+`$$\min_{w \in ℝ^{pk}, b \in \mathbb{R}^k} -\sum_{i=1}^n \log(p(y=y_i|x_i, w, b))$$`
+
+$$\hat{y} = \text{arg} \max_{i=1,...,k} \textbf{w}_i\textbf{x} + b_i$$
+
+- Same prediction rule as OvR !
+
+???
+The binary logistic regression case can be generalized to
+multinomial logistic regression, in which we model the
+probability that i is one of the classes using this formula,
+which is also known as softmax. The probability is
+proportional to e to the minus $w^t x$ which is the same as
+in the binary case. But now we need to normalize it so that
+the sum over all classes is one. So we just divide it by
+this sum.
+
+---
+
+class: some-space
+
+# In sckit-learn
+
+- OvO: only SVC
+- OvR: default for all linear models, even LogisticRegression (deprecated)
+- `LogisticRegression(multinomial=True)`
+- `clf.decision_function` = $w^Tx + b$
+- `logreg.predict_proba`
+- `SVC(probability=True)` not great
+
+
+???
+All the models in scikit-learn have multi-class built-in and
+most of them use One versus Rest. There's only one model
+that uses One versus One which is SVC. The Kernel SVM uses
+One versus One because of the authors of the SVM like that.
+For historical reasons, logistic regression also uses One
+versus Rest by default in scikit-learn. That's probably not
+a good idea, but we can’t really change the default easily.
+Usually, if you do multiclass you probably want to use
+multinomial logistic regression and so you set multinomial
+to true and then it does multinomial logistic regression.
+Question: Does that make it run faster? Answer: Its unlikely
+to make it run faster, but it makes it more theoretically
+sound and gives you better probabilities. The probabilities
+that come out of it, if you do OvR, are a complete hack in
+the multi-class case but in the binary case, it’s the same.
+Logistic regression also has a predict_prob method. This
+method gives the probability estimates, so you get a vector
+of length number of classes for each data point. You might
+be tempted to do SVC (probability) equal to true. That is
+something we're going to talk about in a couple of weeks.
+This is is running calibration. Basically, this does the One
+versus One SVM and then it builds a second model on top that
+tries to estimate probabilities using built-in
+cross-validation. This will take forever and the outcome
+will probably be not that great. Don't do this unless you're
+really sure this is what you want to do. If you want
+probabilities just use logistic regression. predict_proba
+gives you the probabilities. If you call predict_proba, it
+will give you an array that has number of samples times
+number of classes and these entries will sum to one. And the
+prediction is just the arg max of these. You can call
+predict which will give you arg max while predict_proba will
+give you the probabilities as given by the model.
+
+---
+
+# Multi-Class in Practice
+
+
+OvR and multinomial LogReg produce one coef per class:
+
+.center[
+![:scale 80%](images/multiclass_coef.png)
+]
+
+SVC would produce the same shape, but with different semantics!
+
+
+???
+FIXME screenshots
+
+In practice, I'm using logistic regression on the iris
+dataset. We have 50 data points, 4 features, 3 classes, each
+class has 50 samples, and we’re trying to classify different
+kinds of irises. Here, I'm looking at logistic regression
+and linear SVM, I built the model. So the coefficient W is
+stored in coef on this score. Everything in scikit-learn
+that's estimated from the data ends with an underscore. If
+it doesn't, it wasn't learned from the data. So coef_ are
+the coefficient that is learned by the model. They’re for
+logistic regression and linear Support Vector Machine,
+they're the same shape, three classes times four features
+but they have different semantics
+
+---
+
+class: center
+
+![:scale 80%](images/multiclass_array.png)
+
+![:scale 80%](images/multiclass_barchart.png)
+
+(after centering data, without intercept)
+
+
+???
+FIXME screenshots
+
+Here I’ve interpreted them. You can see the four features,
+for each feature and for each class, you have a coefficient.
+If the sepal width is big, then the setosa classifier is
+happy. If the sepal with is small then versicolor will have
+a large response. If the petal width is big then virginica
+will have a large response. This is a bar plot after
+coefficient vector here. This tells you what the classifier
+has learned. This is maybe for a very simple problem this is
+little much to look at but it's still way less to look at
+for any other model. If you used a random forest or
+something like that, there would be no way to visualize
+what's happening.
+
+---
+
+class: center, middle
+
+
+# Computational Considerations
+#(for all linear models)
+
+
+???
+Now I want to talk about more general things, how to make
+your homework run faster, also called Computational
+Considerations.
+---
+
+class: some-space
+
+# Solver choices
+
+- Don’t use `SVC(kernel='linear')`, use `LinearSVC`
+- For `n_features >> n_samples`: Lars (or LassoLars) instead of Lasso.
+- For small n_samples (<10.000?), don’t worry.
+- `LinearSVC`, `LogisticRegression`: `dual=False` if `n_samples >> n_features`
+- `LogisticRegression(solver="sag")` for `n_samples` large.
+- Stochastic Gradient Descent for `n_samples` really
+large
+
+
+???
+Some of the things here are specific to scikit-learn and
+some are not. Scikit-learn has SVC and the linear SVC, and
+they're both support vector machines. SVC uses One versus
+One while linear SVC uses one versus rest. SVC uses the
+hinged loss while linear SVC uses squared hinge loss. Linear
+SVC will provide faster results than SVC. If you want to do
+regression with a large number of features, you should
+probably use Lars or LassoLars, which allows you to do
+feature selection much more quickly than Lasso. Generally,
+if you have a few samples, don't worry, any model will find
+and everything will be sparse. If you have, let's say 10,000
+samples all linear models will be fast all the time.
+Otherwise, use this for regression. For classification, if
+the number of samples is much greater than the number of
+features use dual=false. Basically, solving a dual problem
+means solving something where there are as many variables as
+the number of samples, that's the default. Whereas solving
+the primal problem, so dual=false means solving something
+that's with the number of variables as the same number of
+features. If the number of features is big, dual should be
+true, and if the number of samples is big dual should be
+false. If you have really a whole lot of samples you can use
+a recent solver called sag. This works really for really
+large samples. So LogisticRegression(solver=”sag”) that can
+use L1 or L2 penalties or whatever you want. Then finally,
+if you have an extremely large amount of data you can use
+Stochastic Gradient Descent. It has the STD classifier, STD
+regressor, and hopefully, we'll have enough time to talk
+about these today. But generally often setting dual to false
+will help you a lot and setting the solver to something else
+might help you. All of these basically give you the same
+solution but only at different speeds. I want to talk about
+some tips for getting cross-validation. There are some
+built-in tools for doing quicker cross-validation for linear
+models.
+---
+class: center, middle
+
+# Kernel SVMs
+---
+class: spacious
+
+# Motivation
+
+- Go from linear models to more powerful nonlinear ones.
+- Keep convexity (ease of optimization).
+- Generalize the concept of feature engineering.
+
+???
+The main motivation for kernel support vector machines is
+that we want to go from linear models to nonlinear models
+but we also want to have the same simple kernel optimization
+to solve. So basically, the optimization problem we have to
+solve from a kernel SVM is about as hard as a linear SVM. So
+it's sort of very simple problem to solve. It’s much easier
+than learning in neural networks for example. But we get
+nonlinear decision boundaries. The idea behind this is to
+generalize the concept of feature engineering. We'll see in
+a little bit how, for example, kernels SVM with polynomial
+kernels relate to using polynomials explicitly in your
+feature engineering. Before we talk about kernels, I want to
+talk a little bit more about linear support vector machines,
+which we already discussed last week.
+
+---
+class: spacious
+
+
+# Reminder on Linear SVM
+
+`$$ \min_{w \in \mathbb{R}^p, b \in \mathbf{R}} C \sum_{i=1}^n \max(0, 1 - y_i (w^T\mathbf{x} +b)) + ||w||^2_2 $$`
+
+$$ \hat{y} = \text{sign}(w^T \mathbf{x} + b)  $$
+
+
+???
+The idea behind the linear support vector machine is it's a
+linear classifier, the minimization problem is up a hinge
+loss, which is basically linear in the decision function
+w^x. Basically, as long as you have a distance on the right
+side of the hyper plane, that’s bigger than one, your data
+point does not contribute to the loss. So you want all of
+the points outside of this margin of one around the
+separating hyper plane.
+
+
+---
+
+# Reformulate Linear Models
+
+.smaller[
+- Optimization Theory
+
+$$ w = \sum_{i=1}^n \alpha_i \mathbf{x}_i $$
+
+(alpha are dual coefficients. Non-zero for support vectors only)
+
+
+$$ \hat{y} = \text{sign}(w^T \mathbf{x})  \Longrightarrow   \hat{y} = \text{sign}\left(\sum_i^{n}\alpha_i (\mathbf{x}_i^T  \mathbf{x})\right) $$
+
+$$ \alpha_i <= C$$
+
+]
+
+???
+Now I want to go from this linear model and extended to a
+nonlinear model. The idea here is that with some
+improvisation theory, you can find out that the W at the
+optimum can be expressed as a linear combination of the data
+points which is relatively straightforward to C. Expressing
+W as a linear combination, these alphas are called dual
+coefficients. Basically, you’re expressing the linear
+weights as a linear combination of the data points with this
+two coefficients alpha and you can show that these alpha are
+only non-zero for the points that contribute to this
+solution. So you can always write W as a linear combination
+of the support vectors with some alphas. If you want you can
+do this optimization problem either in trying to find W or
+you can rewrite the optimization problem and you can try to
+find these alphas. If you do this in terms of alphas, the
+decision function can be rewritten like this. Instead of
+looking at you w^T x, we just replace W transposed by the
+sum over all the training data points x_i and then basically
+we move the sum out of the inner products and we can see
+that it's the sum over all the alpha i in the inner product
+of the training data points  x_i was a test data point x.
+Optimization theory also tells us that if I find the alpha w
+to minimize this problem, then all the alpha i (s) will be
+smaller than c. This is another way to say what I said last
+time that basically c limits the influence of each data
+point. So, if you have a smaller c the alpha i belong to
+each training data point can only be as big as this c, and
+so each of the data points has only limited influence.
+
+
+---
+class: spacious
+
+# Introducing Kernels
+
+
+$$\hat{y} = \text{sign}\left(\sum_i^{n}\alpha_i (\mathbf{x}_i^T  \mathbf{x})\right) \longrightarrow \hat{y} = \text{sign}\left(\sum_i^{n}\alpha_i (\phi(\mathbf{x}_i)^T  \phi(\mathbf{x}))\right) $$
+
+$$ \phi(\mathbf{x}_i)^T \phi( \mathbf{x}_j) \longrightarrow k(\mathbf{x}_i,  \mathbf{x}_j) $$
+
+k positive definite, symmetric $\Rightarrow$ there exists a $\phi$! (possilby $\infty$-dim)
+
+
+???
+
+The idea of this rewrite is that now I observed that the
+optimization problem and the prediction problem can be
+written only in terms of these inner products. Let's say I
+want to use the feature function  ∅, like doing a polynomial
+expansion with the polynomial feature transformation and
+while if I use ∅x_i as these inputs then they just replace
+the x and then I just need the inner products between these
+feature vectors, but the only thing I really ever need is
+these inner products. Instead of trying to come up with some
+feature functions that are good to separate the data points,
+I can try it to come up with inner products. I can try to
+engineer this thing here instead of trying to engineer the
+features. If you write down any positive definite quadratic
+form that is symmetric, there's always a ∅. So whenever I
+write down any function that is positive definite and
+symmetric into vectors, there's always a feature function ∅
+so that this is the inner product in this feature space,
+which is kind of interesting. The feature space might be
+infinite dimensional though. So the idea that it might be
+much easier to come up with these kinds of inner products
+than trying to find ∅. So we're now trying to design the k,
+which makes this whole thing a good nonlinear classifier. So
+in this case, obviously, the kernel.
+
+
+---
+
+# Examples of Kernels
+
+
+$$k_\text{linear}(\mathbf{x}, \mathbf{x}') = \mathbf{x}^T\mathbf{x}'$$
+
+$$k_\text{poly}(\mathbf{x}, \mathbf{x}') = (\mathbf{x}^T\mathbf{x}' + c) ^ d$$
+
+$$k_\text{rbf}(\mathbf{x}, \mathbf{x}') = \exp(\gamma||\mathbf{x} -\mathbf{x}'||^2)$$
+
+$$k_\text{sigmoid}(\mathbf{x}, \mathbf{x}') = \tanh\left(\gamma \mathbf{x}^T\mathbf{x}'  + r\right)$$
+
+`$$k_\cap(\mathbf{x}, \mathbf{x}')= \sum_{i=1}^p \min(x_i, x'_i)$$`
+
+- If $k$ and $k'$ are kernels, so are `$k + k', kk', ck', ...$`
+
+???
+There's a couple of kernels that are commonly used. So the
+linear kernel just means I just use the inner product in the
+original space. That is just the original linear SVM. Other
+kernels that are commonly used are like the polynomial
+kernel, in which I take the inner products, I add some
+constant c and I raise it to power d. There's the RVF
+kernel, which is probably the most commonly used kernel,
+which is just a Gaussian function above the curve around the
+distance of the two data points. There's a sigmoid kernel.
+There's the intersection kernel, which computes the minimum.
+And if you have any kernel, you can create a new kernel by
+adding two kernels together or multiplying them or
+multiplying them by constant. The only requirement we have
+is that they're positive, indefinite and symmetric.
+
+
+What does this look like in practice? So, for example, let's
+look at this polynomial kernel. It's not very commonly used,
+but I think it's one of the ones that are relatively easy to
+understand. So the idea of the polynomial kernel is it does
+the same thing as computing polynomials. But if you compute
+polynomials of a very high degree, your feature vector
+becomes very long. Whereas here, I always just need to
+compute this inner product and raise them to this power.
+
+---
+# Polynomial Kernel vs Features
+
+
+$$ k_\text{poly}(\mathbf{x}, \mathbf{x}') = (\mathbf{x}^T\mathbf{x}' + c) ^ d $$
+
+Primal vs Dual Optimization<br /><br />
+
+Explicit polynomials $\rightarrow$ compute on `n_samples * n_features ** d`
+
+Kernel trick $\rightarrow$ compute on kernel matrix of shape `n_samples * n_samples`
+<br /><br />
+For a single feature:
+
+$$ (x^2, \sqrt{2}x, 1)^T (x'^2, \sqrt{2}x', 1) = x^2x'^2 + 2xx' + 1 = (xx' + 1)^2 $$
+
+???
+So if I compute explicit polynomials, if I end features and
+then I do all the interactions, my data set becomes number
+of samples times number of features to the power D. So if I
+have 1000 features, and I take D to be 5, this will be
+enormous. If I'm using the kernel trick, which is replacing
+this inner product in the feature space by the kernel, then
+I only need to compute the inner product on the training
+data. So I only need to compute on this inner product matrix
+which is number of samples times number of samples. So this
+is much smaller if number of features to the D is smaller
+than number of samples then I can compute, essentially the
+same result on something that’s a different representation
+of the data. You can see that they're not entirely
+equivalent. So doing the polynomial expansion is not
+entirely equivalent to the polynomial features but it's
+about the same. You can see this quite easily for a single
+feature. If I do this for many features, adding extra
+features would make a very long feature vector, but the
+thing on the right-hand side always stays the same.
+
+
+---
+
+# Poly kernels vs explicit features
+
+.smaller[
+```python
+poly = PolynomialFeatures(include_bias=False)
+X_poly = poly.fit_transform(X)
+print(X.shape, X_poly.shape)
+print(poly.get_feature_names())
+```
+```
+((100, 2), (100, 5))
+['x0', 'x1', 'x0^2', 'x0 x1', 'x1^2']
+```
+]
+
+.center[
+![:scale 70%](images/poly_kernel_features.png)
+]
+
+???
+You can see that they're very similar, by just applying them
+scikit-learn, either the Kernel SVM or the explicit
+polynomial features. Here I have this dataset consisting of
+classes orange and blue. These are not linearly separable.
+So if I use a linear SVM, it wouldn't work. But I can do a
+polynomial transformation to go from two features to five
+features. In here I just added degree two features. And then
+I can learn linear SVM on top of these expanded features
+space. I get a very similar result if I instead of expanding
+the features, I use the original dataset. But now instead of
+learning linear SVM, I use a SVM with the polynomial kernel
+of degree 2, they're not exactly the same because there was
+this factor of squared of two that I mentioned, but they're
+pretty much the same. Question is if we increase the
+capacity of the model and we overfit and we'll talk about
+this in a little bit, but so, for now, we want to increase
+the capacity of a model making more flexible I mean, we
+definitely don't want to increase it infinitely. But we
+really making out model more flexible. So here for the
+polynomial kernel, you could get the same result just by
+expanding. If you have a very high degree polynomial it
+would be a large expansion. If you use one of the other
+kernels, for example, the RVF kernel doing this expansion
+would actually be resolved in infinite dimensional vector,
+so you couldn't actually do this with a feature vector. Now
+I'm looking at this model here on the right-hand side where
+I'm using the polynomial features.
+
+---
+class: smaller
+# Understanding Dual Coefficients
+
+```python
+linear_svm.coef_
+```
+```
+array([[0.139, 0.06, -0.201, 0.048, 0.019]])
+```
+$$ y = \text{sign}(0.139 x_0 + 0.06 x_1 - 0.201 x_0^2 + 0.048 x_0 x_1 + 0.019 x_1^2) $$
+
+```python
+linear_svm.dual_coef_
+#array([[-0.03, -0.003, 0.003, 0.03]])
+linear_svm.support_
+#array([1,26,42,62], dtype=int32)
+```
+.smallest[
+`$$ y = \text{sign}(-0.03 \phi(\mathbf{x}_1)^T \phi(x) - 0.003 \phi(\mathbf{x}_{26})^T \phi(\mathbf{x})  +0.003 \phi(\mathbf{x}_{42})^T \phi(\mathbf{x}) + 0.03 \phi(\mathbf{x}_{62})^T \phi(\mathbf{x})) $$`
+]
+
+???
+FIXME formula goes over
+And so if I look at the linear SVM and I have five
+coefficients corresponding to the five features. And so if I
+make a prediction, its first coefficient times the first
+feature, second coefficient times the second feature and so
+on, and I look at the sine of it. This is just a linear
+prediction if I want to look what this looks like in terms
+of dual coefficients, I can look at the dual coefficients of
+linear SVM and the support. Out of these many data points,
+there's four, they were selected as support vectors by the
+optimization. These are the ones that have these black
+circles around them. And so the solution can be expressed as
+a linear combination of these four support vectors where the
+coefficients are dual coefficients.
+
+If I want to express this in terms of dual coefficients, I
+can say its dual coefficient -0.03 times the inner product
+of the first data point and my test data point in feature
+space. I do the same thing for the train each point 26 and
+42 and 63 with their respective weights. Now I can look at
+how does this look like for kernel.
+
+---
+# With Kernel
+`$$y = \text{sign}\left(\sum_i^{n}\alpha_i k(\mathbf{x}_i,  \mathbf{x})\right) $$`
+
+```python
+poly_svm.dual_coef_
+# array([[-0.057, -0. , -0.012, 0.008, 0.062]])
+poly_svm.support_
+# array([1,26,41,42,62], dtype=int32)
+```
+`$$ y = \text{sign}(-0.057 (\mathbf{x}_1^T\mathbf{x} + 1)^2
+         -0.012 (\mathbf{x}_{41}^T \mathbf{x} + 1)^2 \\
+         +0.008 (\mathbf{x}_{42}^T \mathbf{x} + 1)^2 + 0.062 * (\mathbf{x}_{62}, \mathbf{x} + 1)^2)
+$$`
+
+???
+So for kernel, the prediction is this. For kernel SVM there
+are no coefficients in the original space, there's only dual
+coefficients. For each of support vectors, I compute the
+kernel of support vector with the test point for which I
+want to make a prediction. This is basically the prediction
+function of the kernel support vector machine. And you can
+see it's very similar to this only that I’ve replaced these
+inner products by the kernels. The original idea behind this
+kernel trick was to make computation faster. In some cases,
+it might be faster.
+
+$$ y = sign(-0.03 * np.inner(poly(X[1]), poly(x)) – 0.003 *
+np.inner(poly(X[26]), poly(x)) +0.003 *
+np.inner(poly(X[42]), poly(x)) + 0.03 *
+np.inner(poly(X[63]), poly(x)) $$
+---
+
+# Runtime Considerations
+
+.center[
+![:scale 85%](images/svm_runtime.png)
+]
+
+???
+So how does it look like in terms of runtime, here I have
+the same plot in linear space and log-log space. This is for
+a fixed number of features, more features make the kernel
+better. But if I fix the number of features, you can see
+which of the two is faster. Log-log space is better for
+this. So you can see that if I have a very small number of
+samples, then linear kernel and doing explicit polynomials
+is slower than doing the kernel because of the matrix that's
+number of samples times the number of samples is very small.
+But if I have a lot of features, then doing the explicit
+expansion is faster since the number of samples is large. In
+the case where we can do explicit feature expansion if we
+have a lot of samples, maybe that's faster.
+
+---
+class:spacious
+
+# Kernels in Practice
+
+- Dual coefficients less interpretable
+- Long runtime for “large” datasets (100k samples)
+- Real power in infinite-dimensional spaces: rbf!
+- Rbf is “universal kernel” - can learn (aka overfit)
+anything.
+
+???
+So what does this mean for us in practice? One issue is that
+the dual coefficients are usually less interpretable because
+they give you like weightings of inner products with the
+training data points which is maybe less intuitive than
+looking at like five times x squared and if you have large
+data sets they can become very slow. The real power of
+kernels is when the feature space would actually be
+infinite-dimensional. The RBF kernel is called the universal
+kernel, which means you can learn any possible concept or
+you can overfit any possible concept. Same is true for like
+neural networks and trees and nearest neighbors, for
+example, they can learn anything but linear models and even
+polynomial models of a fixed degree cannot learn everything.
+
+
+---
+class:spacious
+
+#Preprocessing
+
+- Kernel use inner products or distances.
+- StandardScaler or MinMaxScaler ftw
+- Gamma parameter in RBF directly relates to scaling
+of data and n_features – new default is `1/(X.std() * n_features)` but should be `1/X.var() * n_features)` 😞
+
+???
+Nearly all of these kernels use the distance in the original
+space. These inner products are distances and so scaling is
+really important. People use a center scale or min-max
+scalar.
+
+For the RBF kernel or for any of the kernels really the
+default parameters work well for scale data. If you don't
+scale your data default parameters will not work at all. If
+you multiply that by five then the default parameters will
+give you terrible results.
+
+---
+
+# Parameters for RBF Kernels
+
+- Regularization parameter C is limit on alphas
+(for any kernel)
+- Gamma is bandwidth: $k_\text{rbf}(\mathbf{x}, \mathbf{x}') = \exp(\gamma||\mathbf{x} -\mathbf{x}'||^2)$
+
+
+.center[
+![:scale 85%](images/svm_gamma.png)
+]
+
+???
+Support vector machine with RBF kernel has these two
+parameters you need to tune. These both control complexity
+in some way. We already said that the C parameter limits the
+influence of each individual data point and the other one is
+to kernel bandwidth gamma. A smaller gamma means a wider
+kernel. So wider kernel means a simpler model because the
+decision boundary will be smoother. Whereas a larger gamma
+means a much narrower kernel and that means each data point
+will have much more local influence, which means it's more
+like the nearest neighbor algorithm and has more complexity.
+Usually, you should tune both of these parameters to get a
+good tradeoff between fitting and generalization.
+
+---
+
+.center[
+![:scale 85%](images/svm_c_gamma.png)
+]
+
+???
+This plot tries to illustrate these two parameters in the
+RBF SVM kernel. On the vertical is C and on the horizontal
+is gamma and support vectors are marked with circles. So the
+simplest model is basically the one with the smallest gamma
+and smallest C. Basically, all data points are support
+vectors, everything gets averaged and have a very broad
+kernel. Now, if I increase C, I overfit the data more, each
+data point can have more influence. And so only the data
+points that are really close to the boundary have influence
+now. If you increase gamma, the area of influence of each
+data point sort of shrinks. So here from it being basically
+linear or having this very little curvature if you increase
+gamma, it gets more and more curvature. And in the end, if
+you make gamma very large, each data point basically has a
+small sort of isolated island of its class around it giving
+a very complicated decision boundary. So here, for example,
+these clearly overfit the training data and so this is
+probably too large gamma. There's sort of a tradeoff between
+the two. Usually, they're multiple combinations of C and
+gamma that will give you similarly good results.
+
+---
+
+```python
+from sklearn.datasets import load_digits
+digits = load_digits()
+```
+.center[
+![:scale 65%](images/digits_images.png)
+]
+
+???
+Looking at the digit dataset. Let's say we want to learn
+kernel support vector machine on this dataset. So set the
+two important parameters to tune is C and gamma.
+---
+
+# Scaling and Default Params
+
+.smaller[
+```
+gamma : float, optional (default = "auto")
+  Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
+  If gamma is 'auto' then 1/n_features will be used
+```
+```python
+scaled_svc = make_pipeline(StandardScaler(), SVC())
+print(np.mean(cross_val_score(SVC(), X_train, y_train, cv=10)))
+print(np.mean(cross_val_score(scaled_svc, X_train, y_train, cv=10)))
+```
+```
+0.578
+0.978
+```
+```python
+gamma = (1. / (X_train.shape[1] * X_train.var()))
+print(np.mean(cross_val_score(SVC(gamma=gamma), X_train, y_train, cv=10)))
+```
+```
+0.987
+```
+]
+
+???
+Gamma by default in scikit-learn is one over the number of
+features. This really makes sense only if you scale the data
+to have a standard deviation of one, then this is a pretty
+good default. Here if I compare cross-validation, kernel SVM
+with default parameters on this dataset versus kernel SVM
+with the scaled data, the performance is either 57% or 97%.
+There's a giant jump between the scaled data and the upscale
+data. Actually here in this data set, all the pixels are on
+the same scale more or less, so they all are between 0 and
+16. So if we change the gamma to be to take into account the
+standard deviation of the data set, I actually get pretty
+good results. This is actually just a very peculiar dataset
+because I basically I know the scale should be from zero to
+one when it's from 0 to 16. So scaling by the overall
+standard deviation gives me good results here. But in
+principle day, I want to convey is that gamma scales with
+the standard deviation of the features. Usually, each of the
+features has a different standard deviation or a different
+scale and so you want to use a centered scale to estimate
+the scale for each feature and bring it to one. And then the
+default gamma, which is one over number of features will be
+sort of reasonable.
+
+---
+
+# Grid-Searching Parameters
+
+```python
+param_grid = {'svc__C': np.logspace(-3, 2, 6),
+              'svc__gamma': np.logspace(-3, 2, 6) / X_train.shape[0]}
+param_grid
+```
+{'svc_C': array([   0.001,    0.01 ,    0.1  ,    1.   ,   10.   ,  100.   ]),
+ 'svc_gamma': array([ 0.000001,  0.000007,  0.000074,  0.000742,  0.007424,  0.074239])}
+```python
+grid = GridSearchCV(scaled_svc, param_grid=param_grid, cv=10)
+grid.fit(X_train, y_train)
+```
+???
+To tune them, I use the scaled SVM and both C and gamma
+usually learn auto log space, so here I have a log space for
+C and gamma. I actually divide this by the number of
+features, I could also just change the range, but as I said,
+this is sort of something that scales with the number of
+features and standard deviation. Then I can just do my
+standard grid searchCV with the two-dimensional parameter
+grid.
+
+---
+# Grid-Searching Parameters
+
+.center[
+![:scale 95%](images/svm_c_gamma_heatmap.png)
+]
+
+???
+Usually, there's a strong interaction between these two
+parameters. And the SVM is pretty sensitive to the setting
+of these two parameters. So you can see here if you look at
+the scales, balance 10 classification dataset. So chance
+performance is 10% accuracy. And so if I set the parameters
+wrong, I get chance accuracy. If I set them right, I get the
+high 90s. So that's the difference between setting gamma to
+0.007 and  0.000007 or between setting c to 1 and c to
+0.0001.
+
+So usually they're some correlation between the C and gamma
+values which are good. So you can decrease or increase C if
+you decrease gamma and the other way around.
+
+So usually I like to look at grid search results as a 2d
+heat map for this and if your optimum is somewhere on the
+boundary, you want to extend your search space. For example,
+you can see that I wouldn't need to search this very small
+Cs, they don't work at all, but maybe something better might
+be over here. A C of 100 is already like a very big C so if
+I want to use even less regularization, learning the model
+will be even slower.
+
+---
+
+class: center, middle
+
+# Questions ?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script>
+    // Config Remark
+    remark.macros['scale'] = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+    };
+    config_remark = {
+        highlightStyle: 'github',
+        highlightSpans: true,
+        highlightLines: true,
+        ratio: "16:9"
+    };
+      var slideshow = remark.create(config_remark);
+    // Configure MathJax
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] /* removed 'code' entry*/
+    }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    </script>
+  </body>
+</html>

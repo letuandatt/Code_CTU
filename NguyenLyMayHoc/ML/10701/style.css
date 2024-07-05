@@ -1,0 +1,234 @@
+body {
+    margin: 10px;
+    padding: 2px;
+    background: rgb(230,230,230);
+    font: 16px arial, sans-serif;
+}
+/*
+pre {
+    text-indent: 30px
+}*/
+/*
+h1 {
+    color: rgb(160,160,160);
+}
+*/
+h2 {
+    color: white;
+    background: silver;
+    padding: 5px;  /* top, bottom, left, and right */
+}
+h3 {
+}
+
+#mainmenu {
+    width: 100%;
+    background: url("images/it_back_mac.gif");
+}
+* html #mainmenu { /* IE only */
+    background: none;
+}
+
+#header {
+    font-family: "Times New Roman";
+    color: rgb(40,40,40);
+}
+#header a img {
+    border: 0;
+}
+#header a:hover {
+}
+.coursetitle {
+    font-weight: bold;
+    font-size: 26pt;
+    font-family: "Garamond";
+}
+.lecturer {
+    font-weight: normal;
+    font-size: 18pt;
+    color: blue; /*#4444cc;*/
+    font-family: "Bookman Old Style";
+}
+
+.hspace  {width:  5px;}
+.hspace2 {width: 25px;}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#content {
+    text-align: justify;
+    background: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-top: none;
+    z-index: 2;
+}
+#maincontent {
+    font: 0.9em/1.3em "bitstream vera sans", verdana, sans-serif;
+    color: black; /*rgb(120,120,120);*/
+    width: 100%;
+    min-height: 300px;
+}
+#maincontent a {
+    text-decoration: none;
+    color: blue; /*black;*/
+}
+#maincontent a:hover {
+    color: white;
+    background: blue; /*black;*/
+}
+
+/* trailer */
+#trailer {
+    font: 0.9em/1.3em "bitstream vera sans", verdana, sans-serif;    
+    color: rgb(200,200,200);
+    text-align: center;
+}
+#trailer a {
+    color: rgb(200,200,200);
+}
+
+/* schedule table */
+.schedule th { 
+    background: white; /*rgb(130,0,0);*/ /*maroon;*/
+    color: black; /*white;*/
+}
+
+.schedule {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-collapse:  collapse;
+}
+
+.schedule tr, .schedule th, .schedule td { 
+    padding: 3px;  
+    border-width: 1px; 
+    border-spacing: 0px; 
+    border-style: solid;  
+    border-color: black;
+}
+.schedule ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#maincontent .schedule a {
+    text-decoration: underline;
+}
+/*#maincontent .schedule tr :hover {
+    font: 1.3em/1.3em "bitstream vera sans", verdana, sans-serif;
+}*/
+
+/* Presentation:  No underlines on links in schedule unless you're
+ * moving the mouse over it. */
+
+.schedule tr.lecture { background: white; text-align: left; }
+.schedule tr.lecture.alt { background: #ddd; text-align: left; }
+.schedule tr.exam    { background: rgb(153, 51, 153); color: white; text-align: left; }
+.schedule tr.lechead { background: rgb(15,150,250); color: white; font-weight: bold; text-align: center; }
+.schedule tr.lechead2 { background: yellow; font-weight: bold; text-align: center; }
+.schedule tr.poster { background: lime; }
+.schedule tr.noclass { background: rgb(190,190,255); }
+
+/* misc */
+#embed {
+    background: rgb(255,255,255);
+}
+
+.iframe {
+    background: rgb(255,255,255);         
+}
+
+#bibtex {
+    color: rgb(0,0,0);
+    background: rgb(120, 120, 120);
+}
+
+#note {
+    color: rgb(30,30,220);
+}
+
+#notable {
+    color: rgb(220,30,30);
+    font: bold arial, sans-serif;
+}
+
+
+#bib {
+    font: 0.5em/0.9em "bitstream vera sans", verdana, sans-serif;    
+    color: rgb(150,150,150); 
+    text-align: center;
+}
+
+/* not in use */
+
+/* menu under banner */
+#hdr {
+    text-decoration: none;
+    color: #DEDECF;
+    font: 10px;
+}
+#hdr a {
+    text-decoration: none;
+    color: #DEDECF;
+}
+#hdr a:hover {
+    background: rgb(80,80,80);
+}
+
+/* menu on left side */
+.glossymenu {
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 0;
+    width: 170px;
+    border: 1px solid #9A9A9A; 
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.glossymenu li a {
+    background: white url(http://www.cs.cmu.edu/~epxing/Class/10701/glossyback.jpg) repeat-x bottom left;
+    font: bold 20px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+    color: grey;
+    display: block;
+    width: auto;
+    padding: 3px 0; 
+    padding-left: 5px;
+    text-decoration: none;
+}
+* html .glossymenu li a { /*IE only. Actual menu width minus left padding of A element (5px) */
+    width: 165px;
+}
+.glossymenu li a:hover {
+    background:white url(http://www.cs.cmu.edu/~epxing/Class/10701/glossyback2.jpg) repeat-x bottom left; 
+    font: bold 20px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+    color: grey;
+    display: block;
+    width: auto;
+    padding: 3px 0; 
+    padding-left: 5px;
+    text-decoration: none;
+}
+* html .glossymenu li a:hover { /* IE only */
+    height: 26px;
+}
+
+#navmenu {
+    float: left;
+}
+#navmenu a.two {
+    font-size: 80%;
+}
+* html #navmenu a.two:hover { /* IE only */
+    height: 80%;
+}
+#navmenu a.twoactive {
+    font-size: 80%;
+    color: rgb(30, 30, 30);
+}
+#navmenu a.active {
+    color: rgb(30, 30, 30);
+}
