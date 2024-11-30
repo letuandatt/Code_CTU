@@ -1,30 +1,41 @@
 # Code_CTU
 
-Welcome to **Code_CTU**, a repository for various codes and resources used during my studies at Can Tho University (CTU). This repository includes implementations and exercises across several subjects, such as data structures, algorithms, databases, and artificial intelligence.
+Welcome to **Code_CTU**! This repository is a collection of my coding projects and learning materials from my time at **Can Tho University (CTU)**. It covers a wide range of topics from **Data Structures** and **Algorithms** to **Artificial Intelligence** and **Databases**. Feel free to explore and contribute!
 
-## Contents
+## 📂 Repository Contents
 
-- **CauTrucDuLieu&GiaiThuat**: Data Structures & Algorithms
-- **CoSoDuLieu**: Database Fundamentals
-- **DocumentOfAI**: Artificial Intelligence documentation
-- **EnglishProgramming**: Programming in English
-- **LyThuyetDoThi**: Graph Theory
-- **NguyenLyHeDieuHanh**: Operating Systems
-- **OOP**: Object-Oriented Programming
-- **TriTueNhanTao**: Artificial Intelligence
+- **Data Structures & Algorithms**  
+- **Database Fundamentals**
+- **Artificial Intelligence Documentation**
+- **Programming in English**
+- **Graph Theory**
+- **Operating Systems**
+- **Object-Oriented Programming**
 
-... and more!
+... and much more!
 
-## Languages Used
+## 🛠️ Languages & Tools Used
 
-- Jupyter Notebook (90.1%)
-- HTML (8.6%)
-- Python, C, Java, JavaScript
+- Python
+- C
+- Java
+- JavaScript
+- Jupyter Notebook
+- HTML
 
-## Usage
+## 🚀 Usage
 
-Feel free to explore the code and resources. Contributions are welcome. Fork the repository, make changes, and submit a pull request.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/letuandatt/Code_CTU.git
+    ```
+2. Explore the code for different courses and topics.
+3. Feel free to contribute by forking the repo and submitting a pull request!
 
-## License
+## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+**Contributions are welcome!** 🌟
