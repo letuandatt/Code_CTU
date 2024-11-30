@@ -9,8 +9,8 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
 # Load data and take only first 100 samples (Iris-setosa and Iris-versicolor)
-df = pd.read_csv("../iris/iris.data", header=None).iloc[:100]
-df.iloc[:, -1] = np.where(df.iloc[:, -1] == 'Iris-setosa', 0, 1)
+df = pd.read_csv("../iris/iris.data", header=None)
+df.iloc[:, -1] = np.where(df.iloc[:, -1] == 'Iris-setosa', 0, np.where(df.iloc[:, -1] == 'Iris-versicolor', 1, 2))
 
 # Shuffle data
 df = df.iloc[np.random.permutation(len(df))].reset_index(drop=True)
