@@ -1,4 +1,6 @@
-# Code_CTU
+<p>
+  <h1 style='text-align:center;'>Code_CTU</h1>
+</p>
 
 Welcome to **Code_CTU**! This repository is a collection of my coding projects and learning materials from my time at **Can Tho University (CTU)**. It covers a wide range of topics from **Data Structures** and **Algorithms** to **Artificial Intelligence** and **Databases**. Feel free to explore and contribute!
 
