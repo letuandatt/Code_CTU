@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
-# Load data and take only first 100 samples (Iris-setosa and Iris-versicolor)
+# Load data
 df = pd.read_csv("../iris/iris.data", header=None)
 df.iloc[:, -1] = np.where(df.iloc[:, -1] == 'Iris-setosa', 0, np.where(df.iloc[:, -1] == 'Iris-versicolor', 1, 2))
 
