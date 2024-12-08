@@ -29,7 +29,7 @@ public class SDConVat {
 			if(c.equals("d") || c.equals("D")) {
 				ds[i] = new De();
 			}
-			if(c.equals("b") || c.equals("B")) {
+			if(c.equals("g") || c.equals("G")) {
 				ds[i] = new Ga();
 			}
 			ds[i].nhap();
