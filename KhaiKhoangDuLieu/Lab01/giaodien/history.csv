@@ -1,0 +1,2 @@
+model,sepal_length,sepal_width,petal_length,petal_width,prediction
+KNN,7.6,2.3,1.4,3.2,Virginica

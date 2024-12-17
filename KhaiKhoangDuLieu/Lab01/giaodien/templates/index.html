@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Prediction</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main-container {
+            display: flex;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            max-width: 90%;
+        }
+        .form-container {
+            flex: 1; /* Chiếm 1 phần của container */
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .history-container {
+            flex: 1; /* Chiếm 1 phần của container */
+            padding-left: 20px;
+        }
+        h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 50%;
+            background-color: #007AFF;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        input[type="submit"]:hover {
+            background-color: #005BB5;
+        }
+        input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+
+        /* Custom button to trigger file input */
+        .custom-file-input {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            width: 100px;  /* Đặt chiều rộng tự động */
+            padding: 8px 16px;  /* Giảm padding để nút nhỏ lại */
+            background-color: #007AFF;
+            color: white;
+            font-size: 14px;  /* Giảm kích thước chữ */
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .custom-file-input:hover {
+            background-color: #005BB5;
+        }
+
+        .custom-file-input:active {
+            background-color: #003F8D;
+        }
+
+        input[type="file"]:focus + .custom-file-input {
+            outline: none;
+        }
+
+        /* Optional: Style the file name once a file is selected */
+        .file-name {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #555;
+        }
+        hr {
+            margin: 20px auto;
+            border: 0;
+            border-top: 1px solid #ccc;
+            width: 45%;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+        .history {
+            max-height: 400px; /* Đặt chiều cao tối đa */
+            overflow-y: auto;  /* Kích hoạt cuộn dọc nếu nội dung vượt quá */
+        }
+        .history table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .history th, .history td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .history th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .history td {
+            background-color: #fafafa;
+        }
+        button {
+            background-color: #FF3B30;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #CC1F1A;
+        }
+
+        /* Additional styles for the Clear All button */
+        button.clear-all {
+            background-color: #FF9500;
+            font-size: 16px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Hover effect for Clear All button */
+        button.clear-all:hover {
+            background-color: #CC6E00;
+        }
+
+        button.download {
+            background-color: #007AFF;
+            gap: 10px;
+        }
+
+        .flash-messages {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .alert.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+    <script>
+        // Function to clear all history
+        function clearHistory() {
+            fetch('/clear_history', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        location.reload();  // Reload page to reflect changes
+                    }
+                });
+        }
+
+        // Function to delete a specific row in history
+        function deleteRow(index) {
+            fetch(`/delete_prediction/${index}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        location.reload();  // Reload page to reflect changes
+                    }
+                });
+        }
+
+        // Download history
+        function download() {
+            window.location.href = '/download_history';
+        }
+
+        // Function to toggle between manual input and file input
+        function toggleInputMethod() {
+            const manualInputs = document.getElementById('manual-inputs');
+            const fileInputs = document.getElementById('file-inputs');
+            const radioButtons = document.getElementsByName('input_method');
+
+            if (radioButtons[0].checked) {  // If "manual" is selected
+                manualInputs.style.display = 'block';
+                fileInputs.style.display = 'none';
+            } else {  // If "file" is selected
+                manualInputs.style.display = 'none';
+                fileInputs.style.display = 'block';
+            }
+        }
+
+        // Display filename after selecting a file
+        function displayFileName() {
+            const fileInput = document.getElementById('file');
+            const fileName = document.getElementById('file-name');
+            if (fileInput.files.length > 0) {
+                fileName.textContent = `Selected File: ${fileInput.files[0].name}`;
+            } else {
+                fileName.textContent = '';
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="main-container">
+    <!-- Form dự đoán bên trái -->
+        <div class="form-container">
+            <h2>Iris Flower Prediction</h2>
+            <hr>
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <!-- Lựa chọn nhập liệu -->
+                <label>
+                    <input type="radio" name="input_method" value="manual" checked onchange="toggleInputMethod()"> Nhập thuộc tính thủ công
+                </label>
+                <label>
+                    <input type="radio" name="input_method" value="file" onchange="toggleInputMethod()"> Tải lên file
+                </label>
+                <br><br>
+
+                <!-- Nhập thuộc tính -->
+                <div id="manual-inputs">
+                    <label for="sepal.length">Sepal Length:</label>
+                    <input type="text" id="sepal.length" name="sepal.length" required>
+
+                    <label for="sepal.width">Sepal Width:</label>
+                    <input type="text" id="sepal.width" name="sepal.width" required>
+
+                    <label for="petal.length">Petal Length:</label>
+                    <input type="text" id="petal.length" name="petal.length" required>
+
+                    <label for="petal.width">Petal Width:</label>
+                    <input type="text" id="petal.width" name="petal.width" required>
+                </div>
+
+                <!--- File input --->
+                <div id="file-inputs" style="display: none">
+                    <label for="file" class="custom-file-input">Choose File</label>
+                    <input type="file" id="file" name="file" accept=".csv" onchange="displayFileName()">
+                    <p class="file-name" id="file-name"></p>
+                </div>
+
+                <label for="model">Choose Model:</label>
+                <select id="model" name="model">
+                    <option value="KNN">KNN</option>
+                    <option value="NaiveBayes">Naive Bayes</option>
+                    <option value="DecisionTree">Decision Tree</option>
+                    <option value="RandomForest">Random Forest</option>
+                    <option value="SVM">SVM</option>
+                    <option value="MLP">MLP</option>
+                </select>
+
+                <input type="submit" value="Predict">
+            </form>
+            {% if error %}
+                <h3 class="error">Error: {{ error }}</h3>
+            {% endif %}
+        </div>
+
+        <!-- Lịch sử dự đoán bên phải -->
+        <div class="history-container">
+            <h3>Prediction History</h3>
+            <hr>
+            <div class="history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Sepal Length</th>
+                            <th>Sepal Width</th>
+                            <th>Petal Length</th>
+                            <th>Petal Width</th>
+                            <th>Prediction</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in history %}
+                        <tr>
+                            <td>{{ entry.model }}</td>
+                            <td>{{ entry.sepal_length }}</td>
+                            <td>{{ entry.sepal_width }}</td>
+                            <td>{{ entry.petal_length }}</td>
+                            <td>{{ entry.petal_width }}</td>
+                            <td>{{ entry.prediction }}</td>
+                            <td><button onclick="deleteRow({{ loop.index0 }})">Delete</button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center">
+                <br><button onclick="clearHistory()">Clear All</button>
+                <button onclick="download()" class="download">Tải xuống</button>
+            </div>
+            <br><br>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

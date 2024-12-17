@@ -1,0 +1,49 @@
+params,mean_fit_time,mean_score_time,mean_test_score,rank_test_score
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'sgd'}",0.20858364105224608,0.0010195732116699218,0.8583333333333332,48
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.12841567993164063,0.0020112514495849608,0.8583333333333334,46
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.26160402297973634,0.0011985301971435547,0.8583333333333334,46
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.24293437004089355,0.0044152259826660155,0.8666666666666666,45
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.18176875114440919,0.000823974609375,0.8666666666666668,43
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.10934052467346192,0.0010042667388916015,0.8666666666666668,43
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.10827145576477051,0.0009041309356689453,0.875,38
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.2256993293762207,0.0015053272247314454,0.875,38
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.08489003181457519,0.0005893707275390625,0.875,38
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.17121405601501466,0.0012175083160400391,0.875,38
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.2334132671356201,0.0016092777252197266,0.875,38
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.12812914848327636,0.001413249969482422,0.8833333333333332,37
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.16404690742492675,0.0010051727294921875,0.8833333333333334,34
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.20599498748779296,0.0021066188812255858,0.8833333333333334,34
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'sgd'}",0.19090375900268555,0.0009035110473632812,0.8833333333333334,34
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.1807126522064209,0.0024172782897949217,0.8916666666666666,32
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.08445200920104981,0.000906991958618164,0.8916666666666666,32
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.10930881500244141,0.0008029937744140625,0.8916666666666668,31
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'sgd'}",0.12766785621643068,0.001206350326538086,0.9,30
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.07576799392700195,0.0008048057556152344,0.9083333333333334,29
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.14296183586120606,0.0008033275604248047,0.9166666666666666,28
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'sgd'}",0.129469633102417,0.00020017623901367188,0.9166666666666667,26
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'sgd'}",0.19330239295959473,0.001807260513305664,0.9166666666666667,26
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'adam'}",0.14975347518920898,0.0005786418914794922,0.925,25
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'sgd'}",0.1835494041442871,0.0014075756072998047,0.9333333333333332,24
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'adam'}",0.1422105312347412,0.00079803466796875,0.9416666666666668,21
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.18339715003967286,0.0014022350311279296,0.9416666666666668,21
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'adam'}",0.1150282859802246,0.0009018421173095703,0.9416666666666668,21
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.13487300872802735,0.0013000011444091798,0.95,19
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.09665937423706054,0.0003998279571533203,0.95,19
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'adam'}",0.21562533378601073,0.0019079685211181641,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.28031277656555176,0.0019103050231933593,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'adam'}",0.2425027847290039,0.002400112152099609,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.27951607704162595,0.0032004833221435545,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'adam'}",0.15271968841552735,0.0007105827331542969,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.44487943649291994,0.00250391960144043,0.9583333333333333,8
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.19720134735107422,0.00422964096069336,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'adam'}",0.3125642776489258,0.0007068157196044922,0.9583333333333333,8
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'adam'}",0.18686800003051757,0.0011958599090576172,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.2236412525177002,0.0008083343505859375,0.9583333333333333,8
+"{'activation': 'relu', 'alpha': 0.05, 'hidden_layer_sizes': (50,), 'learning_rate': 'constant', 'solver': 'adam'}",0.28289017677307127,0.0024056434631347656,0.9583333333333333,8
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.15870633125305175,0.0012037277221679688,0.9666666666666666,6
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.09695448875427246,0.0,0.9666666666666666,6
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'adam'}",0.21195673942565918,0.0009080410003662109,0.9666666666666668,1
+"{'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.24441895484924317,0.0021082878112792967,0.9666666666666668,1
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'adaptive', 'solver': 'adam'}",0.13913965225219727,0.0007977485656738281,0.9666666666666668,1
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'learning_rate': 'constant', 'solver': 'adam'}",0.14280266761779786,0.0007978439331054688,0.9666666666666668,1
+"{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'constant', 'solver': 'adam'}",0.09235701560974122,0.0010037422180175781,0.9666666666666668,1
