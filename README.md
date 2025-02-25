@@ -1,12 +1,15 @@
+<p align="center">
+  <img src="logo-ctu-inkythuatso-01-09-14-23-02.jpg" alt="Logo" width="50%">
+</p>
 <p>
-  <h1 style='text-align:center;'>Code_CTU</h1>
+  <h1 align='center'>Code_CTU</h1>
 </p>
 
 Welcome to **Code_CTU**! This repository is a collection of my coding projects and learning materials from my time at **Can Tho University (CTU)**. It covers a wide range of topics from **Data Structures** and **Algorithms** to **Artificial Intelligence** and **Databases**. Feel free to explore and contribute!
 
 ## 📂 Repository Contents
 
-- **Data Structures & Algorithms**  
+- **Data Structures & Algorithms**
 - **Database Fundamentals**
 - **Artificial Intelligence Documentation**
 - **Programming in English**
@@ -28,9 +31,9 @@ Welcome to **Code_CTU**! This repository is a collection of my coding projects a
 ## 🚀 Usage
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/letuandatt/Code_CTU.git
-    ```
+   ```bash
+   git clone https://github.com/letuandatt/Code_CTU.git
+   ```
 2. Explore the code for different courses and topics.
 3. Feel free to contribute by forking the repo and submitting a pull request!
 
