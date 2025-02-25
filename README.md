@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo-ctu-inkythuatso-01-09-14-23-02.jpg" alt="Logo" width="50%">
+  <img src="logo-ctu-inkythuatso-01-09-14-23-02.jpg" alt="Logo" width="30%">
 </p>
 <p>
   <h1 align='center'>Code_CTU</h1>
